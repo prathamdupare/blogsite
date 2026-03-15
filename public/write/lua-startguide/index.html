@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en-US" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pratham&#39;s Blog - Beginner&#39;s Guide to Lua</title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/custom.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/monokai-sublime.min.css">
+        <link rel="icon" type="image/png" href="/favicon.png">
+    </head>
+    <body>
+        
+<main class="terminal-page">
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-title"># main</div>
+                <a href="https://heypratham.in/" class="sidebar-link">home site ↗</a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title"># write</div>
+                <a href="/write/" class="sidebar-link">posts</a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title"># connect</div>
+                <a href="/" class="sidebar-link">contact</a>
+            </div>
+        </aside>
+
+        <div class="editor">
+            <article>
+                <div class="terminal-header">Beginner&#39;s Guide to Lua<span class="header-cursor"></span></div>
+                <div class="terminal-desc">April 3, 2024</div>
+                
+                <div class="terminal-content">
+                    <h1 id="lua---beginners-guide">Lua - Beginners Guide</h1>
+<p>I recently started learning Lua and I found it to be a very interesting language. It is a very lightweight language and is used in many applications. It is also used in many games as a scripting language.</p>
+<p>This is a beginners guide to Lua.</p>
+<h2 id="printing">Printing</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="s2">&#34;Hello World&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><h2 id="comments">Comments</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">--this is a comment</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="s2">&#34;hello&#34;</span><span class="p">)</span> <span class="c1">--this is another comment</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- the next line will not do anything because it is commented out</span>
+</span></span><span class="line"><span class="cl"><span class="c1">--print(&#34;world&#34;)</span>
+</span></span></code></pre></div><h2 id="variables">Variables</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">-- Different types</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1">--number</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&#34;john doe&#34;</span> <span class="c1">--string</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">isAlive</span> <span class="o">=</span> <span class="kc">false</span> <span class="c1">-- boolean</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">a</span> <span class="o">=</span> <span class="kc">nil</span> <span class="c1">--no value or invalid value</span>
+</span></span></code></pre></div><p><strong>Numbers</strong></p>
+<p>operators</p>
+<ul>
+<li>+ addition</li>
+<li>- minus</li>
+<li>* multiply</li>
+<li>/ divide</li>
+<li>^ power</li>
+<li>% modulus</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">-- examples</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="c1">-- 3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">d</span> <span class="o">=</span> <span class="n">b</span> <span class="o">-</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="c1">-- 1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">x</span> <span class="o">=</span>  <span class="mi">1</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span> <span class="c1">-- 12</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="c1">-- 8</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="mi">10</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="c1">-- 5</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span> <span class="p">(</span><span class="mi">2</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span> <span class="c1">-- 4</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="mi">5</span><span class="o">%</span><span class="mi">2</span><span class="p">)</span> <span class="c1">-- 1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="p">)</span> <span class="c1">-- -2</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">-- increment</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">level</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="n">level</span> <span class="o">=</span> <span class="n">level</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">level</span><span class="p">)</span> <span class="c1">-- 2</span>
+</span></span></code></pre></div><p><strong>Strings</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">-- concatenate strings</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">phrase</span> <span class="o">=</span> <span class="s2">&#34;My name is &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&#34;John Doe&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">phase</span> <span class="o">..</span> <span class="n">name</span><span class="p">)</span> <span class="c1">--My name is John Doe</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- strings and numbers</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">12</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&#34;Billy&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">name</span> <span class="o">..</span> <span class="s2">&#34; is &#34;</span> <span class="o">..</span> <span class="n">age</span> <span class="o">..</span> <span class="s2">&#34; years old&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p><strong>Boolean</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">isAlive</span> <span class="o">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">isAlive</span><span class="p">)</span> <span class="c1">--true</span>
+</span></span><span class="line"><span class="cl"><span class="n">isAlive</span> <span class="o">=</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">isAlive</span><span class="p">)</span> <span class="c1">--false</span>
+</span></span></code></pre></div><h2 id="conditional-statements">Conditional Statements</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">--number comparisions</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl"><span class="kr">if</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">18</span> <span class="kr">then</span>
+</span></span><span class="line"><span class="cl">  <span class="n">print</span><span class="p">(</span><span class="s2">&#34;over 18&#34;</span><span class="p">)</span> <span class="c1">--this will not be executed</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">--elseif and else</span>
+</span></span><span class="line"><span class="cl"><span class="n">age</span> <span class="o">=</span> <span class="mi">20</span>
+</span></span><span class="line"><span class="cl"><span class="kr">if</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">18</span> <span class="kr">then</span>
+</span></span><span class="line"><span class="cl">  <span class="n">print</span><span class="p">(</span><span class="s2">&#34;dog&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">elseif</span> <span class="n">age</span> <span class="o">==</span> <span class="mi">18</span> <span class="kr">then</span>
+</span></span><span class="line"><span class="cl">  <span class="n">print</span><span class="p">(</span><span class="s2">&#34;cat&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">else</span>
+</span></span><span class="line"><span class="cl">  <span class="n">print</span><span class="p">(</span><span class="s2">&#34;mouse&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span></code></pre></div><p><strong>Comparison Operators</strong></p>
+<ul>
+<li>== equality</li>
+<li>&lt; less than</li>
+<li>&gt; greater than</li>
+<li>&lt;= less than or equal to</li>
+<li>&gt;= greater than or equal to</li>
+<li>~= inequality</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">--boolean comparision</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">isAlive</span> <span class="o">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl"><span class="kr">if</span> <span class="n">isAlive</span> <span class="kr">then</span>
+</span></span><span class="line"><span class="cl">    <span class="n">print</span><span class="p">(</span><span class="s2">&#34;dog&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">--string comparisions</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&#34;billy&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&#34;Billy&#34;</span> <span class="kr">then</span> <span class="c1">--false</span>
+</span></span><span class="line"><span class="cl">  <span class="n">print</span><span class="p">(</span><span class="s2">&#34;Billy&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">elseif</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&#34;billy&#34;</span> <span class="kr">then</span> <span class="c1">--true</span>
+</span></span><span class="line"><span class="cl">  <span class="n">print</span><span class="p">(</span><span class="s2">&#34;billy&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span></code></pre></div><p><strong>Combining Statements</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl"><span class="kr">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">10</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="kr">then</span> <span class="c1">--both are true</span>
+</span></span><span class="line"><span class="cl">  <span class="n">print</span><span class="p">(</span><span class="s2">&#34;dog&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">elseif</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">100</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="kr">then</span> <span class="c1">--1 or more are true</span>
+</span></span><span class="line"><span class="cl">  <span class="n">print</span><span class="p">(</span><span class="s2">&#34;cat&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span><span class="line"><span class="cl"><span class="c1">--result: cat</span>
+</span></span></code></pre></div><p><strong>Nested statements</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">isAlive</span> <span class="o">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl"><span class="kr">if</span> <span class="n">x</span><span class="o">==</span><span class="mi">10</span> <span class="kr">then</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">if</span> <span class="n">isAlive</span> <span class="o">==</span> <span class="kc">true</span> <span class="kr">then</span>
+</span></span><span class="line"><span class="cl">    <span class="n">print</span><span class="p">(</span><span class="s2">&#34;dog&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">else</span>
+</span></span><span class="line"><span class="cl">    <span class="n">print</span><span class="p">(</span><span class="s2">&#34;cat&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">end</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span></code></pre></div><p><strong>Invert Value</strong></p>
+<p>you can also invert a value with the <strong>not</strong> keyword</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl"><span class="kr">if</span> <span class="ow">not</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">10</span> <span class="kr">then</span>
+</span></span><span class="line"><span class="cl">  <span class="n">print</span><span class="p">(</span><span class="s2">&#34;here&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span></code></pre></div><h2 id="functions">Functions</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="kr">function</span> <span class="nf">printTax</span><span class="p">(</span><span class="n">price</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">local</span> <span class="n">tax</span> <span class="o">=</span> <span class="n">price</span> <span class="o">*</span> <span class="mf">0.21</span>
+</span></span><span class="line"><span class="cl">  <span class="n">print</span><span class="p">(</span><span class="s2">&#34;tax:&#34;</span> <span class="o">..</span> <span class="n">tax</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">printTax</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">--function that returns a value</span>
+</span></span><span class="line"><span class="cl"><span class="kr">function</span> <span class="nf">calculateTax</span><span class="p">(</span><span class="n">price</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">return</span> <span class="n">price</span> <span class="o">*</span> <span class="mf">0.21</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">calculateTax</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">--reusing the function but this time using variables</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">bread</span> <span class="o">=</span> <span class="mi">130</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">milk</span> <span class="o">=</span> <span class="mi">110</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">breadTax</span> <span class="o">=</span> <span class="n">calculateTax</span><span class="p">(</span><span class="n">bread</span><span class="p">)</span> <span class="c1">--27.3</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">milkTax</span> <span class="o">=</span> <span class="n">calculateTax</span><span class="p">(</span><span class="n">milk</span><span class="p">)</span> <span class="c1">--23.1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="s2">&#34;Bread Tax = &#34;</span> <span class="o">..</span> <span class="n">breadTax</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="s2">&#34;Milk Tax = &#34;</span> <span class="o">..</span> <span class="n">milkTax</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">--multiple parameters</span>
+</span></span><span class="line"><span class="cl"><span class="kr">function</span> <span class="nf">displayInfo</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">country</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">print</span><span class="p">(</span><span class="n">name</span> <span class="o">..</span> <span class="s2">&#34; is &#34;</span> <span class="o">..</span> <span class="n">age</span> <span class="o">..</span> <span class="s2">&#34; years old and is from &#34;</span> <span class="o">..</span> <span class="n">country</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">displayInfo</span><span class="p">(</span><span class="s2">&#34;Billy&#34;</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="s2">&#34;Jupiter&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><h2 id="scope">Scope</h2>
+<p>Variables have different scopes. Once the end of the scope is reached the values in that scope are no longer accessable</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="kr">function</span> <span class="nf">foo</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">local</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1">--nil</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">isAlive</span> <span class="o">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl"><span class="kr">if</span> <span class="n">isAlive</span> <span class="kr">then</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">local</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1">--nil</span>
+</span></span></code></pre></div><p><strong>Global Variable</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">_G.myValue</span> <span class="o">=</span> <span class="mi">69</span>
+</span></span><span class="line"><span class="cl"><span class="c1">--doing this can sometimes be bad practice</span>
+</span></span></code></pre></div><h2 id="loops">Loops</h2>
+<p>There is a few different ways you can do a loop in lua</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">--while loop</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span> <span class="kr">do</span>
+</span></span><span class="line"><span class="cl">  <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="s2">&#34;count is &#34;</span> <span class="o">..</span> <span class="n">count</span><span class="p">)</span> <span class="c1">--count is 7</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">--for loop</span>
+</span></span><span class="line"><span class="cl"><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="kr">for</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span> <span class="kr">do</span>
+</span></span><span class="line"><span class="cl">  <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="s2">&#34;count is &#34;</span> <span class="o">..</span> <span class="n">count</span><span class="p">)</span>
+</span></span></code></pre></div><p><strong>Infinite Loops</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">--infinite loop will never end</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="kr">while</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="kr">do</span>
+</span></span><span class="line"><span class="cl"> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"> <span class="n">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span></code></pre></div><p><strong>Nested Loops</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="kr">for</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span> <span class="kr">do</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">for</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span> <span class="kr">do</span>
+</span></span><span class="line"><span class="cl">    <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">end</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span> <span class="c1">-- 100</span>
+</span></span></code></pre></div><h2 id="tables">Tables</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">--basic table</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">colors</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&#34;red&#34;</span><span class="p">,</span> <span class="s2">&#34;green&#34;</span><span class="p">,</span> <span class="s2">&#34;blue&#34;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1">--red</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">colors</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="c1">--green</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">colors</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="c1">--blue</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">--using a loop to iterate though your table</span>
+</span></span><span class="line"><span class="cl"><span class="kr">for</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="o">#</span><span class="n">colors</span> <span class="kr">do</span>
+</span></span><span class="line"><span class="cl">  <span class="n">print</span><span class="p">(</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span></code></pre></div><p><strong>Table Manipulation</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">--insert</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">colors</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&#34;red&#34;</span><span class="p">,</span> <span class="s2">&#34;green&#34;</span><span class="p">,</span> <span class="s2">&#34;blue&#34;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">table.insert</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span> <span class="s2">&#34;orange&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">index</span> <span class="o">=</span> <span class="o">#</span><span class="n">colors</span> <span class="c1">--4 (this is the last index in the table)</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">colors</span><span class="p">[</span><span class="n">index</span><span class="p">])</span> <span class="c1">--orange</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">--insert at index</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">colors</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&#34;red&#34;</span><span class="p">,</span> <span class="s2">&#34;green&#34;</span><span class="p">,</span> <span class="s2">&#34;blue&#34;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">table.insert</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&#34;pink&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">for</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="o">#</span><span class="n">colors</span> <span class="kr">do</span>
+</span></span><span class="line"><span class="cl">  <span class="n">print</span><span class="p">(</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span><span class="line"><span class="cl"><span class="c1">--red, pink, green, blue</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">--remove</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">colors</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&#34;red&#34;</span><span class="p">,</span> <span class="s2">&#34;green&#34;</span><span class="p">,</span> <span class="s2">&#34;blue&#34;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">table.remove</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">for</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="o">#</span><span class="n">colors</span> <span class="kr">do</span>
+</span></span><span class="line"><span class="cl">  <span class="n">print</span><span class="p">(</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- &#34;green&#34;, &#34;blue&#34;</span>
+</span></span></code></pre></div><p><strong>2 Dimensional Table</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">--tables within tables</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="s2">&#34;billy&#34;</span><span class="p">,</span> <span class="mi">12</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="s2">&#34;john&#34;</span><span class="p">,</span> <span class="mi">20</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="s2">&#34;andy&#34;</span><span class="p">,</span> <span class="mi">65</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">for</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="o">#</span><span class="n">data</span> <span class="kr">do</span>
+</span></span><span class="line"><span class="cl">  <span class="n">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">..</span> <span class="s2">&#34; is &#34;</span> <span class="o">..</span> <span class="n">data</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">..</span> <span class="s2">&#34; years old&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span></code></pre></div><p><strong>Key Tables</strong></p>
+<p>2 dimensional tables are not suited to data with different types, instead uses keys for tables</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">teams</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s2">&#34;teamA&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s2">&#34;teamB&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">15</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">teams</span><span class="p">[</span><span class="s2">&#34;teamA&#34;</span><span class="p">])</span> <span class="c1">-- 12</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">for</span> <span class="n">key</span><span class="p">,</span><span class="n">value</span> <span class="kr">in</span> <span class="n">pairs</span><span class="p">(</span><span class="n">teams</span><span class="p">)</span> <span class="kr">do</span>
+</span></span><span class="line"><span class="cl">  <span class="n">print</span><span class="p">(</span><span class="n">key</span> <span class="o">..</span> <span class="s2">&#34;:&#34;</span> <span class="o">..</span> <span class="n">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">--insert into key table</span>
+</span></span><span class="line"><span class="cl"><span class="n">teams</span><span class="p">[</span><span class="s2">&#34;teamC&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">--remove key from table</span>
+</span></span><span class="line"><span class="cl"><span class="n">teams</span><span class="p">[</span><span class="s2">&#34;teamA&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">nil</span>
+</span></span></code></pre></div><p><strong>Returning a Table from a Function</strong></p>
+<p>This can be used to return multiple values from a functions</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="kr">function</span> <span class="nf">getTeamScores</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">local</span> <span class="n">scores</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s2">&#34;teamA&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s2">&#34;teamB&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">15</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">return</span> <span class="n">scores</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">scores</span> <span class="o">=</span> <span class="n">getTeamScores</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="kr">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="kr">in</span> <span class="n">pairs</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span> <span class="kr">do</span>
+</span></span><span class="line"><span class="cl">  <span class="n">total</span> <span class="o">+=</span> <span class="n">val</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="s2">&#34;Total score of all teams:&#34;</span> <span class="o">..</span> <span class="n">total</span><span class="p">)</span>
+</span></span></code></pre></div><h2 id="math">Math</h2>
+<p>The math class has a number of functions for dealing with numbers. You may not need them but here is some of the more useful one functions:</p>
+<p>More: <a href="http://lua-users.org/wiki/MathLibraryTutorial">Wiki</a></p>
+<ul>
+<li>
+<p>abs (absolute value)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">math.abs</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c1">--result: 10</span>
+</span></span><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">math.abs</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="c1">--result: 10</span>
+</span></span></code></pre></div></li>
+<li>
+<p>ceil (round up decimal value)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">1.2</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">math.ceil</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c1">--result: 2</span>
+</span></span></code></pre></div></li>
+<li>
+<p>deg (Convert value from radians to degrees)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">math.deg</span><span class="p">(</span><span class="n">math.pi</span><span class="p">))</span> <span class="c1">-- result: 180</span>
+</span></span></code></pre></div></li>
+<li>
+<p>floor (round down decimal value)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="kd">local</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">1.2</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">math.floor</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c1">--result: 1</span>
+</span></span></code></pre></div></li>
+<li>
+<p>pi (constant value of pi)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">math.pi</span><span class="p">)</span> <span class="c1">--3.1415926535898</span>
+</span></span><span class="line"><span class="cl"><span class="mf">3.1415926535898</span>
+</span></span></code></pre></div></li>
+<li>
+<p>rad (Convert value from degrees to radians)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">math.rad</span><span class="p">(</span><span class="mi">180</span><span class="p">))</span> <span class="c1">--result: 3.1415926535898</span>
+</span></span></code></pre></div></li>
+<li>
+<p>random (random number generation)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">--random value between 0 tand 1</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">math.random</span><span class="p">())</span> <span class="c1">--result: 0.0012512588885159</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">--random integer value from 1 to 100 (both inclusive)</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">math.random</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span> <span class="c1">--result: 20</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">--random integer value from 20 to 100 (both inclusive)</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">math.random</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span> <span class="c1">--result: 54</span>
+</span></span></code></pre></div></li>
+<li>
+<p>sqrt (Square root of a number)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">math.sqrt</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span> <span class="c1">--result: 10</span>
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="modules">Modules</h2>
+<p>Include code other files</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="n">require</span><span class="p">(</span><span class="s2">&#34;otherfile&#34;</span><span class="p">)</span>
+</span></span></code></pre></div>
+                </div>
+
+                
+                <div class="tags-section">
+                    <span class="key">tags:</span>
+                    <div class="tags-list">
+                        
+                        <span class="tag">lua</span>
+                        
+                        <span class="tag">docs</span>
+                        
+                    </div>
+                </div>
+                
+            </article>
+        </div>
+    </div>
+</main>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </body>
+</html>

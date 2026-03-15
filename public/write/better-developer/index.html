@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en-US" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pratham&#39;s Blog - My dev workflow - Linux, Hyprland ,Neovim and Tmux.</title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/custom.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/monokai-sublime.min.css">
+        <link rel="icon" type="image/png" href="/favicon.png">
+    </head>
+    <body>
+        
+<main class="terminal-page">
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-title"># main</div>
+                <a href="https://heypratham.in/" class="sidebar-link">home site ↗</a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title"># write</div>
+                <a href="/write/" class="sidebar-link">posts</a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title"># connect</div>
+                <a href="/" class="sidebar-link">contact</a>
+            </div>
+        </aside>
+
+        <div class="editor">
+            <article>
+                <div class="terminal-header">My dev workflow - Linux, Hyprland ,Neovim and Tmux.<span class="header-cursor"></span></div>
+                <div class="terminal-desc">August 16, 2024</div>
+                
+                <div class="terminal-content">
+                    <p>Disclaimer: This is not a guide on how I rice my Window manager, what terminal I use, it&rsquo;s purely how I use my tools.</p>
+<h2 id="introduction">Introduction</h2>
+<p>The time has come for me to share my developer workflow and how I use my tools to become a PRO developer!</p>
+<h3 id="what-i-dont-focus-on">What I Don&rsquo;t Focus On</h3>
+<ul>
+<li>GPU-rendered terminals (e.g., <em>Alacritty</em>).</li>
+<li>Ricing my desktop or color schemes.</li>
+</ul>
+<h3 id="what-matters">What Matters</h3>
+<ul>
+<li>Speed</li>
+<li>Lower mental overhead</li>
+</ul>
+<h3 id="the-tools-i-use-for-the-perfect-developer-workflow">The Tools I Use for the Perfect Developer Workflow</h3>
+<ul>
+<li><strong>Linux</strong> (of course!)</li>
+<li><strong>Window Manager</strong>: Hyprland (with animations disabled)</li>
+<li><strong>Terminal</strong>: foot (since I use Wayland)</li>
+<li><strong>Terminal Multiplexer</strong>: Tmux</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> If you’re using Mac, great! Try to replicate this setup and find tools that make you fast and productive. If you use Windows, consider upgrading your RAM and playing some games; that&rsquo;s all I can suggest.</p>
+</blockquote>
+<h3 id="window-management">Window Management</h3>
+<p>Most common Linux distros come with GNOME or KDE Plasma, which are excellent and a big reason for Linux’s recent improvements. However, I prefer not to use them because I don&rsquo;t want to rely on the mouse to manage windows. I prefer a window manager to streamline my workflow.</p>
+<h4 id="tiling-window-manager">Tiling Window Manager</h4>
+<figure><img src="/2024/developer/1.png"
+    alt="Telescope"><figcaption>
+      <p>Auto Tiling new Terminal Windows</p>
+    </figcaption>
+</figure>
+
+<p>A tiling window manager automatically tiles and splits your windows, allowing you to quickly view and manage your open applications. I have set my <code>ALT</code> key as the main modifier, and use the following shortcuts:</p>
+<ul>
+<li><code>Alt + 1</code> to switch to my browser on the 1st workspace.</li>
+<li><code>Alt + 2</code> to switch to my terminal on the 2nd workspace.</li>
+<li>And so on, with workspaces typically maximized.</li>
+</ul>
+<p>This setup allows me to quickly switch between tasks without worrying about window positions.</p>
+<p>I can cycle through windows using <code>Alt + HJKL</code>, similar to Vim. Focused windows have highlighted borders, making navigation straightforward.</p>
+<h3 id="terminal-workflow">Terminal Workflow</h3>
+<p>In my terminal, I use <code>tmux</code>, a terminal multiplexer that lets you split your terminal into multiple panes. This setup eliminates the need to switch between workspaces just to work on another terminal. It also helps me avoid multiple displays, which can be distracting and bad for posture.</p>
+<h4 id="using-tmux">Using Tmux</h4>
+<p>Tmux has a prefix key (<code>Ctrl + a</code> in my case) that triggers tmux commands. For example, after pressing the prefix key, you can switch between panes using numbers or navigate to the next pane with <code>prefix + n</code>. Tmux also keeps sessions alive, so if you accidentally close the terminal window, you can resume your work by running <code>tmux a</code>.</p>
+<h3 id="programming">Programming</h3>
+<figure><img src="/2024/developer/0.9.jpg"
+    alt="Telescope"><figcaption>
+      <p>Neovim as my primary text editor</p>
+    </figcaption>
+</figure>
+
+<p>For programming, I use Neovim instead of VS Code.</p>
+<h4 id="why-neovim">Why Neovim?</h4>
+<ul>
+<li>VS Code is bloated and slow.</li>
+<li>Neovim runs in the terminal.</li>
+<li>I prefer Vim motions for efficient text editing.</li>
+<li>I don’t use the mouse (more on this later).</li>
+</ul>
+<h3 id="inside-a-codebase">Inside a Codebase</h3>
+<p>When starting work, I navigate to the desired directory and run <code>nvim .</code>, which opens Neovim in that directory (similar to VS Code’s <code>code .</code>).</p>
+<h4 id="opening-a-file">Opening a File</h4>
+<figure><img src="/2024/developer/2.png"
+    alt="Telescope"><figcaption>
+      <p>Fuzzy finding file with Telescope</p>
+    </figcaption>
+</figure>
+
+<h4 id="moving-between-files">Moving Between Files</h4>
+<figure><img src="/2024/developer/3.png"
+    alt="Telescope"><figcaption>
+      <p>Moving between files with Harpoon</p>
+    </figcaption>
+</figure>
+
+<p>To manage multiple open files, I use the Harpoon plugin, developed by The Primeagen. Harpoon lets me mark frequently used files and switch between them easily without cluttering my workspace. It also saves cursor positions, enhancing productivity.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This setup enables an exceptionally fast workflow and keeps development exciting. There is always room for improvement, and I’ve tailored my workflow to work best for me through experimentation and learning. The key is to try new things, step out of your comfort zone, and develop unique skills that make you a great developer.</p>
+
+                </div>
+
+                
+                <div class="tags-section">
+                    <span class="key">tags:</span>
+                    <div class="tags-list">
+                        
+                        <span class="tag">Reading</span>
+                        
+                    </div>
+                </div>
+                
+            </article>
+        </div>
+    </div>
+</main>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </body>
+</html>

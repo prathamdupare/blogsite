@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en-US" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pratham&#39;s Blog - Components and Optimisations</title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/custom.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/monokai-sublime.min.css">
+        <link rel="icon" type="image/png" href="/favicon.png">
+    </head>
+    <body>
+        
+<main class="terminal-page">
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-title"># main</div>
+                <a href="https://heypratham.in/" class="sidebar-link">home site ↗</a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title"># write</div>
+                <a href="/write/" class="sidebar-link">posts</a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title"># connect</div>
+                <a href="/" class="sidebar-link">contact</a>
+            </div>
+        </aside>
+
+        <div class="editor">
+            <article>
+                <div class="terminal-header">Components and Optimisations<span class="header-cursor"></span></div>
+                <div class="terminal-desc">March 8, 2024</div>
+                
+                <div class="terminal-content">
+                    <h2 id="introduction">Introduction</h2>
+<p>Next.js comes with a variety of built-in optimizations designed to improve your application&rsquo;s speed and Core Web Vitals
+.</p>
+<h2 id="built-in-components">Built-in Components</h2>
+<h3 id="1-images-component">1. Images Component:</h3>
+<ul>
+<li>Utilizes the native <code>&lt;img&gt;</code> element.</li>
+<li>Optimizes image performance by implementing lazy loading.</li>
+<li>Automatically resizes images based on the device size for improved responsiveness.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="c1">//app/page.js
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="nx">Image</span> <span class="nx">from</span> <span class="s2">&#34;next/image&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Page</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">Image</span>
+</span></span><span class="line"><span class="cl">      <span class="na">src</span><span class="o">=</span><span class="s">&#34;/profile.png&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="na">width</span><span class="o">=</span><span class="p">{</span><span class="mi">500</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="na">height</span><span class="o">=</span><span class="p">{</span><span class="mi">500</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="na">alt</span><span class="o">=</span><span class="s">&#34;Picture of the author&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>The Image Component requires the following properties: <code>src</code>, <code>width</code>, <code>height</code>, and <code>alt</code>.</p>
+<h3 id="2-link-component">2. Link Component:</h3>
+<p>The <code>&lt;Link&gt;</code> component in Next.js is a React component that extends the HTML <code>&lt;a&gt;</code> element. It plays a crucial role in providing prefetching and enabling client-side navigation between routes. This component serves as the primary means of navigating between routes in a Next.js application.</p>
+<ul>
+<li>Built on the native <code>&lt;a&gt;</code> tags.</li>
+<li>Prefetches pages in the background, enhancing page transition speed.</li>
+<li>Facilitates faster and smoother navigation between pages.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Link</span> <span class="nx">from</span> <span class="s2">&#34;next/link&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Page</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">Link</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/dashboard&#34;</span><span class="p">&gt;</span><span class="nx">Dashboard</span><span class="p">&lt;/</span><span class="nt">Link</span><span class="p">&gt;;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><code>href</code> (required)<br>
+The path or URL to navigate to.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">Link</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/dashboard&#34;</span><span class="p">&gt;</span><span class="nx">Dashboard</span><span class="p">&lt;/</span><span class="nt">Link</span><span class="p">&gt;</span>
+</span></span></code></pre></div><ul>
+<li><strong>Linking to Dynamic Routes</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="c1">//app/blog/page.js
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="nx">Link</span> <span class="nx">from</span> <span class="s2">&#34;next/link&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">Page</span><span class="p">({</span> <span class="nx">posts</span> <span class="p">})</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span><span class="nx">posts</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">post</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">post</span><span class="p">.</span><span class="nx">id</span><span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">Link</span> <span class="na">href</span><span class="o">=</span><span class="p">{</span><span class="sb">`/blog/</span><span class="si">${</span><span class="nx">post</span><span class="p">.</span><span class="nx">slug</span><span class="si">}</span><span class="sb">`</span><span class="p">}&gt;{</span><span class="nx">post</span><span class="p">.</span><span class="nx">title</span><span class="p">}&lt;/</span><span class="nt">Link</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">))}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>For example, you can generate a list of links to the dynamic route <code>app/blog/[slug]/page.js</code>:</p>
+<h3 id="3-scripts-component">3. Scripts Component:</h3>
+<p>This is self-explanatory, this let&rsquo;s you run scripts for a specific components.</p>
+<ul>
+<li>Implemented with the native <code>&lt;script&gt;</code> tags.</li>
+<li>Provides control over the loading and execution of third-party scripts.</li>
+<li>Enables efficient management of external scripts for better overall performance.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Script</span> <span class="nx">from</span> <span class="s2">&#34;next/script&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Dashboard</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">Script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://example.com/script.js&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><strong>Required Props for Script Component in Next.js</strong></p>
+<p>The <code>&lt;Script&gt;</code> component in Next.js requires the following property:</p>
+<ul>
+<li><strong>src:</strong>
+<ul>
+<li>Type: String</li>
+<li>Description: A path string specifying the URL of an external script. This can be either an absolute external URL or an internal path.</li>
+<li>Requirement: The <code>src</code> property is required unless an inline script is used.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Optional Props</strong> :</p>
+<table>
+  <thead>
+      <tr>
+          <th>Prop</th>
+          <th>Example</th>
+          <th>Type</th>
+          <th>Required</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>src</code></td>
+          <td><code>src=&quot;http://example.com/script&quot;</code></td>
+          <td>String</td>
+          <td>Required unless inline script is used</td>
+      </tr>
+      <tr>
+          <td><code>strategy</code></td>
+          <td><code>strategy=&quot;lazyOnload&quot;</code></td>
+          <td>String</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>onLoad</code></td>
+          <td><code>onLoad={onLoadFunc}</code></td>
+          <td>Function</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>onReady</code></td>
+          <td><code>onReady={onReadyFunc}</code></td>
+          <td>Function</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>onError</code></td>
+          <td><code>onError={onErrorFunc}</code></td>
+          <td>Function</td>
+          <td>-</td>
+      </tr>
+  </tbody>
+</table>
+<p>For a comprehensive guide on Next.js components, refer to the <a href="https://nextjs.org/docs/app/api-reference/components">Api Reference/Components</a> section of the official Next.js documentation.</p>
+<h2 id="static-assets">Static Assets</h2>
+<p>The Next.js <code>/public</code> folder serves as a convenient location for hosting static assets such as images, fonts, and other files.</p>
+<p>Files stored within the <code>/public</code> directory can be efficiently cached by Content Delivery Network (CDN) providers. This caching mechanism enhances the delivery speed of assets to users, resulting in a smoother browsing experience.</p>
+<h2 id="metadata">Metadata</h2>
+<p><strong>Next.js Metadata API for Improved SEO and Shareability</strong></p>
+<p>Next.js provides a Metadata API that allows you to define your application&rsquo;s metadata, including meta and link tags inside the HTML head element. This is crucial for enhancing SEO and improving web shareability.</p>
+<p>There are two methods to add metadata to your application:</p>
+<ol>
+<li>
+<p><strong>Config-based Metadata:</strong></p>
+<ul>
+<li>Export a static metadata object or a dynamic <code>generateMetadata</code> function in a <code>layout.js</code> or <code>page.js</code> file.</li>
+</ul>
+</li>
+<li>
+<p><strong>File-based Metadata:</strong></p>
+<ul>
+<li>Add static or dynamically generated special files to route segments.</li>
+</ul>
+</li>
+</ol>
+<p>Regardless of the method chosen, Next.js will automatically generate the relevant <code>&lt;head&gt;</code> elements for your pages. Additionally, you can create dynamic Open Graph (OG) images using the <code>ImageResponse</code> constructor for a more customized and engaging web sharing experience.</p>
+<p>To define static metadata, export a Metadata object from a <code>layout.js</code>(we have already seen in previous chapter) or static <code>page.js</code> file.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">metadata</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">title</span><span class="o">:</span> <span class="s2">&#34;...&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">description</span><span class="o">:</span> <span class="s2">&#34;...&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Page</span><span class="p">()</span> <span class="p">{}</span>
+</span></span></code></pre></div><p>These components and elements cover the fundamental requirements for constructing a speedy and responsive Next.js application.</p>
+
+                </div>
+
+                
+                <div class="tags-section">
+                    <span class="key">tags:</span>
+                    <div class="tags-list">
+                        
+                        <span class="tag">Web Development</span>
+                        
+                        <span class="tag">NextJs</span>
+                        
+                        <span class="tag">series</span>
+                        
+                        <span class="tag">docs</span>
+                        
+                    </div>
+                </div>
+                
+            </article>
+        </div>
+    </div>
+</main>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </body>
+</html>

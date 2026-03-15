@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en-US" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pratham&#39;s Blog - Rules</title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/custom.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/monokai-sublime.min.css">
+        <link rel="icon" type="image/png" href="/favicon.png">
+    </head>
+    <body>
+        
+<main class="terminal-page">
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-title"># main</div>
+                <a href="https://heypratham.in/" class="sidebar-link">home site ↗</a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title"># write</div>
+                <a href="/write/" class="sidebar-link">posts</a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title"># connect</div>
+                <a href="/" class="sidebar-link">contact</a>
+            </div>
+        </aside>
+
+        <div class="editor">
+            <article>
+                <div class="terminal-header">Rules<span class="header-cursor"></span></div>
+                <div class="terminal-desc">July 6, 2024</div>
+                
+                <div class="terminal-content">
+                    <h3 id="this-is-basic-representation-of-how-our-project-structure-might-look-like">This is basic representation of how our project structure might look like.</h3>
+<pre tabindex="0"><code>my-nextjs-app/
+├── app/
+│   ├── about-us/
+│   │   ├── page.tsx
+│   ├── contact/
+│   │   ├── page.tsx
+│   ├── home/
+│   │   ├── page.tsx
+│   ├── products/
+│   │   ├── [id]/
+│   │   │   ├── page.tsx
+│   ├── services/
+│   │   ├── page.tsx
+│   ├── layout.tsx
+│   ├── globals.css
+├── components/
+│   ├── Header.tsx
+│   ├── Footer.tsx
+│   ├── MyContainer.tsx
+│   ├── Notification.tsx
+│   ├── portfolio-builder/
+│   │   ├── Education.tsx
+│   │   ├── Experience.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Header.tsx
+│   │   ├── PortfolioView.tsx
+│   │   ├── Profile.tsx
+│   │   ├── Projects.tsx
+│   │   └── Skills.tsx
+├── providers/
+│   ├── ThemeProvider.tsx
+│   ├── NotificationProvider.tsx
+├── utils/
+│   ├── index.ts
+│   ├── zod/
+│   │   ├── schema1.ts
+│   │   ├── schema2.ts
+│   │   └── ...
+│   ├── helpers/
+│   │   ├── util1.ts
+│   │   ├── util2.ts
+│   │   └── ...
+│   ├── actions/
+│   │   ├── action1.ts
+│   │   ├── action2.ts
+│   │   └── ...
+├── next.config.js
+├── tsconfig.json
+├── package.json
+├── README.md
+</code></pre><h2 id="file-and-folder-naming-conventions">File and Folder Naming Conventions</h2>
+<p>In NextJS, it is recommended to use lowercase letters and hyphens to separate words in file and folder names. This makes it easier to read and avoids confusion when working with different file types. For example, instead of using AboutUs.js, use about-us.js.</p>
+<h2 id="component-naming-conventions">Component Naming Conventions</h2>
+<p>When creating components, it is best to use PascalCase for naming. This convention makes it easier to differentiate between components and regular HTML elements. For example, instead of using my-container, use MyContainer.</p>
+<h2 id="route-naming-conventions">Route Naming Conventions</h2>
+<p>Routes in NextJS should follow the same naming conventions as file and folder names. This makes it easier to identify routes and avoids confusion when navigating through your application. For example, instead of using /aboutUs, use /about-us.</p>
+<h2 id="utils">utils</h2>
+<p>We will keep all the utils in the same file, no &ldquo;lib&rdquo; directory.
+This will avoid confusion about where to put the supporting files.</p>
+<p>This will also contain zod, helpers and actions.</p>
+<h2 id="providers">Providers</h2>
+<p>Providers will go to the Providers folder, like theme-providers, notification-provider in root of the project.</p>
+
+                </div>
+
+                
+            </article>
+        </div>
+    </div>
+</main>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </body>
+</html>

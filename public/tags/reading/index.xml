@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reading on Pratham&#39;s Blog</title>
+    <link>https://example.org/tags/reading/</link>
+    <description>Recent content in Reading on Pratham&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 16 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://example.org/tags/reading/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My dev workflow - Linux, Hyprland ,Neovim and Tmux.</title>
+      <link>https://example.org/write/better-developer/</link>
+      <pubDate>Fri, 16 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://example.org/write/better-developer/</guid>
+      <description>&lt;p&gt;Disclaimer: This is not a guide on how I rice my Window manager, what terminal I use, it&amp;rsquo;s purely how I use my tools.&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;The time has come for me to share my developer workflow and how I use my tools to become a PRO developer!&lt;/p&gt;&#xA;&lt;h3 id=&#34;what-i-dont-focus-on&#34;&gt;What I Don&amp;rsquo;t Focus On&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;GPU-rendered terminals (e.g., &lt;em&gt;Alacritty&lt;/em&gt;).&lt;/li&gt;&#xA;&lt;li&gt;Ricing my desktop or color schemes.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;what-matters&#34;&gt;What Matters&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Speed&lt;/li&gt;&#xA;&lt;li&gt;Lower mental overhead&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;the-tools-i-use-for-the-perfect-developer-workflow&#34;&gt;The Tools I Use for the Perfect Developer Workflow&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Linux&lt;/strong&gt; (of course!)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Window Manager&lt;/strong&gt;: Hyprland (with animations disabled)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Terminal&lt;/strong&gt;: foot (since I use Wayland)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Terminal Multiplexer&lt;/strong&gt;: Tmux&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; If you’re using Mac, great! Try to replicate this setup and find tools that make you fast and productive. If you use Windows, consider upgrading your RAM and playing some games; that&amp;rsquo;s all I can suggest.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Best Manga reader for Linux</title>
+      <link>https://example.org/write/best-manga-reader/</link>
+      <pubDate>Sat, 10 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>https://example.org/write/best-manga-reader/</guid>
+      <description>&lt;p&gt;If you love reading manga, you have got the perfect app for reading Manga on Linux.&lt;/p&gt;&#xA;&lt;p&gt;It’s called Kommiku.&lt;/p&gt;&#xA;&lt;p&gt;With Kommiku, you can read, download and organize your collection.&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Recently, Komikku got  ported to GTK4 and libadwaita which provides new modern look and feel!&lt;/p&gt;&#xA;&lt;p&gt;It is an open-source manga reader available as a Linux-only application, it will fit well with your GNOME desktop but you can use it on any distributions.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

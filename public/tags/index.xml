@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Pratham&#39;s Blog</title>
+    <link>https://example.org/tags/</link>
+    <description>Recent content in Tags on Pratham&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 08 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Productivity</title>
+      <link>https://example.org/tags/productivity/</link>
+      <pubDate>Sun, 08 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/productivity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Terminal</title>
+      <link>https://example.org/tags/terminal/</link>
+      <pubDate>Sun, 08 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/terminal/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vim</title>
+      <link>https://example.org/tags/vim/</link>
+      <pubDate>Sun, 08 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/vim/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docs</title>
+      <link>https://example.org/tags/docs/</link>
+      <pubDate>Sun, 10 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/docs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Series</title>
+      <link>https://example.org/tags/series/</link>
+      <pubDate>Sun, 10 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/series/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Reading</title>
+      <link>https://example.org/tags/reading/</link>
+      <pubDate>Fri, 16 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/reading/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Android</title>
+      <link>https://example.org/tags/android/</link>
+      <pubDate>Tue, 16 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/android/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lua</title>
+      <link>https://example.org/tags/lua/</link>
+      <pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/lua/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Neovim Notes</title>
+      <link>https://example.org/tags/neovim-notes/</link>
+      <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/neovim-notes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>NextJs</title>
+      <link>https://example.org/tags/nextjs/</link>
+      <pubDate>Mon, 11 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/nextjs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Development</title>
+      <link>https://example.org/tags/web-development/</link>
+      <pubDate>Mon, 11 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/web-development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Html</title>
+      <link>https://example.org/tags/html/</link>
+      <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/html/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Website</title>
+      <link>https://example.org/tags/website/</link>
+      <pubDate>Sat, 03 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/website/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Updates</title>
+      <link>https://example.org/tags/updates/</link>
+      <pubDate>Thu, 11 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/updates/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>https://example.org/tags/linux/</link>
+      <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Open Source</title>
+      <link>https://example.org/tags/open-source/</link>
+      <pubDate>Sun, 15 Jan 2023 09:00:00 -0700</pubDate>
+      <guid>https://example.org/tags/open-source/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Write</title>
+      <link>https://example.org/tags/write/</link>
+      <pubDate>Sun, 15 Jan 2023 09:00:00 -0700</pubDate>
+      <guid>https://example.org/tags/write/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Privacy</title>
+      <link>https://example.org/tags/privacy/</link>
+      <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/privacy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security</title>
+      <link>https://example.org/tags/security/</link>
+      <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Social Media</title>
+      <link>https://example.org/tags/social-media/</link>
+      <pubDate>Tue, 09 Aug 2022 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/social-media/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GNOME</title>
+      <link>https://example.org/tags/gnome/</link>
+      <pubDate>Mon, 08 Aug 2022 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/gnome/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Customization</title>
+      <link>https://example.org/tags/customization/</link>
+      <pubDate>Fri, 05 Aug 2022 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/customization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Addiction</title>
+      <link>https://example.org/tags/addiction/</link>
+      <pubDate>Tue, 13 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/addiction/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

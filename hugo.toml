@@ -1,0 +1,32 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-US'
+title = "Pratham's Blog"
+theme = "digio-theme"
+ignoreLogs = ['warning-goldmark-raw-html']
+
+[menus]
+  [[menus.main]]
+    name = 'home'
+    pageRef = '/'
+    weight = 1
+
+  [[menus.main]]
+    name = 'write'
+    pageRef = '/write'
+    weight = 2
+
+  [[menus.main]]
+    name = 'me'
+    pageRef = '/me'
+    weight = 3
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    style = "monokai"
+    wrapAddAnchors = ""
+    lineNos = false
+    hl_Lines = ""
+    lineNumbersInTable = true
+    nohighlight = false
+    inherit = false

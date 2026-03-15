@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en-US" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pratham&#39;s Blog</title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/custom.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/monokai-sublime.min.css">
+        <link rel="icon" type="image/png" href="/favicon.png">
+    </head>
+    <body>
+        
+<main class="terminal-page">
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-title"># main</div>
+                <a href="https://heypratham.in/" class="sidebar-link">home site ↗</a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title"># write</div>
+                <a href="/write/" class="sidebar-link">posts</a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title"># connect</div>
+                <a href="/" class="sidebar-link">contact</a>
+            </div>
+        </aside>
+
+        <div class="editor">
+            <article>
+                <div class="terminal-header"><span class="header-cursor"></span></div>
+                <div class="terminal-desc">January 1, 0001</div>
+                
+                <div class="terminal-content">
+                    <p>package handlers</p>
+<p>import (
+&ldquo;backend/middleware&rdquo;
+&ldquo;backend/models&rdquo;
+&ldquo;context&rdquo;
+&ldquo;encoding/json&rdquo;
+&ldquo;net/http&rdquo;
+&ldquo;time&rdquo;</p>
+<pre><code>&quot;github.com/gorilla/mux&quot;
+&quot;go.mongodb.org/mongo-driver/bson&quot;
+&quot;go.mongodb.org/mongo-driver/bson/primitive&quot;
+&quot;go.mongodb.org/mongo-driver/mongo&quot;
+&quot;golang.org/x/crypto/bcrypt&quot;
+</code></pre>
+<p>)</p>
+<p>var client *mongo.Client</p>
+<p>func SetClient(mongoClient *mongo.Client) {
+client = mongoClient
+}</p>
+<p>func GetUserByIDHandler(w http.ResponseWriter, r *http.Request) {
+// Get the user ID from the URL parameter
+vars := mux.Vars(r)
+userID, err := primitive.ObjectIDFromHex(vars[&ldquo;id&rdquo;])
+if err != nil {
+http.Error(w, &ldquo;Invalid user ID&rdquo;, http.StatusBadRequest)
+return
+}</p>
+<pre><code>collection := client.Database(&quot;profileFolio&quot;).Collection(&quot;users&quot;)
+var user models.User
+ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+defer cancel()
+
+// Find user by ID
+err = collection.FindOne(ctx, bson.M{&quot;_id&quot;: userID}).Decode(&amp;user)
+if err != nil {
+	if err == mongo.ErrNoDocuments {
+		http.Error(w, &quot;User not found&quot;, http.StatusNotFound)
+	} else {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+	return
+}
+
+w.Header().Set(&quot;Content-Type&quot;, &quot;application/json&quot;)
+json.NewEncoder(w).Encode(user)
+</code></pre>
+<p>}</p>
+<p>func GetUserByEmailHandler(w http.ResponseWriter, r *http.Request) {
+// Get the email from the URL parameter
+vars := mux.Vars(r)
+email := vars[&ldquo;email&rdquo;]</p>
+<pre><code>collection := client.Database(&quot;profileFolio&quot;).Collection(&quot;users&quot;)
+var user models.User
+ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+defer cancel()
+
+// Find user by email
+err := collection.FindOne(ctx, bson.M{&quot;basics.email&quot;: email}).Decode(&amp;user)
+if err != nil {
+	if err == mongo.ErrNoDocuments {
+		http.Error(w, &quot;User not found&quot;, http.StatusNotFound)
+	} else {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+	return
+}
+
+w.Header().Set(&quot;Content-Type&quot;, &quot;application/json&quot;)
+json.NewEncoder(w).Encode(user)
+</code></pre>
+<p>}</p>
+<p>func GetUserByUsernameHandler(w http.ResponseWriter, r *http.Request) {
+// Get the username from the URL parameter
+vars := mux.Vars(r)
+username := vars[&ldquo;username&rdquo;]</p>
+<pre><code>collection := client.Database(&quot;profileFolio&quot;).Collection(&quot;users&quot;)
+var user models.User
+ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+defer cancel()
+
+// Find user by username
+err := collection.FindOne(ctx, bson.M{&quot;basics.username&quot;: username}).Decode(&amp;user)
+if err != nil {
+	if err == mongo.ErrNoDocuments {
+		http.Error(w, &quot;User not found&quot;, http.StatusNotFound)
+	} else {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+	return
+}
+
+w.Header().Set(&quot;Content-Type&quot;, &quot;application/json&quot;)
+json.NewEncoder(w).Encode(user)
+</code></pre>
+<p>}</p>
+<p>func UpdateUserByEmailHandler(w http.ResponseWriter, r *http.Request) {
+// Get the email from the URL parameter
+vars := mux.Vars(r)
+email := vars[&ldquo;email&rdquo;]</p>
+<pre><code>// Parse the request body
+var updates map[string]interface{}
+err := json.NewDecoder(r.Body).Decode(&amp;updates)
+if err != nil {
+	http.Error(w, &quot;Invalid request body&quot;, http.StatusBadRequest)
+	return
+}
+
+// Prepare the update document
+update := bson.M{}
+for key, value := range updates {
+	update[key] = value
+}
+
+collection := client.Database(&quot;profileFolio&quot;).Collection(&quot;users&quot;)
+ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+defer cancel()
+
+// Perform the update
+result, err := collection.UpdateOne(
+	ctx,
+	bson.M{&quot;basics.email&quot;: email},
+	bson.M{&quot;$set&quot;: update},
+)
+if err != nil {
+	http.Error(w, err.Error(), http.StatusInternalServerError)
+	return
+}
+
+if result.MatchedCount == 0 {
+	http.Error(w, &quot;User not found&quot;, http.StatusNotFound)
+	return
+}
+
+w.WriteHeader(http.StatusOK)
+json.NewEncoder(w).Encode(map[string]string{&quot;message&quot;: &quot;User updated successfully&quot;})
+</code></pre>
+<p>}</p>
+<p>func UpdateUserByUsernameHandler(w http.ResponseWriter, r *http.Request) {
+// Get the username from the URL parameter
+vars := mux.Vars(r)
+username := vars[&ldquo;username&rdquo;]</p>
+<pre><code>// Parse the request body
+var updates map[string]interface{}
+err := json.NewDecoder(r.Body).Decode(&amp;updates)
+if err != nil {
+	http.Error(w, &quot;Invalid request body&quot;, http.StatusBadRequest)
+	return
+}
+
+// Prepare the update document
+update := bson.M{}
+for key, value := range updates {
+	update[key] = value
+}
+
+collection := client.Database(&quot;profileFolio&quot;).Collection(&quot;users&quot;)
+ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+defer cancel()
+
+// Perform the update
+result, err := collection.UpdateOne(
+	ctx,
+	bson.M{&quot;basics.username&quot;: username},
+	bson.M{&quot;$set&quot;: update},
+)
+if err != nil {
+	http.Error(w, err.Error(), http.StatusInternalServerError)
+	return
+}
+
+if result.MatchedCount == 0 {
+	http.Error(w, &quot;User not found&quot;, http.StatusNotFound)
+	return
+}
+
+w.WriteHeader(http.StatusOK)
+json.NewEncoder(w).Encode(map[string]string{&quot;message&quot;: &quot;User updated successfully&quot;})
+</code></pre>
+<p>}</p>
+<p>func SignUpHandler(w http.ResponseWriter, r *http.Request) {
+if r.Method != http.MethodPost {
+http.Error(w, &ldquo;Invalid request method&rdquo;, http.StatusMethodNotAllowed)
+return
+}</p>
+<pre><code>var user models.User
+var authUser models.AuthUser
+if err := json.NewDecoder(r.Body).Decode(&amp;authUser); err != nil {
+	http.Error(w, &quot;Error decoding request body&quot;, http.StatusBadRequest)
+	return
+}
+
+// Hash the password
+hashedPassword, err := bcrypt.GenerateFromPassword([]byte(authUser.Password), bcrypt.DefaultCost)
+if err != nil {
+	http.Error(w, &quot;Error hashing password&quot;, http.StatusInternalServerError)
+	return
+}
+authUser.Password = string(hashedPassword)
+
+userCollection := client.Database(&quot;profileFolio&quot;).Collection(&quot;users&quot;)
+authCollection := client.Database(&quot;profileFolio&quot;).Collection(&quot;auth_users&quot;)
+ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+defer cancel()
+
+// Check if the user already exists
+filter_email := bson.M{&quot;email&quot;: authUser.Email}
+filter_username := bson.M{&quot;username&quot;: authUser.Username}
+
+email_err := authCollection.FindOne(ctx, filter_email).Decode(&amp;authUser)
+username_err := authCollection.FindOne(ctx, filter_username).Decode(&amp;authUser)
+
+if email_err == nil {
+	http.Error(w, &quot;Email already exists&quot;, http.StatusConflict)
+	return
+} else if username_err == nil {
+	http.Error(w, &quot;Username already exists&quot;, http.StatusConflict)
+	return
+} else if email_err != mongo.ErrNoDocuments {
+	http.Error(w, &quot;Error checking user existence&quot;, http.StatusInternalServerError)
+	return
+}
+
+// Insert into auth_users collection
+_, auth_err := authCollection.InsertOne(ctx, authUser)
+if auth_err != nil {
+	http.Error(w, &quot;Error saving user credentials&quot;, http.StatusInternalServerError)
+	return
+}
+
+// Create a new User object with only email
+user = models.User{
+	Basics: models.Basics{
+		Username: authUser.Username,
+		Email:    authUser.Email,
+	},
+	Resumes:      []models.Resume{},
+	Work:         []models.WorkExperience{},
+	Education:    []models.EducationDetail{},
+	Certificates: []models.Certificate{},
+	Skills:       []models.Skill{},
+	Languages:    []models.Language{},
+	Interests:    []models.Interest{},
+	Projects:     []models.Project{},
+}
+
+// Insert into users collection
+_, user_err := userCollection.InsertOne(ctx, user)
+if user_err != nil {
+	http.Error(w, &quot;Error saving user object&quot;, http.StatusInternalServerError)
+	return
+}
+
+var new_user models.User
+collection := client.Database(&quot;profileFolio&quot;).Collection(&quot;users&quot;)
+err = collection.FindOne(ctx, bson.M{&quot;basics.email&quot;: authUser.Email}).Decode(&amp;new_user)
+if err != nil {
+	http.Error(w, &quot;User not found&quot;, http.StatusNotFound)
+	return
+}
+
+// Generate JWT token
+token, err := middleware.GenerateJWT()
+if err != nil {
+	http.Error(w, &quot;Error generating token&quot;, http.StatusInternalServerError)
+	return
+}
+
+w.WriteHeader(http.StatusCreated)
+response := map[string]interface{}{
+	&quot;message&quot;:     &quot;User created successfully&quot;,
+	&quot;id&quot;:          new_user.ID,
+	&quot;accessToken&quot;: token,
+	&quot;user&quot;:        new_user,
+}
+json.NewEncoder(w).Encode(response)
+</code></pre>
+<p>}</p>
+<p>func SignInHandler(w http.ResponseWriter, r *http.Request) {
+if r.Method != http.MethodPost {
+http.Error(w, &ldquo;Invalid request method&rdquo;, http.StatusMethodNotAllowed)
+return
+}</p>
+<pre><code>var credentials struct {
+	Email    string `json:&quot;email&quot;`
+	Password string `json:&quot;password&quot;`
+}
+if err := json.NewDecoder(r.Body).Decode(&amp;credentials); err != nil {
+	http.Error(w, &quot;Error decoding request body&quot;, http.StatusBadRequest)
+	return
+}
+
+var authUser models.AuthUser
+collection := client.Database(&quot;profileFolio&quot;).Collection(&quot;auth_users&quot;)
+ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+defer cancel()
+
+// Find user by email
+err := collection.FindOne(ctx, bson.M{&quot;email&quot;: credentials.Email}).Decode(&amp;authUser)
+if err != nil {
+	http.Error(w, &quot;Invalid user credentials&quot;, http.StatusUnauthorized)
+	return
+}
+
+// Check hashed password
+err = bcrypt.CompareHashAndPassword([]byte(authUser.Password), []byte(credentials.Password))
+if err != nil {
+	http.Error(w, &quot;Invalid user credentials&quot;, http.StatusUnauthorized)
+	return
+}
+
+// Returning user schema
+var user models.User
+collection = client.Database(&quot;profileFolio&quot;).Collection(&quot;users&quot;)
+err = collection.FindOne(ctx, bson.M{&quot;basics.email&quot;: credentials.Email}).Decode(&amp;user)
+if err != nil {
+	http.Error(w, &quot;User not found&quot;, http.StatusNotFound)
+	return
+}
+
+// Generate JWT token
+token, err := middleware.GenerateJWT()
+if err != nil {
+	http.Error(w, &quot;Error generating token&quot;, http.StatusInternalServerError)
+	return
+}
+
+response := map[string]interface{}{
+	&quot;id&quot;:          user.ID,
+	&quot;user&quot;:        user.Basics,
+	&quot;accessToken&quot;: token,
+}
+
+json.NewEncoder(w).Encode(response)
+</code></pre>
+<p>}</p>
+<p>func GetUserHandler(w http.ResponseWriter, r *http.Request) {
+collection := client.Database(&ldquo;profileFolio&rdquo;).Collection(&ldquo;users&rdquo;)
+var user models.User
+err := collection.FindOne(context.Background(), bson.M{}).Decode(&amp;user)
+if err != nil {
+http.Error(w, err.Error(), http.StatusInternalServerError)
+return
+}</p>
+<pre><code>json.NewEncoder(w).Encode(user)
+</code></pre>
+<p>}</p>
+<p>func GetSkillsHandler(w http.ResponseWriter, r *http.Request) {
+collection := client.Database(&ldquo;profileFolio&rdquo;).Collection(&ldquo;skills&rdquo;)
+var skills []models.SkillCollection</p>
+<pre><code>cursor, err := collection.Find(context.Background(), bson.M{})
+if err != nil {
+	http.Error(w, err.Error(), http.StatusInternalServerError)
+	return
+}
+defer cursor.Close(context.Background())
+
+for cursor.Next(context.Background()) {
+	var skill models.SkillCollection
+	if err := cursor.Decode(&amp;skill); err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	skills = append(skills, skill)
+}
+
+if err := cursor.Err(); err != nil {
+	http.Error(w, err.Error(), http.StatusInternalServerError)
+	return
+}
+
+w.Header().Set(&quot;Content-Type&quot;, &quot;application/json&quot;)
+if err := json.NewEncoder(w).Encode(skills); err != nil {
+	http.Error(w, err.Error(), http.StatusInternalServerError)
+}
+</code></pre>
+<p>}</p>
+<p>func GetSkillsByUserIDHandler(w http.ResponseWriter, r *http.Request) {
+vars := mux.Vars(r)
+userID, err := primitive.ObjectIDFromHex(vars[&ldquo;id&rdquo;])
+if err != nil {
+http.Error(w, &ldquo;Invalid user ID&rdquo;, http.StatusBadRequest)
+return
+}</p>
+<pre><code>ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+defer cancel()
+
+collection := client.Database(&quot;profileFolio&quot;).Collection(&quot;users&quot;)
+var user models.User
+
+err = collection.FindOne(ctx, bson.M{&quot;_id&quot;: userID}).Decode(&amp;user)
+if err != nil {
+	if err == mongo.ErrNoDocuments {
+		http.Error(w, &quot;User not found&quot;, http.StatusNotFound)
+	} else {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+	return
+}
+
+if len(user.Skills) == 0 {
+	w.Header().Set(&quot;Content-Type&quot;, &quot;application/json&quot;)
+	json.NewEncoder(w).Encode([]models.SkillCollection{})
+	return
+}
+
+// Collect skill IDs from user skills
+var skillIDs []primitive.ObjectID
+for _, skill := range user.Skills {
+	skillIDs = append(skillIDs, skill.Keywords...)
+}
+
+if len(skillIDs) == 0 {
+	w.Header().Set(&quot;Content-Type&quot;, &quot;application/json&quot;)
+	json.NewEncoder(w).Encode([]models.SkillCollection{})
+	return
+}
+
+skillCollection := client.Database(&quot;profileFolio&quot;).Collection(&quot;skills&quot;)
+filter := bson.M{&quot;_id&quot;: bson.M{&quot;$in&quot;: skillIDs}}
+
+cursor, err := skillCollection.Find(ctx, filter)
+if err != nil {
+	http.Error(w, err.Error(), http.StatusInternalServerError)
+	return
+}
+defer cursor.Close(ctx)
+
+var skills []models.SkillCollection
+if err = cursor.All(ctx, &amp;skills); err != nil {
+	http.Error(w, err.Error(), http.StatusInternalServerError)
+	return
+}
+
+w.Header().Set(&quot;Content-Type&quot;, &quot;application/json&quot;)
+json.NewEncoder(w).Encode(skills)
+</code></pre>
+<p>}</p>
+<p>func GetSkillsByUsernameHandler(w http.ResponseWriter, r *http.Request) {
+vars := mux.Vars(r)
+username := vars[&ldquo;username&rdquo;]</p>
+<pre><code>collection := client.Database(&quot;profileFolio&quot;).Collection(&quot;users&quot;)
+var user models.User
+ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+defer cancel()
+
+err := collection.FindOne(ctx, bson.M{&quot;basics.username&quot;: username}).Decode(&amp;user)
+if err != nil {
+	if err == mongo.ErrNoDocuments {
+		http.Error(w, &quot;User not found&quot;, http.StatusNotFound)
+	} else {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+	return
+}
+
+if len(user.Skills) == 0 {
+	w.Header().Set(&quot;Content-Type&quot;, &quot;application/json&quot;)
+	json.NewEncoder(w).Encode([]models.SkillCollection{})
+	return
+}
+
+// Collect skill IDs from user skills
+var skillIDs []primitive.ObjectID
+for _, skill := range user.Skills {
+	skillIDs = append(skillIDs, skill.Keywords...)
+}
+
+if len(skillIDs) == 0 {
+	w.Header().Set(&quot;Content-Type&quot;, &quot;application/json&quot;)
+	json.NewEncoder(w).Encode([]models.SkillCollection{})
+	return
+}
+
+skillCollection := client.Database(&quot;profileFolio&quot;).Collection(&quot;skills&quot;)
+filter := bson.M{&quot;_id&quot;: bson.M{&quot;$in&quot;: skillIDs}}
+
+cursor, err := skillCollection.Find(ctx, filter)
+if err != nil {
+	http.Error(w, err.Error(), http.StatusInternalServerError)
+	return
+}
+defer cursor.Close(ctx)
+
+var skills []models.SkillCollection
+if err = cursor.All(ctx, &amp;skills); err != nil {
+	http.Error(w, err.Error(), http.StatusInternalServerError)
+	return
+}
+
+w.Header().Set(&quot;Content-Type&quot;, &quot;application/json&quot;)
+json.NewEncoder(w).Encode(skills)
+</code></pre>
+<p>}</p>
+<p>func GetSkillsByEmailHandler(w http.ResponseWriter, r *http.Request) {
+vars := mux.Vars(r)
+email := vars[&ldquo;email&rdquo;]</p>
+<pre><code>collection := client.Database(&quot;profileFolio&quot;).Collection(&quot;users&quot;)
+var user models.User
+ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+defer cancel()
+
+err := collection.FindOne(ctx, bson.M{&quot;basics.email&quot;: email}).Decode(&amp;user)
+if err != nil {
+	if err == mongo.ErrNoDocuments {
+		http.Error(w, &quot;User not found&quot;, http.StatusNotFound)
+	} else {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+	return
+}
+
+if len(user.Skills) == 0 {
+	w.Header().Set(&quot;Content-Type&quot;, &quot;application/json&quot;)
+	json.NewEncoder(w).Encode([]models.SkillCollection{})
+	return
+}
+
+// Collect skill IDs from user skills
+var skillIDs []primitive.ObjectID
+for _, skill := range user.Skills {
+	skillIDs = append(skillIDs, skill.Keywords...)
+}
+
+if len(skillIDs) == 0 {
+	w.Header().Set(&quot;Content-Type&quot;, &quot;application/json&quot;)
+	json.NewEncoder(w).Encode([]models.SkillCollection{})
+	return
+}
+
+skillCollection := client.Database(&quot;profileFolio&quot;).Collection(&quot;skills&quot;)
+filter := bson.M{&quot;_id&quot;: bson.M{&quot;$in&quot;: skillIDs}}
+
+cursor, err := skillCollection.Find(ctx, filter)
+if err != nil {
+	http.Error(w, err.Error(), http.StatusInternalServerError)
+	return
+}
+defer cursor.Close(ctx)
+
+var skills []models.SkillCollection
+if err = cursor.All(ctx, &amp;skills); err != nil {
+	http.Error(w, err.Error(), http.StatusInternalServerError)
+	return
+}
+
+w.Header().Set(&quot;Content-Type&quot;, &quot;application/json&quot;)
+json.NewEncoder(w).Encode(skills)
+</code></pre>
+<p>}</p>
+<p>func AddUserHandler(w http.ResponseWriter, r *http.Request) {
+var newUser models.User
+err := json.NewDecoder(r.Body).Decode(&amp;newUser)
+if err != nil {
+http.Error(w, &ldquo;Invalid request body&rdquo;, http.StatusBadRequest)
+return
+}</p>
+<pre><code>collection := client.Database(&quot;profileFolio&quot;).Collection(&quot;users&quot;)
+
+// Check if user already exists
+existingUser := models.User{}
+err = collection.FindOne(context.Background(), bson.M{&quot;email&quot;: bson.M{&quot;$regex&quot;: primitive.Regex{Pattern: &quot;^&quot; + newUser.Basics.Email + &quot;$&quot;, Options: &quot;i&quot;}}}).Decode(&amp;existingUser)
+if err == nil {
+	http.Error(w, &quot;User with this email already exists&quot;, http.StatusConflict)
+	return
+} else if err != mongo.ErrNoDocuments {
+	http.Error(w, err.Error(), http.StatusInternalServerError)
+	return
+}
+
+// Insert new user without specifying ID
+result, err := collection.InsertOne(context.Background(), newUser)
+if err != nil {
+	http.Error(w, err.Error(), http.StatusInternalServerError)
+	return
+}
+
+// Get the auto-generated ID
+insertedID := result.InsertedID.(primitive.ObjectID)
+
+w.WriteHeader(http.StatusCreated)
+json.NewEncoder(w).Encode(map[string]string{
+	&quot;message&quot;: &quot;User added successfully&quot;,
+	&quot;id&quot;:      insertedID.Hex(),
+})
+</code></pre>
+<p>}</p>
+<p>func UpdateUserHandler(w http.ResponseWriter, r *http.Request) {
+// Get the user ID from the URL parameter
+vars := mux.Vars(r)
+userID, err := primitive.ObjectIDFromHex(vars[&ldquo;id&rdquo;])
+if err != nil {
+http.Error(w, &ldquo;Invalid user ID&rdquo;, http.StatusBadRequest)
+return
+}</p>
+<pre><code>// Parse the request body
+var updates map[string]interface{}
+err = json.NewDecoder(r.Body).Decode(&amp;updates)
+if err != nil {
+	http.Error(w, &quot;Invalid request body&quot;, http.StatusBadRequest)
+	return
+}
+
+// Prepare the update document
+update := bson.M{}
+for key, value := range updates {
+	update[key] = value
+}
+
+collection := client.Database(&quot;profileFolio&quot;).Collection(&quot;users&quot;)
+
+// Perform the update
+result, err := collection.UpdateOne(
+	context.Background(),
+	bson.M{&quot;_id&quot;: userID},
+	bson.M{&quot;$set&quot;: update},
+)
+if err != nil {
+	http.Error(w, err.Error(), http.StatusInternalServerError)
+	return
+}
+
+if result.MatchedCount == 0 {
+	http.Error(w, &quot;User not found&quot;, http.StatusNotFound)
+	return
+}
+
+w.WriteHeader(http.StatusOK)
+json.NewEncoder(w).Encode(map[string]string{&quot;message&quot;: &quot;User updated successfully&quot;})
+</code></pre>
+<p>}</p>
+
+                </div>
+
+                
+            </article>
+        </div>
+    </div>
+</main>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </body>
+</html>

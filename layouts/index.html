@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Site.Title }}</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="icon" type="image/png" href="/favicon.png">
+</head>
+<body>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-title"># main</div>
+                <a href="https://heypratham.in/" class="sidebar-link">home site ↗</a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title"># write</div>
+                <a href="#posts" class="sidebar-link active">posts</a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title"># connect</div>
+                <a href="#contact" class="sidebar-link">get contact</a>
+            </div>
+        </aside>
+
+        <main class="editor">
+            <section id="posts" class="section-block">
+                <div class="terminal-header">/posts<span class="header-cursor"></span></div>
+                <div class="terminal-desc">latest blog posts.</div>
+                <div class="terminal-content">
+                    {{ $posts := where site.RegularPages "Section" "write" }}
+                    {{ $recentPosts := first 5 (sort $posts "Date" "desc") }}
+                    {{ range $post := $recentPosts }}
+                    <div class="project-entry">
+                        <div class="project-title">
+                            <a href="{{ $post.RelPermalink }}" class="project-link">{{ $post.Title }}</a>
+                            <span class="exp-period">{{ $post.Date.Format "Jan 2006" }}</span>
+                        </div>
+                        <div class="project-desc">
+                            {{ with $post.Params.description }}{{ . }}{{ else }}{{ $post.Summary | plainify | truncate 150 }}{{ end }}
+                        </div>
+                    </div>
+                    {{ end }}
+                    <div style="margin-top: 1rem;">
+                        <a href="/write/" style="color: var(--highlight-method);">→ view all posts</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="section-block">
+                <div class="terminal-header">/contact<span class="header-cursor hidden"></span></div>
+                <div class="terminal-desc">retrieve contact links and social profiles.</div>
+                <div class="terminal-content">
+                    <div class="key-val">
+                        <span class="key">github</span>
+                        <span class="val"><a href="https://github.com/prathamdupare" target="_blank">github.com/prathamdupare</a></span>
+                    </div>
+                    <div class="key-val">
+                        <span class="key">linkedin</span>
+                        <span class="val"><a href="https://linkedin.com/in/pratham-dupare-a99b97247" target="_blank">linkedin.com/in/pratham-dupare-a99b97247</a></span>
+                    </div>
+                    <div class="key-val">
+                        <span class="key">x (twitter)</span>
+                        <span class="val"><a href="https://x.com/prathammdupare" target="_blank">x.com/prathammdupare</a></span>
+                    </div>
+                    <div class="key-val">
+                        <span class="key">instagram</span>
+                        <span class="val"><a href="https://www.instagram.com/prathammdupare/" target="_blank">instagram.com/prathammdupare</a></span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const sidebar = document.querySelector('.sidebar');
+        const overlay = document.getElementById('sidebarOverlay');
+
+        function openSidebar() {
+            sidebar.classList.add('open');
+            overlay.classList.add('active');
+            menuBtn.classList.add('open');
+        }
+
+        function closeSidebar() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('active');
+            menuBtn.classList.remove('open');
+        }
+
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
+        });
+        overlay.addEventListener('click', closeSidebar);
+
+        function activateSection(section) {
+            document.querySelectorAll('.header-cursor').forEach(c => c.classList.add('hidden'));
+            const headerCursor = section.querySelector('.header-cursor');
+            if (headerCursor) headerCursor.classList.remove('hidden');
+
+            const sectionId = section.getAttribute('id');
+            document.querySelectorAll('.sidebar-link').forEach(link => link.classList.remove('active'));
+            const matchingLink = document.querySelector(`.sidebar-link[href="#${sectionId}"]`);
+            if (matchingLink) matchingLink.classList.add('active');
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetElement = document.querySelector(this.getAttribute('href'));
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    activateSection(targetElement);
+                }
+                document.querySelectorAll('.sidebar-link').forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
+                closeSidebar();
+            });
+        });
+
+        document.querySelectorAll('.section-block').forEach(section => {
+            section.addEventListener('click', function () {
+                activateSection(this);
+            });
+        });
+    </script>
+</body>
+</html>

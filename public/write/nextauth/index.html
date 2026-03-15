@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en-US" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pratham&#39;s Blog - NextJS and NextAuth guide</title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/custom.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/monokai-sublime.min.css">
+        <link rel="icon" type="image/png" href="/favicon.png">
+    </head>
+    <body>
+        
+<main class="terminal-page">
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-title"># main</div>
+                <a href="https://heypratham.in/" class="sidebar-link">home site ↗</a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title"># write</div>
+                <a href="/write/" class="sidebar-link">posts</a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title"># connect</div>
+                <a href="/" class="sidebar-link">contact</a>
+            </div>
+        </aside>
+
+        <div class="editor">
+            <article>
+                <div class="terminal-header">NextJS and NextAuth guide<span class="header-cursor"></span></div>
+                <div class="terminal-desc">March 3, 2024</div>
+                
+                <div class="terminal-content">
+                    <h1 id="introduction">Introduction</h1>
+<p>NextAuth.js is a complete open-source authentication solution for Next.js applications, and it is currently my favorite solution for adding authentication. It doesn&rsquo;t set up everything like Clerk in 7 minutes but also gives you control over everything and makes it really easy!</p>
+<p>It&rsquo;s specifically designed to work seamlessly with Next.js and Serverless architectures.</p>
+<h1 id="getting-started">Getting Started</h1>
+<h2 id="install-nextauth">Install NextAuth</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install next-auth
+</span></span></code></pre></div><h4 id="note--">Note -</h4>
+<p>I will be using the latest version of Next.js 14.0 or above with the app router.</p>
+<p>Next.js 13.2 introduced Route Handlers, the preferred way to handle REST-like requests in App Router (app/).</p>
+<p>You can initialize NextAuth with a Route Handler too, similar to API Routes.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="err">#</span> <span class="o">/</span><span class="nx">app</span><span class="o">/</span><span class="nx">api</span><span class="o">/</span><span class="nx">auth</span><span class="o">/</span><span class="p">[...</span><span class="nx">nextauth</span><span class="p">]</span><span class="o">/</span><span class="nx">route</span><span class="p">.</span><span class="nx">js</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">NextAuth</span> <span class="nx">from</span> <span class="s2">&#34;next-auth&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">handler</span> <span class="o">=</span> <span class="nx">NextAuth</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl"><span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="p">{</span> <span class="nx">handler</span> <span class="nx">as</span> <span class="nx">GET</span><span class="p">,</span> <span class="nx">handler</span> <span class="nx">as</span> <span class="nx">POST</span> <span class="p">}</span>
+</span></span></code></pre></div><p>Now, let&rsquo;s provide options to this, specifying the providers for sign-in.</p>
+<p>Create a separate file for our options.</p>
+<p>Create the options.js file in the same directory as the route.</p>
+<p>For this tutorial, we&rsquo;ll use the Github Provider. There are many providers, you can see the list in NextAuth documentation.</p>
+<pre tabindex="0"><code># /app/api/auth/[...nextauth]/options.js
+
+export const options = {
+providers: []
+}
+</code></pre><h2 id="providers">Providers</h2>
+<p>An array of authentication providers for signing in (e.g., Google, Facebook, Twitter, GitHub, Email, etc.) in any order. This can be one of the built-in providers or an object with a custom provider.</p>
+<p>For now, we&rsquo;ll stick to the default settings, but there are numerous customization options available.</p>
+<p>We can use Credentials for login as well as Providers that support OAuth like Google, Github, etc.</p>
+<p>Refer to the NextAuth documentation for a comprehensive list of providers.</p>
+<p>Now, set up the secret string required by NextAuth:</p>
+<p>To generate a random string, run this command in your terminal:</p>
+<pre tabindex="0"><code>openssl rand -base64 32
+</code></pre><p>Now, create a .env.local file on the same level as the package.json file (i.e., the root directory) and paste the generated string:</p>
+<pre tabindex="0"><code>
+# .env.local
+
+NEXTAUTH_SECRET=2Imue0dkSptxssYHeYU5WOWrpFESkq++SWbG/ItyYT4=
+//replace this with your generated stirng
+</code></pre><h2 id="setting-up-github">Setting up Github</h2>
+<p>You&rsquo;ll need a GitHub account for this.</p>
+<p>Go to <a href="https://github.com/settings/apps">https://github.com/settings/apps</a></p>
+<p>Click on &lsquo;OAuth Apps&rsquo; and then &lsquo;New OAuth App&rsquo;</p>
+<p>Provide an Application name and set the homepage URL as http://localhost:3000 (for the dev environment; change it when deploying).</p>
+<p>In Authorization callback URL: http://localhost:3000/api/auth/callback/github</p>
+<p>Click &lsquo;Register application&rsquo;.</p>
+<p>Copy the Client ID, generate the secret, and confirm access.</p>
+<p>Add Client ID and Client secret to the .env.local file:</p>
+<pre tabindex="0"><code># .env.local
+
+NEXTAUTH_SECRET=2Imue0dkSptxssYHeYU5WOWrpFESkq++SWbG/ItyYT4=
+//replace this with your generated stirng
+
+GITHUB_SECRET=74f7032f71a995401fasdfads9b870b255e6c18159b
+GITHUB_ID=0c384680asdfasfcb9c61
+</code></pre><h2 id="options">Options</h2>
+<p>First, import GitHubProvider and CredentialsProvider from next-auth/providers/credentials</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="err">#</span> <span class="o">/</span><span class="nx">app</span><span class="o">/</span><span class="nx">api</span><span class="o">/</span><span class="nx">auth</span><span class="o">/</span><span class="p">[...</span><span class="nx">nextauth</span><span class="p">]</span><span class="o">/</span><span class="nx">options</span><span class="p">.</span><span class="nx">js</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">GitHubProvider</span> <span class="nx">from</span> <span class="s2">&#34;next-auth/providers/github&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">CredentialsProvider</span> <span class="nx">from</span> <span class="s2">&#34;next-auth/providers/credentials&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">providers</span><span class="o">:</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Now in the providers array add GitHubProvider and set id and secret:</p>
+<pre tabindex="0"><code># /app/api/auth/[...nextauth]/options.js
+
+import GitHubProvider from &#34;next-auth/providers/github&#34;;
+import CredentialsProvider from &#34;next-auth/providers/credentials&#34;;
+
+export const options = {
+    providers: [
+        GitHubProvider({
+            clientId: process.env.GITHUB_ID,
+            clientSecret: process.env.GITHUB_SECRET,
+    }),
+   ],
+}
+</code></pre><p>add CredentialsProvider.</p>
+<pre tabindex="0"><code># /app/api/auth/[...nextauth]/options.js
+
+import GitHubProvider from &#34;next-auth/providers/github&#34;;
+import CredentialsProvider from &#34;next-auth/providers/credentials&#34;;
+export const options = {
+    providers: [
+        GitHubProvider({
+            clientId: process.env.GITHUB_ID,
+            clientSecret: process.env.GITHUB_SECRET,
+    }),
+    CredentialsProvider({
+      name: &#34;Credentials&#34;,
+      credentials: {
+        username: {
+          label: &#34;Username:&#34;,
+          type: &#34;text&#34;,
+          placeholder: &#34;your-cool-username&#34;,
+        },
+        password: {
+          label: &#34;Password:&#34;,
+          type: &#34;password&#34;,
+          placeholder: &#34;your-awesome-password&#34;,
+        },
+      },
+      async authorize(credentials) {
+        // This is where you need to retrieve user data
+        // to verify with credentials
+        // Docs: https://next-auth.js.org/configuration/providers/credentias
+        const user = { id: &#34;42&#34;, name: &#34;Dave&#34;, password: &#34;nextauth&#34; };
+
+        if (
+          credentials?.username === user.name &amp;&amp;
+          credentials?.password === user.password
+        ) {
+          return user;
+        } else {
+          return null;
+        }
+      },
+    }),
+   ],
+}
+</code></pre><p>The CredentialsProvider is configured with a name, &ldquo;Credentials,&rdquo; and includes credential fields for username and password with associated labels, types, and placeholders.</p>
+<p>Within the authorize function of the CredentialsProvider configuration, a simple authentication logic is demonstrated. A hardcoded user object is compared with the provided credentials. If there&rsquo;s a match, the user object is returned; otherwise, null is returned.</p>
+<p>In a real-world scenario, the authorize function would typically interact with a database or an external service for dynamic credential validation. This example serves as a concise illustration of setting up a custom CredentialsProvider in NextAuth.js for username and password authentication.</p>
+<p>Now, we just need to import and set options in the route.js file:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="err">#</span> <span class="o">/</span><span class="nx">app</span><span class="o">/</span><span class="nx">api</span><span class="o">/</span><span class="nx">auth</span><span class="o">/</span><span class="p">[...</span><span class="nx">nextauth</span><span class="p">]</span><span class="o">/</span><span class="nx">route</span><span class="p">.</span><span class="nx">js</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">NextAuth</span> <span class="nx">from</span> <span class="s2">&#34;next-auth&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">options</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;./options&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">handler</span> <span class="o">=</span> <span class="nx">NextAuth</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="p">{</span> <span class="nx">handler</span> <span class="nx">as</span> <span class="nx">GET</span><span class="p">,</span> <span class="nx">handler</span> <span class="nx">as</span> <span class="nx">POST</span> <span class="p">};</span>
+</span></span></code></pre></div><p>Then run the app:</p>
+<pre tabindex="0"><code>npm run dev
+</code></pre><p>Test it by making a GET request on Postman.
+Open Postman and make a GET request to the URL: http://localhost:3000/api/auth/providers</p>
+<p>You should get a response like:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;github&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;github&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;GitHub&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;oauth&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;signinUrl&#34;</span><span class="p">:</span> <span class="s2">&#34;http://localhost:3000/api/auth/signin/github&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;callbackUrl&#34;</span><span class="p">:</span> <span class="s2">&#34;http://localhost:3000/api/auth/callback/github&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;credentials&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;credentials&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Credentials&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;credentials&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;signinUrl&#34;</span><span class="p">:</span> <span class="s2">&#34;http://localhost:3000/api/auth/signin/credentials&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;callbackUrl&#34;</span><span class="p">:</span> <span class="s2">&#34;http://localhost:3000/api/auth/callback/credentials&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>This covers almost everything needed to set up authentication. Now, let&rsquo;s inform NextAuth about which pages are protected.
+The simplest way is using NextJS middleware. This middleware runs between server and client requests:</p>
+<p>Let&rsquo;s do it!</p>
+<p>Create a &lsquo;middleware.js&rsquo; file on the same level as the &lsquo;app&rsquo; directory</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="err">#</span> <span class="o">/</span><span class="nx">middleware</span><span class="p">.</span><span class="nx">js</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="p">{</span> <span class="k">default</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;next-auth/middleware&#34;</span><span class="p">;</span>
+</span></span></code></pre></div><p>This will protect everything in your app, even the home page. You can check this by going to http://localhost:3000 and you will be redirected to the signup page.</p>
+<p>If you want to protect only some pages in your app, add this one line to your middleware.js</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="err">#</span> <span class="o">/</span><span class="nx">middleware</span><span class="p">.</span><span class="nx">js</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="p">{</span> <span class="k">default</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;next-auth/middleware&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">matcher</span><span class="o">:</span> <span class="p">[</span><span class="s2">&#34;/dashboard&#34;</span><span class="p">]</span> <span class="p">};</span>
+</span></span></code></pre></div><p>For example, this will only protect the &lsquo;/dashboard&rsquo; route.</p>
+<p>And there you go! This is all you need to have basic authentication on your project.</p>
+<h2 id="bonus">Bonus</h2>
+<p>If you want to have certain information on the client side to show email, name, or profileImage, you can get that from useSession()</p>
+<p>For example:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">#</span> <span class="o">/</span><span class="nx">navbar</span><span class="p">.</span><span class="nx">jsx</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;use client&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s2">&#34;react&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Button</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;./ui/button&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Image</span> <span class="nx">from</span> <span class="s2">&#34;next/image&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Link</span> <span class="nx">from</span> <span class="s2">&#34;next/link&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">useSession</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;next-auth/react&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">Navbar</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">{</span> <span class="nx">data</span><span class="o">:</span> <span class="nx">session</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useSession</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span><span class="o">!</span><span class="nx">session</span> <span class="o">?</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="nx">Button</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="o">&lt;</span><span class="nx">Link</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;/api/auth/signin&#34;</span><span class="o">&gt;</span><span class="nx">LogIn</span><span class="o">&lt;</span><span class="err">/Link&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="err">/Button&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">)</span> <span class="o">:</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s2">&#34;flex gap-3 items-center&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="o">&lt;</span><span class="nx">Image</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">className</span><span class="o">=</span><span class="s2">&#34;rounded-full&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">alt</span><span class="o">=</span><span class="s2">&#34;hlh&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">width</span><span class="o">=</span><span class="p">{</span><span class="mi">30</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">height</span><span class="o">=</span><span class="p">{</span><span class="mi">30</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">session</span><span class="p">.</span><span class="nx">user</span><span class="o">?</span><span class="p">.</span><span class="nx">image</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">          <span class="o">/&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="o">&lt;</span><span class="nx">Button</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">&lt;</span><span class="nx">Link</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;/api/auth/signout&#34;</span><span class="o">&gt;</span><span class="nx">SignOut</span><span class="o">&lt;</span><span class="err">/Link&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="o">&lt;</span><span class="err">/Button&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">)}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><p>Thanks for reading!</p>
+<blockquote>
+<p>&lsquo;Jack of all trades master of none, though oftentimes better than master of one.&rsquo;</p>
+</blockquote>
+
+                </div>
+
+                
+                <div class="tags-section">
+                    <span class="key">tags:</span>
+                    <div class="tags-list">
+                        
+                        <span class="tag">Android</span>
+                        
+                        <span class="tag">html</span>
+                        
+                    </div>
+                </div>
+                
+            </article>
+        </div>
+    </div>
+</main>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </body>
+</html>

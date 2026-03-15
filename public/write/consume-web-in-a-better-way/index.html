@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en-US" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pratham&#39;s Blog - Consume Internet The Better Way</title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/custom.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/monokai-sublime.min.css">
+        <link rel="icon" type="image/png" href="/favicon.png">
+    </head>
+    <body>
+        
+<main class="terminal-page">
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-title"># main</div>
+                <a href="https://heypratham.in/" class="sidebar-link">home site ↗</a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title"># write</div>
+                <a href="/write/" class="sidebar-link">posts</a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title"># connect</div>
+                <a href="/" class="sidebar-link">contact</a>
+            </div>
+        </aside>
+
+        <div class="editor">
+            <article>
+                <div class="terminal-header">Consume Internet The Better Way<span class="header-cursor"></span></div>
+                <div class="terminal-desc">February 13, 2023</div>
+                
+                <div class="terminal-content">
+                    <h2 id="1-newsboat">1. Newsboat</h2>
+<!-- raw HTML omitted -->
+<h3 id="history-of-rss">History of RSS</h3>
+<p>RSS stands for (Really Simple Syndication). It is used to distribute frequently updated content on a website. It is an old tool which was developed in 1990s.The goal was to help people receive updates from multiple sites, just like you subscribe to your favorite YouTube channel. With RSS you can get updates from your favorite websites like <a href="fosspage.com">fosspage.com</a>.</p>
+<p>RSS feeds were really popular in 2000s, overtime their popularity decreased, with the emergence of social media and other sites that pulls you in a rabbit hole.Still this is a perfect tool for people who want to prioritize work and want to stay away from distractions.</p>
+<p>Newsboat is a simple terminal based RSS Feed reader which works on Linux. It is active maintained. You can check the GitHub repo <a href="https://github.com/newsboat/newsboat">here</a>.</p>
+<p>You can easily install newsboat from your distribution&rsquo;s repository <a href="https://repology.org/project/newsboat">(a lot of distros have a package)</a>.</p>
+<h4 id="features">Features</h4>
+<p>Among the features that stand out of Newsboat, we can find:</p>
+<ul>
+<li>Supports RSS 0.9x, 1.0, 2.0 and Atom</li>
+<li>Keyboard control with the ability to define your own key combinations(Yes you can configure VIM keybindings!!)</li>
+<li>Find all uploaded feeds</li>
+<li>Classify your subscriptions using tag system</li>
+<li>Change colors and customize</li>
+<li>Import and export of OPML subscriptions</li>
+<li>Ability to sync feeds with Google Reader.</li>
+</ul>
+<h4 id="install-via-snap">Install via snap:</h4>
+<pre tabindex="0"><code>sudo snap install newsboat
+</code></pre><h4 id="on-arch-linux-using-yay">On Arch Linux using yay</h4>
+<pre tabindex="0"><code>yay -S newsboat
+</code></pre><p>or</p>
+<pre tabindex="0"><code>sudo pacman -S newsboat
+</code></pre><h4 id="or-you-can-clone-and-install">Or you can clone and install</h4>
+<pre tabindex="0"><code>git clone git://github.com/newsboat/newsboat.git
+</code></pre><p>And then run:</p>
+<pre tabindex="0"><code>make
+sudo make install
+</code></pre><h3 id="configuring-or-adding-feeds">Configuring or adding feeds</h3>
+<!-- raw HTML omitted -->
+<p>You will find <strong>.newsboat</strong> folder in your home directory. If it doesn&rsquo;t, exist create a folder with the same name written here.</p>
+<p>Under this folder create a file named <strong>&ldquo;urls&rdquo;</strong>.</p>
+<p>Paste all the RSS links you need into this file. You can use any text editor to edit these files. I prefer Vim.</p>
+<p>This website also has a RSS feed, you can paste this link inside urls file:</p>
+<pre tabindex="0"><code>https://fosspage.com/index.xml
+</code></pre><p>Finding RSS links for sites can be frustrating. Luckily, There are a lot of extensions that make it easy to find them.</p>
+<p>I use <a href="https://addons.mozilla.org/en-US/firefox/addon/awesome-rss/">Awesome RSS</a> which is a Firefox extension.</p>
+<p>For Chromium browsers like Chrome and Brave, you can use <a href="https://chrome.google.com/webstore/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp?hl=en">RSS Feed Reader</a>.</p>
+<p>Once you visit a site you will see RSS icon above, click on that icon, copy the link and paste it into your <strong>urls</strong> file.</p>
+<p>Your browser might render the xml url, but we just need that url, copy it from url bar.</p>
+<h3 id="bonus">Bonus</h3>
+<p>You can subscribe to YouTube channels too! Awesome RSS or any extension will find them for you. There is another way to get them through source code but we won&rsquo;t get into that. Looks like YouTube and Google don&rsquo;t want to share their RSS links!</p>
+<p>Finally run into your terminal:</p>
+<pre tabindex="0"><code>newsboat
+</code></pre><p>You will be greeted with a minimal but beautiful list of websites. Navigate with arrow keys and press Enter to select a website. Newsboat will refresh last 15 posts.</p>
+<p>You are done!</p>
+<h3 id="optional-customization">Optional Customization</h3>
+<p>Newsboat can be configured in any way you want, it can also open the feeds in browser, play YouTube directly in MPV or VLC player and much more!</p>
+<p>You can use my <a href="">newsboat configuration</a>. Simply paste the config file in <strong>.newsboat</strong> folder.</p>
+<p>This will enable:</p>
+<ul>
+<li>Vim keybindings</li>
+<li>Beautiful Color scheme and highlights</li>
+<li>Set <strong>(, + V)</strong> to open playable video links in MPV</li>
+<li>Set <strong>(, + F)</strong> to open posts in Browser</li>
+</ul>
+<p>Of course, you can customize it to your liking, just go through the <a href="https://newsboat.org/releases/2.18/docs/newsboat.html">Documentation</a>.</p>
+<h2 id="2-youtube-via-terminal">2. Youtube via Terminal</h2>
+<!-- raw HTML omitted -->
+<p>What if I told you you can watch YouTube videos right from the comfort of your terminal. Okay, newsboat can do that but what if you need to search something on youtube and play it.</p>
+<p>I am going to show you a elite way to do that.</p>
+<p>Go to this <a href="https://github.com/sayan01/scripts/blob/master/yt">GitHub repo</a></p>
+<ol>
+<li>Click on Raw and copy the script.</li>
+<li>Go to your home directory and create a file named yt.sh
+or run this command in your terminal.</li>
+</ol>
+<pre tabindex="0"><code>touch yt.sh
+</code></pre><ol start="3">
+<li>
+<p>Open the file and paste the copied script into this file.</p>
+</li>
+<li>
+<p>Go to Home Directory and open a file named <strong>.bashrc</strong> and add the following line to it:</p>
+</li>
+</ol>
+<pre tabindex="0"><code>alias yt=&#39;./yt.sh&#39;
+</code></pre><ol start="5">
+<li>Run &ldquo;yt&rdquo; inside terminal and you should see search box. Search the term you want and you will see results. Navigate with arrow keys and select the video you want to play.</li>
+</ol>
+<p>Note that this script does not use YouTube API and hence can&rsquo;t display thumbnails.</p>
+
+                </div>
+
+                
+                <div class="tags-section">
+                    <span class="key">tags:</span>
+                    <div class="tags-list">
+                        
+                        <span class="tag">Android</span>
+                        
+                    </div>
+                </div>
+                
+            </article>
+        </div>
+    </div>
+</main>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </body>
+</html>

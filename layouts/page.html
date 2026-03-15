@@ -1,0 +1,44 @@
+{{ define "main" }}
+<main class="terminal-page">
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-title"># main</div>
+                <a href="https://heypratham.in/" class="sidebar-link">home site ↗</a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title"># write</div>
+                <a href="/write/" class="sidebar-link">posts</a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title"># connect</div>
+                <a href="/" class="sidebar-link">contact</a>
+            </div>
+        </aside>
+
+        <div class="editor">
+            <article>
+                <div class="terminal-header">{{ .Title }}<span class="header-cursor"></span></div>
+                <div class="terminal-desc">{{ .Date.Format "January 2, 2006" }}</div>
+                
+                <div class="terminal-content">
+                    {{ .Content }}
+                </div>
+
+                {{ with .Params.tags }}
+                <div class="tags-section">
+                    <span class="key">tags:</span>
+                    <div class="tags-list">
+                        {{ range . }}
+                        <span class="tag">{{ . }}</span>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+            </article>
+        </div>
+    </div>
+</main>
+{{ end }}

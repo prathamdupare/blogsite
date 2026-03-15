@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Updates on Pratham&#39;s Blog</title>
+    <link>https://example.org/tags/updates/</link>
+    <description>Recent content in Updates on Pratham&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 11 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://example.org/tags/updates/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Back to Arch Linux and Backend Learning Journey</title>
+      <link>https://example.org/write/learning-nodejs/</link>
+      <pubDate>Thu, 11 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://example.org/write/learning-nodejs/</guid>
+      <description>&lt;h2 id=&#34;update-for-the-week&#34;&gt;Update for the week!&lt;/h2&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve switched back to Arch Linux, specifically the Arco Linux Hyprland setup, from Nobara Linux. Excited about the change!&lt;/p&gt;&#xA;&lt;h2 id=&#34;on-the-learning-front&#34;&gt;On the learning front&lt;/h2&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve delved into backend development with Node.js and Express.js. It&amp;rsquo;s been a challenging yet rewarding experience so far.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

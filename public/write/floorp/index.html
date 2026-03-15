@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en-US" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pratham&#39;s Blog - Floorp - The Best Browser (For me)</title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/custom.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/monokai-sublime.min.css">
+        <link rel="icon" type="image/png" href="/favicon.png">
+    </head>
+    <body>
+        
+<main class="terminal-page">
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-title"># main</div>
+                <a href="https://heypratham.in/" class="sidebar-link">home site ↗</a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title"># write</div>
+                <a href="/write/" class="sidebar-link">posts</a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title"># connect</div>
+                <a href="/" class="sidebar-link">contact</a>
+            </div>
+        </aside>
+
+        <div class="editor">
+            <article>
+                <div class="terminal-header">Floorp - The Best Browser (For me)<span class="header-cursor"></span></div>
+                <div class="terminal-desc">January 13, 2024</div>
+                
+                <div class="terminal-content">
+                    <h2 id="what-is-floorp">What is Floorp?</h2>
+<p>Floorp is essentially a fork of Firefox with added customizations and features. It&rsquo;s a free and open-source project with numerous contributors from Mozilla. You can explore the source code <a href="https://github.com/Floorp-Projects/Floorp">here</a>.</p>
+<p>A special thanks to Chris Titus for introducing me to Floorp.</p>
+<h2 id="why-not-firefox">Why not Firefox?</h2>
+<p>I love Firefox; it&rsquo;s excellent and the only true competitor for the Chromium-based browser monopoly. If the Floorp Project didn&rsquo;t exist, I would definitely go back to using Firefox.</p>
+<h2 id="the-problem---vim-navigation">The Problem - VIM Navigation</h2>
+<p>As they say, &ldquo;Once you learn Vim, there is no going back.&rdquo; I use Neovim as my primary IDE, and my Hyprland Window manager has Vim-like keybindings for selecting different windows. I wanted the same keyboard-centric navigation for my browser. Don&rsquo;t get me wrong; I don&rsquo;t hate using the mouse. I believe using both the mouse and keyboard together is optimal when needed, but some tasks can be performed faster with the keyboard.</p>
+<p>I tried using an extension called <a href="https://chromewebstore.google.com/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?pli=1">Vimium (Chrome)</a> or <a href="https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/">Vimium-FF (Firefox)</a>. This is a fantastic extension that provides Vim-like navigation in your browser:</p>
+<ul>
+<li><strong>SHIFT+H</strong> - Go back</li>
+<li><strong>SHIFT + (J, K)</strong> - Move between tabs</li>
+<li><strong>O, SHIFT + O</strong> - Search on the current/new tab</li>
+</ul>
+<p>And much more.</p>
+<p>However, for some tabs in Firefox or Chrome, you can&rsquo;t use these shortcuts.</p>
+<h2 id="the-solution---floorp">The Solution - Floorp</h2>
+<p>Floorp allows you to disable the built-in shortcuts and assign your own. This is perfect for my use case. Instead of relying on Vimium, I can use Floorp&rsquo;s built-in shortcuts!</p>
+<p>Floorp also has other cool features, such as a double sidebar, the option to move the toolbar and tab bar anywhere, or vertical tabs built into it. I&rsquo;m not a fan of these features; I prefer the default layout, but they are good to have.</p>
+<h2 id="finally">Finally..</h2>
+<p>While Floorp might me just another browser for someone, it&rsquo;s definitely the best one I have found.</p>
+<h2 id="installation">Installation</h2>
+<h4 id="linux">Linux</h4>
+<p>Install from PPA</p>
+<pre><code>curl -fsSL https://ppa.ablaze.one/KEY.gpg | sudo gpg --dearmor -o /usr/share/keyrings/Floorp.gpg
+sudo curl -sS --compressed -o /etc/apt/sources.list.d/Floorp.list 'https://ppa.ablaze.one/Floorp.list'
+sudo apt update
+sudo apt install floorp
+</code></pre>
+<p>Install from Flathub</p>
+<pre><code>flatpak install flathub one.ablaze.floorp
+flatpak run one.ablaze.floorp
+</code></pre>
+<p>Install from AUR with yay (For Arch Linux)</p>
+<pre><code>yay -S floorp
+</code></pre>
+<h4 id="macos-and-windows">MacOS and Windows</h4>
+<p>You can download .exe or .dmg from <a href="https://floorp.app/en/download/">Floorp&rsquo;s official website</a></p>
+<h2 id="finally-1">Finally&hellip;</h2>
+<p>While Floorp might be just another browser for some, it&rsquo;s undeniably the best one I have found.</p>
+
+                </div>
+
+                
+                <div class="tags-section">
+                    <span class="key">tags:</span>
+                    <div class="tags-list">
+                        
+                        <span class="tag">Android</span>
+                        
+                    </div>
+                </div>
+                
+            </article>
+        </div>
+    </div>
+</main>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </body>
+</html>
