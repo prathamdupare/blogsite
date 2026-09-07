@@ -1,8 +1,11 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://blog.heypratham.in/'
 languageCode = 'en-US'
-title = "Pratham's Blog"
-theme = "digio-theme"
+title = "Pratham Dupare"
 ignoreLogs = ['warning-goldmark-raw-html']
+
+[params]
+  author = "Pratham Dupare"
+  description = "Software developer building open-source tools, mobile apps, and web experiences."
 
 [menus]
   [[menus.main]]
@@ -11,22 +14,18 @@ ignoreLogs = ['warning-goldmark-raw-html']
     weight = 1
 
   [[menus.main]]
-    name = 'write'
+    name = 'writing'
     pageRef = '/write'
     weight = 2
 
   [[menus.main]]
-    name = 'me'
+    name = 'about'
     pageRef = '/me'
     weight = 3
 
 [markup]
   [markup.highlight]
-    noClasses = false
-    style = "monokai"
-    wrapAddAnchors = ""
+    noClasses = true
+    style = "github"
     lineNos = false
-    hl_Lines = ""
     lineNumbersInTable = true
-    nohighlight = false
-    inherit = false

@@ -1,0 +1,22 @@
+{{- $items := slice }}
+{{- range .pages }}
+    {{- $items = $items | append (dict "title" .Title "url" .RelPermalink "date" .Date "desc" (or .Params.description (.Summary | plainify | truncate 160)) "external" false) }}
+{{- end }}
+{{- range .externalLinks }}
+    {{ $items = $items | append (dict "title" .title "url" .url "date" (time .date) "desc" (or .teaser "") "external" true) }}
+{{- end }}
+{{- $items = sort $items "date" "desc" }}
+{{- with .limit }}{{ $items = first . $items }}{{ end }}
+{{- if $items }}
+<ul class="post-list">
+    {{- range $items }}
+    <li>
+        <a class="post-title" href="{{ .url }}"{{ if .external }} target="_blank" rel="noopener"{{ end }}>{{ .title }}{{ if .external }} ↗{{ end }}</a>
+        <span class="post-date">{{ .date.Format "January 2, 2006" }}</span>
+        {{ with .desc }}<p class="post-desc">{{ . }}</p>{{ end }}
+    </li>
+    {{- end }}
+</ul>
+{{ else }}
+<p>Nothing here yet.</p>
+{{ end }}

@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Customization on Pratham&#39;s Blog</title>
-    <link>https://example.org/tags/customization/</link>
-    <description>Recent content in Customization on Pratham&#39;s Blog</description>
-    <generator>Hugo</generator>
-    <language>en-US</language>
-    <lastBuildDate>Fri, 05 Aug 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/tags/customization/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Material You for Linux with this GNOME extension</title>
-      <link>https://example.org/write/material-you-gnome/</link>
-      <pubDate>Fri, 05 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>https://example.org/write/material-you-gnome/</guid>
-      <description>&lt;h2 id=&#34;material-you-for-linux&#34;&gt;Material You for Linux&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://material.io/blog/announcing-material-you&#34;&gt;Material You&lt;/a&gt; is wallpaper based theming introduced to Android 12 which themes the entire system by picking colors from wallpaper. If you like want Material You inspired personalization on Linux desktop, you just need one extension.&lt;/p&gt;&#xA;&lt;h3 id=&#34;extension&#34;&gt;Extension&lt;/h3&gt;&#xA;&lt;p&gt;Enable &lt;a href=&#34;https://extensions.gnome.org/extension/5236/material-you-color-theming/&#34;&gt;Material You Color Theming GNOME Extension&lt;/a&gt;. It can apply generated libadwaita theme from wallpaper using Material You.&lt;/p&gt;&#xA;&lt;p&gt;Every time you change wallpaper, the extension generates a patched version of GNOME’s libadwaita theme with accent colors generated from wallpaper.&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Customization on Pratham Dupare</title>
+		<link>http://localhost:1313/tags/customization/</link>
+		<description>Recent content in Customization on Pratham Dupare</description>
+		<generator>Hugo</generator>
+		<language>en-US</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 05 Aug 2022 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/customization/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Material You for Linux with this GNOME extension</title>
+				<link>http://localhost:1313/write/material-you-gnome/</link>
+				<pubDate>Fri, 05 Aug 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/write/material-you-gnome/</guid>
+				<description>&lt;h2 id=&#34;material-you-for-linux&#34;&gt;Material You for Linux&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://material.io/blog/announcing-material-you&#34;&gt;Material You&lt;/a&gt; is wallpaper based theming introduced to Android 12 which themes the entire system by picking colors from wallpaper. If you like want Material You inspired personalization on Linux desktop, you just need one extension.&lt;/p&gt;&#xA;&lt;h3 id=&#34;extension&#34;&gt;Extension&lt;/h3&gt;&#xA;&lt;p&gt;Enable &lt;a href=&#34;https://extensions.gnome.org/extension/5236/material-you-color-theming/&#34;&gt;Material You Color Theming GNOME Extension&lt;/a&gt;. It can apply generated libadwaita theme from wallpaper using Material You.&lt;/p&gt;&#xA;&lt;p&gt;Every time you change wallpaper, the extension generates a patched version of GNOME’s libadwaita theme with accent colors generated from wallpaper.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

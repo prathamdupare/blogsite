@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Website on Pratham&#39;s Blog</title>
-    <link>https://example.org/tags/website/</link>
-    <description>Recent content in Website on Pratham&#39;s Blog</description>
-    <generator>Hugo</generator>
-    <language>en-US</language>
-    <lastBuildDate>Sat, 03 Feb 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/tags/website/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Hugo - Simple guide</title>
-      <link>https://example.org/write/hugo-guide/</link>
-      <pubDate>Sat, 03 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://example.org/write/hugo-guide/</guid>
-      <description>&lt;h2 id=&#34;what-is-hugo&#34;&gt;What is Hugo?&lt;/h2&gt;&#xA;&lt;p&gt;Hugo is a fast and modern static site generator written in Go, designed to make website creation enjoyable.&lt;/p&gt;&#xA;&lt;h3 id=&#34;the-basics-you-need-to-know-and-have&#34;&gt;The basics you need to know and have:&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Git or GitHub&lt;/li&gt;&#xA;&lt;li&gt;Somewhere you can deploy your site (for example: Netlify, GitHub pages, fly.io, nginx, etc)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;&#xA;&lt;h3 id=&#34;linux&#34;&gt;Linux&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Snap package&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo snap install hugo&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;&#xA;&lt;li&gt;Arch Linux&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo pacman -S hugo&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;&#xA;&lt;li&gt;Debian&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo apt install hugo&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;for more info check the official installation guide &lt;a href=&#34;https://gohugo.io/installation/linux/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Website on Pratham Dupare</title>
+		<link>http://localhost:1313/tags/website/</link>
+		<description>Recent content in Website on Pratham Dupare</description>
+		<generator>Hugo</generator>
+		<language>en-US</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 03 Feb 2024 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/website/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Hugo - Simple guide</title>
+				<link>http://localhost:1313/write/hugo-guide/</link>
+				<pubDate>Sat, 03 Feb 2024 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/write/hugo-guide/</guid>
+				<description>&lt;h2 id=&#34;what-is-hugo&#34;&gt;What is Hugo?&lt;/h2&gt;&#xA;&lt;p&gt;Hugo is a fast and modern static site generator written in Go, designed to make website creation enjoyable.&lt;/p&gt;&#xA;&lt;h3 id=&#34;the-basics-you-need-to-know-and-have&#34;&gt;The basics you need to know and have:&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Git or GitHub&lt;/li&gt;&#xA;&lt;li&gt;Somewhere you can deploy your site (for example: Netlify, GitHub pages, fly.io, nginx, etc)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;&#xA;&lt;h3 id=&#34;linux&#34;&gt;Linux&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Snap package&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo snap install hugo&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;&#xA;&lt;li&gt;Arch Linux&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo pacman -S hugo&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;&#xA;&lt;li&gt;Debian&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo apt install hugo&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;for more info check the official installation guide &lt;a href=&#34;https://gohugo.io/installation/linux/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

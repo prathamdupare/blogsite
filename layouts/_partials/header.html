@@ -1,0 +1,10 @@
+<header class="site-header">
+    <div class="wrap">
+        <a class="site-name" href="{{ "/" | relURL }}">{{ site.Params.author | default "Pratham Dupare" }}</a>
+        <nav class="site-nav">
+            {{ range site.Menus.main }}
+            <a href="{{ .URL }}"{{ if $.IsMenuCurrent .Menu . }} aria-current="page"{{ end }}>{{ .Name }}</a>
+            {{ end }}
+        </nav>
+    </div>
+</header>

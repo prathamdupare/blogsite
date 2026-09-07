@@ -1,47 +1,52 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Productivity on Pratham&#39;s Blog</title>
-    <link>https://example.org/tags/productivity/</link>
-    <description>Recent content in Productivity on Pratham&#39;s Blog</description>
-    <generator>Hugo</generator>
-    <language>en-US</language>
-    <lastBuildDate>Sun, 08 Dec 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/tags/productivity/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Top 10 essential Vim Tricks</title>
-      <link>https://example.org/write/top-10-vim-tricks/</link>
-      <pubDate>Sun, 08 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://example.org/write/top-10-vim-tricks/</guid>
-      <description>&lt;h3 id=&#34;1-jump-to-matching-parentheses-or-braces&#34;&gt;1. Jump to Matching Parentheses or Braces&lt;/h3&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;function matchingBraces() {&#xA;  if (true) {&#xA;    console.log(&amp;#34;Jump between these braces using %&amp;#34;);&#xA;  }&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;2-visual-block-editing&#34;&gt;2. Visual Block Editing&lt;/h3&gt;&#xA;&lt;h4 id=&#34;use-c-v-to-select-a-block-of-text-and-edit-all-rows-simultaneously&#34;&gt;Use &lt;code&gt;&amp;lt;C-v&amp;gt;&lt;/code&gt; to select a block of text and edit all rows simultaneously.&lt;/h4&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;const ock1 = &amp;#34;Edit me!&amp;#34;;&#xA;const ock2 = &amp;#34;Edit me!&amp;#34;;&#xA;const ock3 = &amp;#34;Edit me!&amp;#34;;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;3-move-by-search-history&#34;&gt;3. Move by Search History&lt;/h3&gt;&#xA;&lt;h4 id=&#34;use-log-to-search-for-log-then-press-n-to-move-to-the-next-match-and-n-for-the-previous-match&#34;&gt;Use &lt;code&gt;/log&lt;/code&gt; to search for &amp;ldquo;log&amp;rdquo;, then press &lt;code&gt;n&lt;/code&gt; to move to the next match and &lt;code&gt;N&lt;/code&gt; for the previous match.&lt;/h4&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;console.log(&amp;#34;Search for this log statement.&amp;#34;);&#xA;console.log(&amp;#34;Another log statement.&amp;#34;);&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;4-try-ci-or-di-to-modify-or-delete-the-text-inside-these-quotes&#34;&gt;4. Try &lt;code&gt;ci&amp;quot;&lt;/code&gt; or &lt;code&gt;di&amp;quot;&lt;/code&gt; to modify or delete the text inside these quotes.&lt;/h3&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;const greeting = &amp;#34;Change or delete this text.&amp;#34;;&#xA;const foo = () =&amp;gt; {&#xA;console.log(&amp;#34;Vim is awesome&amp;#34;);&#xA;};&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;5-repeat-the-last-command&#34;&gt;5. Repeat the Last Command&lt;/h3&gt;&#xA;&lt;h4 id=&#34;delete-this-line-using-dd-then-press--on-the-next-line-to-repeat-the-delete&#34;&gt;Delete this line using &lt;code&gt;dd&lt;/code&gt;, then press &lt;code&gt;.&lt;/code&gt; on the next line to repeat the delete.&lt;/h4&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;const repeatCommand = &amp;#34;Repeat this delete.&amp;#34;;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;6-replace-text-globally&#34;&gt;6. Replace Text Globally&lt;/h3&gt;&#xA;&lt;h4 id=&#34;use-soldnewg-to-replace-all-instances-of-old-with-new&#34;&gt;Use &lt;code&gt;:%s/old/new/g&lt;/code&gt; to replace all instances of &amp;ldquo;old&amp;rdquo; with &amp;ldquo;new&amp;rdquo;.&lt;/h4&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;const oldVariable = &amp;#34;Replace all &amp;#39;old&amp;#39; instances.&amp;#34;;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;7-swap-two-lines&#34;&gt;7. Swap Two Lines&lt;/h3&gt;&#xA;&lt;h4 id=&#34;use-ddp-to-swap-this-line&#34;&gt;Use &lt;code&gt;ddp&lt;/code&gt; to swap this line&amp;hellip;&lt;/h4&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;console.log(&amp;#34;This line should be swapped below...&amp;#34;);&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;8-incrementdecrement-numbers&#34;&gt;8. Increment/Decrement Numbers&lt;/h3&gt;&#xA;&lt;h4 id=&#34;place-your-cursor-on-the-numbers-below-and-press-c-a-to-increment-or-c-x-to-decrement&#34;&gt;Place your cursor on the numbers below and press &lt;code&gt;&amp;lt;C-a&amp;gt;&lt;/code&gt; to increment or &lt;code&gt;&amp;lt;C-x&amp;gt;&lt;/code&gt; to decrement.&lt;/h4&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;let number = 40; // Increment or decrement this number.&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;9-reformat-code&#34;&gt;9. Reformat Code&lt;/h3&gt;&#xA;&lt;h4 id=&#34;select-this-block-of-code-and-press--to-auto-indent-it&#34;&gt;Select this block of code and press &lt;code&gt;=&lt;/code&gt; to auto-indent it.&lt;/h4&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;function messyCode() {&#xA;const foo = &amp;#34;fjkdj&amp;#34;;&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;10-toggle-case&#34;&gt;10. Toggle Case&lt;/h3&gt;&#xA;&lt;h4 id=&#34;place-your-cursor-on-the-text-below-and-press--to-toggle-its-case&#34;&gt;Place your cursor on the text below and press &lt;code&gt;~&lt;/code&gt; to toggle its case.&lt;/h4&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;const caseToggle = &amp;#34;Toggle This Case.&amp;#34;;&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
-    </item>
-    <item>
-      <title>One Screen for Productivity</title>
-      <link>https://example.org/write/one-screen/</link>
-      <pubDate>Sun, 10 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://example.org/write/one-screen/</guid>
-      <description>&lt;p&gt;You might have seen many people in productivity videos using multiple or wide-angle screens, and it might feel straightforward to believe that using multiple displays might improve productivity. However, it’s actually the opposite. How so?&lt;/p&gt;&#xA;&lt;p&gt;The best analogy I can think of is typing on a keyboard. The main reason people use touch typing to type fast is that it doesn’t make you look down at the keyboard while you&amp;rsquo;re focused on the task. It makes you much faster than looking down. Looking at a secondary or multiple screens is similar. But what’s the proof of it, you might ask.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Make Ubuntu avoid entering suspended mode when the laptop lid is closed.</title>
-      <link>https://example.org/write/ubuntu-lid/</link>
-      <pubDate>Wed, 07 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>https://example.org/write/ubuntu-lid/</guid>
-      <description>&lt;p&gt;Our laptops suspend when the lid is closed, it is the default behavior of any laptop. It is a good feature that helps to save battery but if you are using a laptop as a server that needs to run constantly then it can cause problems.&lt;/p&gt;&#xA;&lt;p&gt;If you are using Ubuntu then you can turn that off.&lt;/p&gt;&#xA;&lt;h2 id=&#34;method-1-&#34;&gt;Method 1 :&lt;/h2&gt;&#xA;&lt;p&gt;This is the simplest method and doesn&amp;rsquo;t require any command line and works with any Distro with a GNOME desktop.&#xA;If you use the GNOME desktop, you might use Gnome Tweaks for various reasons.&#xA;You can install the GNOME tweaks tool from the software center.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Gaming on Linux — How To Play Any Game on Linux!</title>
-      <link>https://example.org/write/gaming-on-linux/</link>
-      <pubDate>Fri, 26 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>https://example.org/write/gaming-on-linux/</guid>
-      <description>&lt;p&gt;Linux gaming is growing so popular.&lt;/p&gt;&#xA;&lt;p&gt;The Steam deck has over 1.6 million users, and we expect them to grow more!&lt;/p&gt;&#xA;&lt;p&gt;Unlike Windows, where you can play almost anything with a click, Linux gaming can be tricky. There are a lot of tools, software, and terms that can make things complicated.&lt;/p&gt;&#xA;&lt;p&gt;This guide will cover everything including Steam, Epic Games, Ubisoft, and much more.&lt;/p&gt;&#xA;&lt;h2 id=&#34;basic-terms&#34;&gt;Basic terms&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Proton&lt;/strong&gt;&#xA;Proton is a compatibility layer for Microsoft Windows games to run on Linux-based operating systems. It is a collection of software and libraries combined with a patched version of Wine to improve performance and compatibility with Windows games.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>The best Project and Task manager on Linux! </title>
-      <link>https://example.org/write/planner-linux/</link>
-      <pubDate>Tue, 23 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>https://example.org/write/planner-linux/</guid>
-      <description>&lt;p&gt; The Planner is an open-source task and project manager designed for GNU/Linux. &lt;/p&gt;&#xA;&lt;p&gt;&amp;rsquo;&amp;rsquo;&#39;&#xA;Planner keeps track of all your tasks, projects, and goals in one beautifully simple place.&#xA;&amp;rsquo;&#39;&#39;&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Planner was developed as a task manager in 2018 and is now a project manager.&lt;/p&gt;&#xA;&lt;p&gt;Some of the main features are:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;It can synchronize to a Todoist account.&lt;/li&gt;&#xA;&lt;li&gt;You can set up tags, due dates, and remainders.&lt;/li&gt;&#xA;&lt;li&gt;It supports a dark theme.&lt;/li&gt;&#xA;&lt;li&gt;It helps you organize individual projects.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Planner is available on Flathub, Elementary OS App Centre, and Arch user repository.&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Productivity on Pratham Dupare</title>
+		<link>http://localhost:1313/tags/productivity/</link>
+		<description>Recent content in Productivity on Pratham Dupare</description>
+		<generator>Hugo</generator>
+		<language>en-US</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 08 Dec 2024 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/productivity/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Top 10 essential Vim Tricks</title>
+				<link>http://localhost:1313/write/top-10-vim-tricks/</link>
+				<pubDate>Sun, 08 Dec 2024 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/write/top-10-vim-tricks/</guid>
+				<description>&lt;h3 id=&#34;1-jump-to-matching-parentheses-or-braces&#34;&gt;1. Jump to Matching Parentheses or Braces&lt;/h3&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;function matchingBraces() {&#xA;  if (true) {&#xA;    console.log(&amp;#34;Jump between these braces using %&amp;#34;);&#xA;  }&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;2-visual-block-editing&#34;&gt;2. Visual Block Editing&lt;/h3&gt;&#xA;&lt;h4 id=&#34;use-c-v-to-select-a-block-of-text-and-edit-all-rows-simultaneously&#34;&gt;Use &lt;code&gt;&amp;lt;C-v&amp;gt;&lt;/code&gt; to select a block of text and edit all rows simultaneously.&lt;/h4&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;const ock1 = &amp;#34;Edit me!&amp;#34;;&#xA;const ock2 = &amp;#34;Edit me!&amp;#34;;&#xA;const ock3 = &amp;#34;Edit me!&amp;#34;;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;3-move-by-search-history&#34;&gt;3. Move by Search History&lt;/h3&gt;&#xA;&lt;h4 id=&#34;use-log-to-search-for-log-then-press-n-to-move-to-the-next-match-and-n-for-the-previous-match&#34;&gt;Use &lt;code&gt;/log&lt;/code&gt; to search for &amp;ldquo;log&amp;rdquo;, then press &lt;code&gt;n&lt;/code&gt; to move to the next match and &lt;code&gt;N&lt;/code&gt; for the previous match.&lt;/h4&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;console.log(&amp;#34;Search for this log statement.&amp;#34;);&#xA;console.log(&amp;#34;Another log statement.&amp;#34;);&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;4-try-ci-or-di-to-modify-or-delete-the-text-inside-these-quotes&#34;&gt;4. Try &lt;code&gt;ci&amp;quot;&lt;/code&gt; or &lt;code&gt;di&amp;quot;&lt;/code&gt; to modify or delete the text inside these quotes.&lt;/h3&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;const greeting = &amp;#34;Change or delete this text.&amp;#34;;&#xA;const foo = () =&amp;gt; {&#xA;console.log(&amp;#34;Vim is awesome&amp;#34;);&#xA;};&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;5-repeat-the-last-command&#34;&gt;5. Repeat the Last Command&lt;/h3&gt;&#xA;&lt;h4 id=&#34;delete-this-line-using-dd-then-press--on-the-next-line-to-repeat-the-delete&#34;&gt;Delete this line using &lt;code&gt;dd&lt;/code&gt;, then press &lt;code&gt;.&lt;/code&gt; on the next line to repeat the delete.&lt;/h4&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;const repeatCommand = &amp;#34;Repeat this delete.&amp;#34;;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;6-replace-text-globally&#34;&gt;6. Replace Text Globally&lt;/h3&gt;&#xA;&lt;h4 id=&#34;use-soldnewg-to-replace-all-instances-of-old-with-new&#34;&gt;Use &lt;code&gt;:%s/old/new/g&lt;/code&gt; to replace all instances of &amp;ldquo;old&amp;rdquo; with &amp;ldquo;new&amp;rdquo;.&lt;/h4&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;const oldVariable = &amp;#34;Replace all &amp;#39;old&amp;#39; instances.&amp;#34;;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;7-swap-two-lines&#34;&gt;7. Swap Two Lines&lt;/h3&gt;&#xA;&lt;h4 id=&#34;use-ddp-to-swap-this-line&#34;&gt;Use &lt;code&gt;ddp&lt;/code&gt; to swap this line&amp;hellip;&lt;/h4&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;console.log(&amp;#34;This line should be swapped below...&amp;#34;);&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;8-incrementdecrement-numbers&#34;&gt;8. Increment/Decrement Numbers&lt;/h3&gt;&#xA;&lt;h4 id=&#34;place-your-cursor-on-the-numbers-below-and-press-c-a-to-increment-or-c-x-to-decrement&#34;&gt;Place your cursor on the numbers below and press &lt;code&gt;&amp;lt;C-a&amp;gt;&lt;/code&gt; to increment or &lt;code&gt;&amp;lt;C-x&amp;gt;&lt;/code&gt; to decrement.&lt;/h4&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;let number = 40; // Increment or decrement this number.&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;9-reformat-code&#34;&gt;9. Reformat Code&lt;/h3&gt;&#xA;&lt;h4 id=&#34;select-this-block-of-code-and-press--to-auto-indent-it&#34;&gt;Select this block of code and press &lt;code&gt;=&lt;/code&gt; to auto-indent it.&lt;/h4&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;function messyCode() {&#xA;const foo = &amp;#34;fjkdj&amp;#34;;&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;10-toggle-case&#34;&gt;10. Toggle Case&lt;/h3&gt;&#xA;&lt;h4 id=&#34;place-your-cursor-on-the-text-below-and-press--to-toggle-its-case&#34;&gt;Place your cursor on the text below and press &lt;code&gt;~&lt;/code&gt; to toggle its case.&lt;/h4&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;const caseToggle = &amp;#34;Toggle This Case.&amp;#34;;&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+			</item>
+			<item>
+				<title>One Screen for Productivity</title>
+				<link>http://localhost:1313/write/one-screen/</link>
+				<pubDate>Sun, 10 Nov 2024 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/write/one-screen/</guid>
+				<description>&lt;p&gt;You might have seen many people in productivity videos using multiple or wide-angle screens, and it might feel straightforward to believe that using multiple displays might improve productivity. However, it’s actually the opposite. How so?&lt;/p&gt;&#xA;&lt;p&gt;The best analogy I can think of is typing on a keyboard. The main reason people use touch typing to type fast is that it doesn’t make you look down at the keyboard while you&amp;rsquo;re focused on the task. It makes you much faster than looking down. Looking at a secondary or multiple screens is similar. But what’s the proof of it, you might ask.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Make Ubuntu avoid entering suspended mode when the laptop lid is closed.</title>
+				<link>http://localhost:1313/write/ubuntu-lid/</link>
+				<pubDate>Wed, 07 Sep 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/write/ubuntu-lid/</guid>
+				<description>&lt;p&gt;Our laptops suspend when the lid is closed, it is the default behavior of any laptop. It is a good feature that helps to save battery but if you are using a laptop as a server that needs to run constantly then it can cause problems.&lt;/p&gt;&#xA;&lt;p&gt;If you are using Ubuntu then you can turn that off.&lt;/p&gt;&#xA;&lt;h2 id=&#34;method-1-&#34;&gt;Method 1 :&lt;/h2&gt;&#xA;&lt;p&gt;This is the simplest method and doesn&amp;rsquo;t require any command line and works with any Distro with a GNOME desktop.&#xA;If you use the GNOME desktop, you might use Gnome Tweaks for various reasons.&#xA;You can install the GNOME tweaks tool from the software center.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Gaming on Linux — How To Play Any Game on Linux!</title>
+				<link>http://localhost:1313/write/gaming-on-linux/</link>
+				<pubDate>Fri, 26 Aug 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/write/gaming-on-linux/</guid>
+				<description>&lt;p&gt;Linux gaming is growing so popular.&lt;/p&gt;&#xA;&lt;p&gt;The Steam deck has over 1.6 million users, and we expect them to grow more!&lt;/p&gt;&#xA;&lt;p&gt;Unlike Windows, where you can play almost anything with a click, Linux gaming can be tricky. There are a lot of tools, software, and terms that can make things complicated.&lt;/p&gt;&#xA;&lt;p&gt;This guide will cover everything including Steam, Epic Games, Ubisoft, and much more.&lt;/p&gt;&#xA;&lt;h2 id=&#34;basic-terms&#34;&gt;Basic terms&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Proton&lt;/strong&gt;&#xA;Proton is a compatibility layer for Microsoft Windows games to run on Linux-based operating systems. It is a collection of software and libraries combined with a patched version of Wine to improve performance and compatibility with Windows games.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>The best Project and Task manager on Linux! </title>
+				<link>http://localhost:1313/write/planner-linux/</link>
+				<pubDate>Tue, 23 Aug 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/write/planner-linux/</guid>
+				<description>&lt;p&gt; The Planner is an open-source task and project manager designed for GNU/Linux. &lt;/p&gt;&#xA;&lt;p&gt;&amp;rsquo;&amp;rsquo;&#39;&#xA;Planner keeps track of all your tasks, projects, and goals in one beautifully simple place.&#xA;&amp;rsquo;&#39;&#39;&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Planner was developed as a task manager in 2018 and is now a project manager.&lt;/p&gt;&#xA;&lt;p&gt;Some of the main features are:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;It can synchronize to a Todoist account.&lt;/li&gt;&#xA;&lt;li&gt;You can set up tags, due dates, and remainders.&lt;/li&gt;&#xA;&lt;li&gt;It supports a dark theme.&lt;/li&gt;&#xA;&lt;li&gt;It helps you organize individual projects.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Planner is available on Flathub, Elementary OS App Centre, and Arch user repository.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Html on Pratham&#39;s Blog</title>
-    <link>https://example.org/tags/html/</link>
-    <description>Recent content in Html on Pratham&#39;s Blog</description>
-    <generator>Hugo</generator>
-    <language>en-US</language>
-    <lastBuildDate>Sun, 03 Mar 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/tags/html/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>NextJS and NextAuth guide</title>
-      <link>https://example.org/write/nextauth/</link>
-      <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://example.org/write/nextauth/</guid>
-      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;NextAuth.js is a complete open-source authentication solution for Next.js applications, and it is currently my favorite solution for adding authentication. It doesn&amp;rsquo;t set up everything like Clerk in 7 minutes but also gives you control over everything and makes it really easy!&lt;/p&gt;&#xA;&lt;p&gt;It&amp;rsquo;s specifically designed to work seamlessly with Next.js and Serverless architectures.&lt;/p&gt;&#xA;&lt;h1 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h1&gt;&#xA;&lt;h2 id=&#34;install-nextauth&#34;&gt;Install NextAuth&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npm install next-auth&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;note--&#34;&gt;Note -&lt;/h4&gt;&#xA;&lt;p&gt;I will be using the latest version of Next.js 14.0 or above with the app router.&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Html on Pratham Dupare</title>
+		<link>http://localhost:1313/tags/html/</link>
+		<description>Recent content in Html on Pratham Dupare</description>
+		<generator>Hugo</generator>
+		<language>en-US</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 03 Mar 2024 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/html/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>NextJS and NextAuth guide</title>
+				<link>http://localhost:1313/write/nextauth/</link>
+				<pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/write/nextauth/</guid>
+				<description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;NextAuth.js is a complete open-source authentication solution for Next.js applications, and it is currently my favorite solution for adding authentication. It doesn&amp;rsquo;t set up everything like Clerk in 7 minutes but also gives you control over everything and makes it really easy!&lt;/p&gt;&#xA;&lt;p&gt;It&amp;rsquo;s specifically designed to work seamlessly with Next.js and Serverless architectures.&lt;/p&gt;&#xA;&lt;h1 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h1&gt;&#xA;&lt;h2 id=&#34;install-nextauth&#34;&gt;Install NextAuth&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm install next-auth&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;note--&#34;&gt;Note -&lt;/h4&gt;&#xA;&lt;p&gt;I will be using the latest version of Next.js 14.0 or above with the app router.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

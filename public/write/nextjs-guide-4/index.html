@@ -1,55 +1,54 @@
 <!doctype html>
-<html lang="en-US" dir="ltr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Pratham&#39;s Blog - API Routes</title>
-        <link rel="stylesheet" href="/css/styles.css">
-        <link rel="stylesheet" href="/css/custom.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/monokai-sublime.min.css">
-        <link rel="icon" type="image/png" href="/favicon.png">
-    </head>
-    <body>
-        
-<main class="terminal-page">
-    <div class="container">
-        <aside class="sidebar">
-            <div class="sidebar-section">
-                <div class="sidebar-title"># main</div>
-                <a href="https://heypratham.in/" class="sidebar-link">home site ↗</a>
-            </div>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>API Routes · Pratham Dupare</title>
+<meta name="description" content="Basic to advance guide for Next.js">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="icon" href="/favicon.svg">
 
-            <div class="sidebar-section">
-                <div class="sidebar-title"># write</div>
-                <a href="/write/" class="sidebar-link">posts</a>
-            </div>
 
-            <div class="sidebar-section">
-                <div class="sidebar-title"># connect</div>
-                <a href="/" class="sidebar-link">contact</a>
-            </div>
-        </aside>
+</head>
+<body>
+    <header class="site-header">
+    <div class="wrap">
+        <a class="site-name" href="/">Pratham Dupare</a>
+        <nav class="site-nav">
+            
+            <a href="/">home</a>
+            
+            <a href="/write/">writing</a>
+            
+            <a href="/me/">about</a>
+            
+        </nav>
+    </div>
+</header>
 
-        <div class="editor">
-            <article>
-                <div class="terminal-header">API Routes<span class="header-cursor"></span></div>
-                <div class="terminal-desc">March 11, 2024</div>
-                
-                <div class="terminal-content">
-                    <h2 id="introduction">Introduction</h2>
+    <main>
+        <div class="wrap">
+            
+<article>
+    <header class="post-header">
+        <h1>API Routes</h1>
+        <div class="meta">March 11, 2024 · 2 min read</div>
+    </header>
+
+    <h2 id="introduction">Introduction</h2>
 <p>Next.js is a full-stack framework that enables you to develop both the frontend and backend seamlessly. In contrast to using Express.js for building the backend, where you might need to run a separate server on a different port, Next.js eliminates this need.</p>
 <p>Next.js employs a file-based routing system, making it convenient and efficient.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;express&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">port</span> <span class="o">=</span> <span class="mi">3000</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&#34;/&#34;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s2">&#34;Hello World!&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">});</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">port</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Example app listening on port </span><span class="si">${</span><span class="nx">port</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">});</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#cf222e">const</span> <span style="color:#1f2328">express</span> <span style="color:#0550ae">=</span> <span style="color:#1f2328">require</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;express&#34;</span><span style="color:#1f2328">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">const</span> <span style="color:#1f2328">app</span> <span style="color:#0550ae">=</span> <span style="color:#1f2328">express</span><span style="color:#1f2328">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">const</span> <span style="color:#1f2328">port</span> <span style="color:#0550ae">=</span> <span style="color:#0550ae">3000</span><span style="color:#1f2328">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">app</span><span style="color:#1f2328">.</span><span style="color:#1f2328">get</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;/&#34;</span><span style="color:#1f2328">,</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">req</span><span style="color:#1f2328">,</span> <span style="color:#1f2328">res</span><span style="color:#1f2328">)</span> <span style="color:#1f2328">=&gt;</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">res</span><span style="color:#1f2328">.</span><span style="color:#1f2328">send</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;Hello World!&#34;</span><span style="color:#1f2328">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">});</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">app</span><span style="color:#1f2328">.</span><span style="color:#1f2328">listen</span><span style="color:#1f2328">(</span><span style="color:#1f2328">port</span><span style="color:#1f2328">,</span> <span style="color:#1f2328">()</span> <span style="color:#1f2328">=&gt;</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">console</span><span style="color:#1f2328">.</span><span style="color:#1f2328">log</span><span style="color:#1f2328">(</span><span style="color:#0a3069">`Example app listening on port </span><span style="color:#0a3069">${</span><span style="color:#1f2328">port</span><span style="color:#0a3069">}</span><span style="color:#0a3069">`</span><span style="color:#1f2328">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">});</span>
 </span></span></code></pre></div><p>Note that in the traditional Express.js example, app.listen specifies the port to which it must listen, requiring it to be continuously running to handle requests.</p>
 <p>Next.js covers all traditional backend features, including middlewares, parsing, authentication, and even serverless functions.</p>
 <h2 id="creating-the-api-route">Creating the API Route</h2>
@@ -57,9 +56,9 @@
 and Response
 APIs.</p>
 <p>Route Handlers are defined in a <code>route.js|ts</code> file inside the <code>app</code> directory:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">//app/api/route.js
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kr">const</span> <span class="nx">dynamic</span> <span class="o">=</span> <span class="s2">&#34;force-dynamic&#34;</span><span class="p">;</span> <span class="c1">// defaults to auto
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kr">async</span> <span class="kd">function</span> <span class="nx">GET</span><span class="p">(</span><span class="nx">request</span><span class="p">)</span> <span class="p">{}</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#57606a">//app/api/route.js
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">export</span> <span style="color:#cf222e">const</span> <span style="color:#1f2328">dynamic</span> <span style="color:#0550ae">=</span> <span style="color:#0a3069">&#34;force-dynamic&#34;</span><span style="color:#1f2328">;</span> <span style="color:#57606a">// defaults to auto
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">export</span> <span style="color:#cf222e">async</span> <span style="color:#cf222e">function</span> <span style="color:#1f2328">GET</span><span style="color:#1f2328">(</span><span style="color:#1f2328">request</span><span style="color:#1f2328">)</span> <span style="color:#1f2328">{}</span>
 </span></span></code></pre></div><p>Route Handlers can be nested inside the <code>app</code> directory, similar to <code>page.js</code> and <code>layout.js</code>. But there cannot be a <code>route.js</code> file at the same route segment level as <code>page.js</code>.</p>
 <p>While Route Handlers can be nested inside the <code>app</code> directory, similar to <code>page.js</code> and <code>layout.js</code>, it&rsquo;s crucial to avoid having a <code>route.js</code> file at the same route segment level as <code>page.js</code>. A recommended practice is to keep routes separate in another folder, commonly in <code>/api/*</code>.</p>
 <p>For instance, if you need a route at <code>/api/users</code>, create a <code>users</code> folder inside the <code>api</code> directory and then add a <code>route.js</code> file inside it. This route will correspond to <code>/api/users</code>.</p>
@@ -69,51 +68,45 @@ APIs.</p>
 are supported: <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>PATCH</code>, <code>DELETE</code>, <code>HEAD</code>, and <code>OPTIONS</code>. If an unsupported method is called, Next.js will return a <code>405 Method Not Allowed</code> response.</p>
 <p>This is esentially everything you need.</p>
 <p>To handle a <code>GET</code> request, you simply write a <code>GET</code> function inside the <code>route.js</code> file.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">async</span> <span class="kd">function</span> <span class="nx">GET</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">Response</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="s2">&#34;Hello, Next.js!&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#cf222e">export</span> <span style="color:#cf222e">async</span> <span style="color:#cf222e">function</span> <span style="color:#1f2328">GET</span><span style="color:#1f2328">()</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">return</span> <span style="color:#1f2328">Response</span><span style="color:#1f2328">.</span><span style="color:#1f2328">json</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;Hello, Next.js!&#34;</span><span style="color:#1f2328">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
 </span></span></code></pre></div><p>You return the response as you would return from any regular express server.</p>
 <p>For example ,</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">//app/api/items/route.js
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kr">async</span> <span class="kd">function</span> <span class="nx">GET</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">&#34;https://data.mongodb-api.com/...&#34;</span><span class="p">,</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">headers</span><span class="o">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="s2">&#34;Content-Type&#34;</span><span class="o">:</span> <span class="s2">&#34;application/json&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="s2">&#34;API-Key&#34;</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DATA_API_KEY</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">  <span class="p">});</span>
-</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">Response</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span> <span class="nx">data</span> <span class="p">});</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#57606a">//app/api/items/route.js
+</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">export</span> <span style="color:#cf222e">async</span> <span style="color:#cf222e">function</span> <span style="color:#1f2328">GET</span><span style="color:#1f2328">()</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">const</span> <span style="color:#1f2328">res</span> <span style="color:#0550ae">=</span> <span style="color:#cf222e">await</span> <span style="color:#1f2328">fetch</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;https://data.mongodb-api.com/...&#34;</span><span style="color:#1f2328">,</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">headers</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#0a3069">&#34;Content-Type&#34;</span><span style="color:#0550ae">:</span> <span style="color:#0a3069">&#34;application/json&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#0a3069">&#34;API-Key&#34;</span><span style="color:#0550ae">:</span> <span style="color:#1f2328">process</span><span style="color:#1f2328">.</span><span style="color:#1f2328">env</span><span style="color:#1f2328">.</span><span style="color:#1f2328">DATA_API_KEY</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">});</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">const</span> <span style="color:#1f2328">data</span> <span style="color:#0550ae">=</span> <span style="color:#cf222e">await</span> <span style="color:#1f2328">res</span><span style="color:#1f2328">.</span><span style="color:#1f2328">json</span><span style="color:#1f2328">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">return</span> <span style="color:#1f2328">Response</span><span style="color:#1f2328">.</span><span style="color:#1f2328">json</span><span style="color:#1f2328">({</span> <span style="color:#1f2328">data</span> <span style="color:#1f2328">});</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
 </span></span></code></pre></div><p>Similarly, and within the same file, you can use all other <code>HTTP</code> verbs.
 To witness this specific API in your browser, go to: <code>http://localhost:3000/app/api/items</code>.
 That&rsquo;s it! It&rsquo;s simple and intuitive.</p>
 
-                </div>
 
-                
-                <div class="tags-section">
-                    <span class="key">tags:</span>
-                    <div class="tags-list">
-                        
-                        <span class="tag">Web Development</span>
-                        
-                        <span class="tag">NextJs</span>
-                        
-                        <span class="tag">series</span>
-                        
-                        <span class="tag">docs</span>
-                        
-                    </div>
-                </div>
-                
-            </article>
-        </div>
+    
+    <div class="tags">
+        <a href="/tags/web-development/">#Web Development</a> <a href="/tags/nextjs/">#NextJs</a> <a href="/tags/series/">#series</a> <a href="/tags/docs/">#docs</a> 
     </div>
-</main>
+    
+</article>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-        <script>hljs.highlightAll();</script>
-    </body>
+        </div>
+    </main>
+    <footer class="site-footer">
+    <div class="wrap">
+        <span>© 2026 Pratham Dupare</span>
+        <a href="https://github.com/prathamdupare">github</a>
+        <a href="https://x.com/prathammdupare">x</a>
+        <a href="/index.xml">rss</a>
+    </div>
+</footer>
+
+</body>
 </html>

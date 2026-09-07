@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Security on Pratham&#39;s Blog</title>
-    <link>https://example.org/tags/security/</link>
-    <description>Recent content in Security on Pratham&#39;s Blog</description>
-    <generator>Hugo</generator>
-    <language>en-US</language>
-    <lastBuildDate>Sat, 13 Aug 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/tags/security/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Use these 10 Tools to boost Security and Privacy!</title>
-      <link>https://example.org/write/tools_privacy/</link>
-      <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>https://example.org/write/tools_privacy/</guid>
-      <description>&lt;p&gt;Privacy is a fundamental human right. Yet, most people choose convenience and don&amp;rsquo;t consider privacy much. Setting up things for privacy and security can be frustrating and takes real work, but these tools will provide you with that experience.&lt;/p&gt;&#xA;&lt;p&gt;Here is the list of 10 tools that can make your Privacy and Security more convenient. These are unordered.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-usb-datablocker&#34;&gt;1. USB Data Blocker&lt;/h2&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;A &lt;a href=&#34;https://amzn.to/3QlkVvm&#34;&gt;USB data blocker&lt;/a&gt; is a device that allows you to plug into USB charging ports including charging kiosks, and USB ports on gadgets owned by other people. If you connect your devices to a wireless or wired public internet connection, or a USB power charging station, it&amp;rsquo;s difficult to tell how safe they&amp;rsquo;ll be. You can be a victim of juice jacking, which is stealing data or loading malware through USB ports.&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Security on Pratham Dupare</title>
+		<link>http://localhost:1313/tags/security/</link>
+		<description>Recent content in Security on Pratham Dupare</description>
+		<generator>Hugo</generator>
+		<language>en-US</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 13 Aug 2022 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/security/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Use these 10 Tools to boost Security and Privacy!</title>
+				<link>http://localhost:1313/write/tools_privacy/</link>
+				<pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/write/tools_privacy/</guid>
+				<description>&lt;p&gt;Privacy is a fundamental human right. Yet, most people choose convenience and don&amp;rsquo;t consider privacy much. Setting up things for privacy and security can be frustrating and takes real work, but these tools will provide you with that experience.&lt;/p&gt;&#xA;&lt;p&gt;Here is the list of 10 tools that can make your Privacy and Security more convenient. These are unordered.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-usb-datablocker&#34;&gt;1. USB Data Blocker&lt;/h2&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;A &lt;a href=&#34;https://amzn.to/3QlkVvm&#34;&gt;USB data blocker&lt;/a&gt; is a device that allows you to plug into USB charging ports including charging kiosks, and USB ports on gadgets owned by other people. If you connect your devices to a wireless or wired public internet connection, or a USB power charging station, it&amp;rsquo;s difficult to tell how safe they&amp;rsquo;ll be. You can be a victim of juice jacking, which is stealing data or loading malware through USB ports.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

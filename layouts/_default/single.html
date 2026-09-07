@@ -1,44 +1,16 @@
 {{ define "main" }}
-<main class="terminal-page">
-    <div class="container">
-        <aside class="sidebar">
-            <div class="sidebar-section">
-                <div class="sidebar-title"># personal</div>
-                <a href="/" class="sidebar-link">whoami</a>
-            </div>
+<article>
+    <header class="post-header">
+        <h1>{{ .Title }}</h1>
+        {{ if not .Date.IsZero }}<div class="meta">{{ .Date.Format "January 2, 2006" }}{{ with .ReadingTime }} · {{ . }} min read{{ end }}</div>{{ end }}
+    </header>
 
-            <div class="sidebar-section">
-                <div class="sidebar-title"># write</div>
-                <a href="/write/" class="sidebar-link">posts</a>
-            </div>
+    {{ .Content }}
 
-            <div class="sidebar-section">
-                <div class="sidebar-title"># connect</div>
-                <a href="#contact" class="sidebar-link">contact</a>
-            </div>
-        </aside>
-
-        <div class="editor">
-            <article>
-                <div class="terminal-header">{{ .Title }}<span class="header-cursor"></span></div>
-                <div class="terminal-desc">{{ .Date.Format "January 2, 2006" }}</div>
-                
-                <div class="terminal-content">
-                    {{ .Content }}
-                </div>
-
-                {{ with .Params.tags }}
-                <div class="tags-section">
-                    <span class="key">tags:</span>
-                    <div class="tags-list">
-                        {{ range . }}
-                        <span class="tag">{{ . }}</span>
-                        {{ end }}
-                    </div>
-                </div>
-                {{ end }}
-            </article>
-        </div>
+    {{ with .Params.tags }}
+    <div class="tags">
+        {{ range . }}<a href="{{ (printf "/tags/%s/" (urlize .)) | relURL }}">#{{ . }}</a> {{ end }}
     </div>
-</main>
+    {{ end }}
+</article>
 {{ end }}

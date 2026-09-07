@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Neovim Notes on Pratham&#39;s Blog</title>
-    <link>https://example.org/tags/neovim-notes/</link>
-    <description>Recent content in Neovim Notes on Pratham&#39;s Blog</description>
-    <generator>Hugo</generator>
-    <language>en-US</language>
-    <lastBuildDate>Mon, 01 Apr 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/tags/neovim-notes/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Minimal notetaking with Neovim and Obsidian.</title>
-      <link>https://example.org/write/neovim-obsidian/</link>
-      <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://example.org/write/neovim-obsidian/</guid>
-      <description>&lt;h2 id=&#34;why&#34;&gt;WHY?&lt;/h2&gt;&#xA;&lt;p&gt;Several years ago, I experimented with Obsidian for a while, finding it useful initially. However, as an advocate for free and open-source software, I discovered that Obsidian wasn&amp;rsquo;t open-source, prompting me to abandon it.&lt;/p&gt;&#xA;&lt;h3 id=&#34;present-situation&#34;&gt;Present Situation&lt;/h3&gt;&#xA;&lt;p&gt;By 2024, I found Neovim to be immensely satisfying, although not for note-taking purposes. My needs were simple - I required a platform to jot down daily tasks, links, or to-dos, without any frills. While I attempted to use Neovim for this, the challenge arose when I wasn&amp;rsquo;t always near my laptop. Hence, I sought a solution to synchronize my notes with my phone. My initial thought was to sync them using Syncthing (which I&amp;rsquo;ll discuss further). However, I still needed to access the notes through a text editor on my phone, which wasn&amp;rsquo;t ideal.&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Neovim Notes on Pratham Dupare</title>
+		<link>http://localhost:1313/tags/neovim-notes/</link>
+		<description>Recent content in Neovim Notes on Pratham Dupare</description>
+		<generator>Hugo</generator>
+		<language>en-US</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 01 Apr 2024 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/neovim-notes/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Minimal notetaking with Neovim and Obsidian.</title>
+				<link>http://localhost:1313/write/neovim-obsidian/</link>
+				<pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/write/neovim-obsidian/</guid>
+				<description>&lt;h2 id=&#34;why&#34;&gt;WHY?&lt;/h2&gt;&#xA;&lt;p&gt;Several years ago, I experimented with Obsidian for a while, finding it useful initially. However, as an advocate for free and open-source software, I discovered that Obsidian wasn&amp;rsquo;t open-source, prompting me to abandon it.&lt;/p&gt;&#xA;&lt;h3 id=&#34;present-situation&#34;&gt;Present Situation&lt;/h3&gt;&#xA;&lt;p&gt;By 2024, I found Neovim to be immensely satisfying, although not for note-taking purposes. My needs were simple - I required a platform to jot down daily tasks, links, or to-dos, without any frills. While I attempted to use Neovim for this, the challenge arose when I wasn&amp;rsquo;t always near my laptop. Hence, I sought a solution to synchronize my notes with my phone. My initial thought was to sync them using Syncthing (which I&amp;rsquo;ll discuss further). However, I still needed to access the notes through a text editor on my phone, which wasn&amp;rsquo;t ideal.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

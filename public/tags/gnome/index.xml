@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>GNOME on Pratham&#39;s Blog</title>
-    <link>https://example.org/tags/gnome/</link>
-    <description>Recent content in GNOME on Pratham&#39;s Blog</description>
-    <generator>Hugo</generator>
-    <language>en-US</language>
-    <lastBuildDate>Mon, 08 Aug 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/tags/gnome/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>GNOME - All updates from this week</title>
-      <link>https://example.org/write/gnome-aug-5-2022/</link>
-      <pubDate>Mon, 08 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>https://example.org/write/gnome-aug-5-2022/</guid>
-      <description>&lt;h2 id=&#34;gnome-updates&#34;&gt;GNOME Updates&lt;/h2&gt;&#xA;&lt;h4 id=&#34;july-29---august-05&#34;&gt;July 29 - August 05&lt;/h4&gt;&#xA;&lt;p&gt;These are all the major updates across the GNOME project.&lt;/p&gt;&#xA;&lt;h2 id=&#34;core-apps-and-libraries&#34;&gt;Core Apps and Libraries&lt;/h2&gt;&#xA;&lt;h3 id=&#34;photos&#34;&gt;Photos&lt;/h3&gt;&#xA;&lt;p&gt;You can set picture as your background / lockscreen as GNOME Photos now uses Wallpaper portal.&lt;/p&gt;&#xA;&lt;h3 id=&#34;gnome-web&#34;&gt;GNOME Web&lt;/h3&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://gitlab.gnome.org/GNOME/epiphany&#34;&gt;GNOME Web&lt;/a&gt; got some new features.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;You can now take screenshots by pressing Shift + Ctrl + S.&lt;/li&gt;&#xA;&lt;li&gt;It is also possible to do this through context menu&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;solanum&#34;&gt;Solanum&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://gitlab.gnome.org/World/Solanum&#34;&gt;Solanum&lt;/a&gt; is a pomodaro timer for GNOME desktop.&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>GNOME on Pratham Dupare</title>
+		<link>http://localhost:1313/tags/gnome/</link>
+		<description>Recent content in GNOME on Pratham Dupare</description>
+		<generator>Hugo</generator>
+		<language>en-US</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 08 Aug 2022 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/gnome/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>GNOME - All updates from this week</title>
+				<link>http://localhost:1313/write/gnome-aug-5-2022/</link>
+				<pubDate>Mon, 08 Aug 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/write/gnome-aug-5-2022/</guid>
+				<description>&lt;h2 id=&#34;gnome-updates&#34;&gt;GNOME Updates&lt;/h2&gt;&#xA;&lt;h4 id=&#34;july-29---august-05&#34;&gt;July 29 - August 05&lt;/h4&gt;&#xA;&lt;p&gt;These are all the major updates across the GNOME project.&lt;/p&gt;&#xA;&lt;h2 id=&#34;core-apps-and-libraries&#34;&gt;Core Apps and Libraries&lt;/h2&gt;&#xA;&lt;h3 id=&#34;photos&#34;&gt;Photos&lt;/h3&gt;&#xA;&lt;p&gt;You can set picture as your background / lockscreen as GNOME Photos now uses Wallpaper portal.&lt;/p&gt;&#xA;&lt;h3 id=&#34;gnome-web&#34;&gt;GNOME Web&lt;/h3&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://gitlab.gnome.org/GNOME/epiphany&#34;&gt;GNOME Web&lt;/a&gt; got some new features.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;You can now take screenshots by pressing Shift + Ctrl + S.&lt;/li&gt;&#xA;&lt;li&gt;It is also possible to do this through context menu&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;solanum&#34;&gt;Solanum&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://gitlab.gnome.org/World/Solanum&#34;&gt;Solanum&lt;/a&gt; is a pomodaro timer for GNOME desktop.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

@@ -2,238 +2,220 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.org/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2024-12-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/</loc>
+    <loc>http://localhost:1313/tags/productivity/</loc>
     <lastmod>2024-12-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/productivity/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2024-12-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/</loc>
+    <loc>http://localhost:1313/tags/terminal/</loc>
     <lastmod>2024-12-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/terminal/</loc>
+    <loc>http://localhost:1313/write/top-10-vim-tricks/</loc>
     <lastmod>2024-12-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/top-10-vim-tricks/</loc>
+    <loc>http://localhost:1313/tags/vim/</loc>
     <lastmod>2024-12-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/vim/</loc>
+    <loc>http://localhost:1313/write/</loc>
     <lastmod>2024-12-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/docs/</loc>
+    <loc>http://localhost:1313/tags/docs/</loc>
     <lastmod>2024-11-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/one-screen/</loc>
+    <loc>http://localhost:1313/write/one-screen/</loc>
     <lastmod>2024-11-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/series/</loc>
+    <loc>http://localhost:1313/tags/series/</loc>
     <lastmod>2024-11-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/better-developer/</loc>
+    <loc>http://localhost:1313/write/better-developer/</loc>
     <lastmod>2024-08-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/reading/</loc>
+    <loc>http://localhost:1313/tags/reading/</loc>
     <lastmod>2024-08-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/android/</loc>
+    <loc>http://localhost:1313/tags/android/</loc>
     <lastmod>2024-07-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/expansion/</loc>
+    <loc>http://localhost:1313/write/expansion/</loc>
     <lastmod>2024-07-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/rules/</loc>
+    <loc>http://localhost:1313/rules/</loc>
     <lastmod>2024-07-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/lua-startguide/</loc>
+    <loc>http://localhost:1313/write/lua-startguide/</loc>
     <lastmod>2024-04-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/lua/</loc>
+    <loc>http://localhost:1313/tags/lua/</loc>
     <lastmod>2024-04-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/neovim-obsidian/</loc>
+    <loc>http://localhost:1313/write/neovim-obsidian/</loc>
     <lastmod>2024-04-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/neovim-notes/</loc>
+    <loc>http://localhost:1313/tags/neovim-notes/</loc>
     <lastmod>2024-04-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/nextjs-guide-4/</loc>
+    <loc>http://localhost:1313/write/nextjs-guide-4/</loc>
     <lastmod>2024-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/nextjs/</loc>
+    <loc>http://localhost:1313/tags/nextjs/</loc>
     <lastmod>2024-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/web-development/</loc>
+    <loc>http://localhost:1313/tags/web-development/</loc>
     <lastmod>2024-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/nextjs-guide-3/</loc>
+    <loc>http://localhost:1313/write/nextjs-guide-3/</loc>
     <lastmod>2024-03-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/series/</loc>
+    <loc>http://localhost:1313/write/series/</loc>
     <lastmod>2024-03-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/nextjs-guide-1/</loc>
+    <loc>http://localhost:1313/write/nextjs-guide-1/</loc>
     <lastmod>2024-03-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/html/</loc>
+    <loc>http://localhost:1313/tags/html/</loc>
     <lastmod>2024-03-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/nextauth/</loc>
+    <loc>http://localhost:1313/write/nextauth/</loc>
     <lastmod>2024-03-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/hugo-guide/</loc>
+    <loc>http://localhost:1313/write/hugo-guide/</loc>
     <lastmod>2024-02-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/website/</loc>
+    <loc>http://localhost:1313/tags/website/</loc>
     <lastmod>2024-02-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/calisthenics2024/</loc>
+    <loc>http://localhost:1313/write/calisthenics2024/</loc>
     <lastmod>2024-01-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/floorp/</loc>
+    <loc>http://localhost:1313/write/floorp/</loc>
     <lastmod>2024-01-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/learning-nodejs/</loc>
+    <loc>http://localhost:1313/write/learning-nodejs/</loc>
     <lastmod>2024-01-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/updates/</loc>
+    <loc>http://localhost:1313/tags/updates/</loc>
     <lastmod>2024-01-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/distraction-free-internet/</loc>
+    <loc>http://localhost:1313/write/distraction-free-internet/</loc>
     <lastmod>2023-11-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/linux/</loc>
+    <loc>http://localhost:1313/tags/linux/</loc>
     <lastmod>2023-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/youtube-local/</loc>
+    <loc>http://localhost:1313/write/youtube-local/</loc>
     <lastmod>2023-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/simple-apps/</loc>
+    <loc>http://localhost:1313/write/simple-apps/</loc>
     <lastmod>2023-02-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/tgpt/</loc>
+    <loc>http://localhost:1313/write/tgpt/</loc>
     <lastmod>2023-02-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/consume-web-in-a-better-way/</loc>
+    <loc>http://localhost:1313/write/consume-web-in-a-better-way/</loc>
     <lastmod>2023-02-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/learninglog/</loc>
+    <loc>http://localhost:1313/learninglog/</loc>
     <lastmod>2023-01-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/perfect-phone/</loc>
+    <loc>http://localhost:1313/write/perfect-phone/</loc>
     <lastmod>2023-01-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/open-source/</loc>
-    <lastmod>2023-01-15T09:00:00-07:00</lastmod>
-  </url><url>
-    <loc>https://example.org/write/test/</loc>
-    <lastmod>2023-01-15T09:00:00-07:00</lastmod>
-  </url><url>
-    <loc>https://example.org/write/test2/</loc>
-    <lastmod>2023-01-15T09:00:00-07:00</lastmod>
-  </url><url>
-    <loc>https://example.org/open-source/test3/</loc>
-    <lastmod>2023-01-15T09:00:00-07:00</lastmod>
-  </url><url>
-    <loc>https://example.org/open-source/test4/</loc>
-    <lastmod>2023-01-15T09:00:00-07:00</lastmod>
-  </url><url>
-    <loc>https://example.org/tags/open-source/</loc>
-    <lastmod>2023-01-15T09:00:00-07:00</lastmod>
-  </url><url>
-    <loc>https://example.org/tags/write/</loc>
-    <lastmod>2023-01-15T09:00:00-07:00</lastmod>
-  </url><url>
-    <loc>https://example.org/write/best-manga-reader/</loc>
+    <loc>http://localhost:1313/write/best-manga-reader/</loc>
     <lastmod>2022-09-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/ubuntu-lid/</loc>
+    <loc>http://localhost:1313/write/ubuntu-lid/</loc>
     <lastmod>2022-09-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/gaming-on-linux/</loc>
+    <loc>http://localhost:1313/write/gaming-on-linux/</loc>
     <lastmod>2022-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/planner-linux/</loc>
+    <loc>http://localhost:1313/write/planner-linux/</loc>
     <lastmod>2022-08-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/mobile-screen-usage/</loc>
+    <loc>http://localhost:1313/write/mobile-screen-usage/</loc>
     <lastmod>2022-08-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/privacy/</loc>
+    <loc>http://localhost:1313/tags/privacy/</loc>
     <lastmod>2022-08-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/security/</loc>
+    <loc>http://localhost:1313/tags/security/</loc>
     <lastmod>2022-08-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/tools_privacy/</loc>
+    <loc>http://localhost:1313/write/tools_privacy/</loc>
     <lastmod>2022-08-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/social-media/</loc>
+    <loc>http://localhost:1313/tags/social-media/</loc>
     <lastmod>2022-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/social-media-addiction/</loc>
+    <loc>http://localhost:1313/write/social-media-addiction/</loc>
     <lastmod>2022-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/gnome/</loc>
+    <loc>http://localhost:1313/tags/gnome/</loc>
     <lastmod>2022-08-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/gnome-aug-5-2022/</loc>
+    <loc>http://localhost:1313/write/gnome-aug-5-2022/</loc>
     <lastmod>2022-08-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/customization/</loc>
+    <loc>http://localhost:1313/tags/customization/</loc>
     <lastmod>2022-08-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/material-you-gnome/</loc>
+    <loc>http://localhost:1313/write/material-you-gnome/</loc>
     <lastmod>2022-08-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/how-to-switch-to-linux/</loc>
+    <loc>http://localhost:1313/write/how-to-switch-to-linux/</loc>
     <lastmod>2022-08-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/android-13/</loc>
+    <loc>http://localhost:1313/write/android-13/</loc>
     <lastmod>2022-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/android-132/</loc>
+    <loc>http://localhost:1313/write/android-132/</loc>
     <lastmod>2022-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/linux-6.0/</loc>
+    <loc>http://localhost:1313/write/linux-6.0/</loc>
     <lastmod>2022-08-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/wine-7.14/</loc>
+    <loc>http://localhost:1313/write/wine-7.14/</loc>
     <lastmod>2022-08-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/chrome-os-flex/</loc>
+    <loc>http://localhost:1313/write/chrome-os-flex/</loc>
     <lastmod>2022-07-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/alternative/</loc>
+    <loc>http://localhost:1313/alternative/</loc>
     <lastmod>2022-07-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/vulcan_beta_drivers/</loc>
+    <loc>http://localhost:1313/write/vulcan_beta_drivers/</loc>
     <lastmod>2022-07-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/reasons-to-use-foss/</loc>
+    <loc>http://localhost:1313/tags/open-source/</loc>
     <lastmod>2022-07-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/you-should-switch-to-these-private-messangers/</loc>
+    <loc>http://localhost:1313/write/reasons-to-use-foss/</loc>
+    <lastmod>2022-07-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/write/you-should-switch-to-these-private-messangers/</loc>
     <lastmod>2021-07-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/productive-android-apps/</loc>
+    <loc>http://localhost:1313/write/productive-android-apps/</loc>
     <lastmod>2021-07-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/open-source-browsers/</loc>
+    <loc>http://localhost:1313/write/open-source-browsers/</loc>
     <lastmod>2021-07-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/addiction/</loc>
+    <loc>http://localhost:1313/tags/addiction/</loc>
     <lastmod>2021-07-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/write/instagram-addiction/</loc>
+    <loc>http://localhost:1313/write/instagram-addiction/</loc>
     <lastmod>2021-07-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/test/</loc>
+    <loc>http://localhost:1313/test/</loc>
   </url><url>
-    <loc>https://example.org/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>https://example.org/me/</loc>
+    <loc>http://localhost:1313/me/</loc>
   </url>
 </urlset>
