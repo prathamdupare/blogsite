@@ -19,9 +19,14 @@ ignoreLogs = ['warning-goldmark-raw-html']
     weight = 2
 
   [[menus.main]]
+    name = 'likes'
+    pageRef = '/media'
+    weight = 3
+
+  [[menus.main]]
     name = 'about'
     pageRef = '/me'
-    weight = 3
+    weight = 4
 
 [markup]
   [markup.highlight]

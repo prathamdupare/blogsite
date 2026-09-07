@@ -10,8 +10,6 @@
 		
 		
 		
-			<lastBuildDate>Sun, 08 Dec 2024 00:00:00 +0000</lastBuildDate>
-		
 			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Top 10 essential Vim Tricks</title>
@@ -341,6 +339,13 @@
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
 				<guid>http://localhost:1313/me/</guid>
 				<description>&lt;p&gt;I&amp;rsquo;m Pratham — a math graduate from IISER Bhopal who ended up writing code full time.&#xA;Most of what I make is open source: habit trackers, self-hosted dashboards, and small&#xA;tools that scratch my own itches. I run NixOS, live inside Neovim and tmux, and care a&#xA;lot about software that respects the people using it.&lt;/p&gt;&#xA;&lt;p&gt;This blog is where I write about Linux, Android, open source, privacy, and whatever I&amp;rsquo;m&#xA;learning at the moment.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Things I like</title>
+				<link>http://localhost:1313/media/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/media/</guid>
+				<description>&lt;p&gt;Anime: not enough context for AI — just kidding. I&amp;rsquo;m tired, I&amp;rsquo;ll add anime later.&lt;/p&gt;&#xA;&lt;p&gt;As I said, I don&amp;rsquo;t watch much. And yes, I&amp;rsquo;ve watched &lt;em&gt;Interstellar&lt;/em&gt; and &lt;em&gt;Breaking Bad&lt;/em&gt;. Bollywood and some more Japanese stuff to come.&lt;/p&gt;</description>
 			</item>
 	</channel>
 </rss>

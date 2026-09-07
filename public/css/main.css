@@ -258,3 +258,73 @@ th, td { border-bottom: 1px solid var(--faint); padding: 0.5rem 0.75rem 0.5rem 0
   main { padding-top: 2rem; }
   .rows > div { grid-template-columns: 1fr; gap: 0; }
 }
+
+/* Things I like */
+
+.media-list { list-style: none; padding: 0; margin: 0; }
+
+.media-item {
+  display: grid;
+  grid-template-columns: 5.75rem 1fr;
+  gap: 1.1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--faint);
+}
+
+.media-item:last-child { border-bottom: 0; }
+
+.media-item .poster {
+  width: 5.75rem;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 3px;
+  border: 1px solid var(--faint);
+  background: var(--code-bg);
+}
+
+.media-body { min-width: 0; align-self: center; }
+
+.media-title { font-weight: 600; font-size: 1rem; margin-bottom: 0.2rem; }
+
+.media-note {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.media-outro {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--faint);
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+.media-outro p { margin-bottom: 0.75rem; }
+
+/* Poster strip teaser on the homepage */
+
+.poster-strip {
+  display: flex;
+  gap: 0.6rem;
+  overflow-x: auto;
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.9rem;
+  scrollbar-width: thin;
+}
+
+.poster-strip img {
+  flex: 0 0 auto;
+  width: 5rem;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 3px;
+  border: 1px solid var(--faint);
+}
+
+@media (max-width: 34rem) {
+  .media-item { grid-template-columns: 4.5rem 1fr; gap: 0.9rem; }
+  .media-item .poster { width: 4.5rem; }
+}

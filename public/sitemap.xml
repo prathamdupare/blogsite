@@ -2,220 +2,222 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://blog.heypratham.in/</loc>
     <lastmod>2024-12-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/productivity/</loc>
+    <loc>https://blog.heypratham.in/tags/productivity/</loc>
     <lastmod>2024-12-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://blog.heypratham.in/tags/</loc>
     <lastmod>2024-12-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/terminal/</loc>
+    <loc>https://blog.heypratham.in/tags/terminal/</loc>
     <lastmod>2024-12-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/top-10-vim-tricks/</loc>
+    <loc>https://blog.heypratham.in/write/top-10-vim-tricks/</loc>
     <lastmod>2024-12-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/vim/</loc>
+    <loc>https://blog.heypratham.in/tags/vim/</loc>
     <lastmod>2024-12-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/</loc>
+    <loc>https://blog.heypratham.in/write/</loc>
     <lastmod>2024-12-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/docs/</loc>
+    <loc>https://blog.heypratham.in/tags/docs/</loc>
     <lastmod>2024-11-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/one-screen/</loc>
+    <loc>https://blog.heypratham.in/write/one-screen/</loc>
     <lastmod>2024-11-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/series/</loc>
+    <loc>https://blog.heypratham.in/tags/series/</loc>
     <lastmod>2024-11-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/better-developer/</loc>
+    <loc>https://blog.heypratham.in/write/better-developer/</loc>
     <lastmod>2024-08-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/reading/</loc>
+    <loc>https://blog.heypratham.in/tags/reading/</loc>
     <lastmod>2024-08-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/android/</loc>
+    <loc>https://blog.heypratham.in/tags/android/</loc>
     <lastmod>2024-07-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/expansion/</loc>
+    <loc>https://blog.heypratham.in/write/expansion/</loc>
     <lastmod>2024-07-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/rules/</loc>
+    <loc>https://blog.heypratham.in/rules/</loc>
     <lastmod>2024-07-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/lua-startguide/</loc>
+    <loc>https://blog.heypratham.in/write/lua-startguide/</loc>
     <lastmod>2024-04-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/lua/</loc>
+    <loc>https://blog.heypratham.in/tags/lua/</loc>
     <lastmod>2024-04-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/neovim-obsidian/</loc>
+    <loc>https://blog.heypratham.in/write/neovim-obsidian/</loc>
     <lastmod>2024-04-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/neovim-notes/</loc>
+    <loc>https://blog.heypratham.in/tags/neovim-notes/</loc>
     <lastmod>2024-04-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/nextjs-guide-4/</loc>
+    <loc>https://blog.heypratham.in/write/nextjs-guide-4/</loc>
     <lastmod>2024-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/nextjs/</loc>
+    <loc>https://blog.heypratham.in/tags/nextjs/</loc>
     <lastmod>2024-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/web-development/</loc>
+    <loc>https://blog.heypratham.in/tags/web-development/</loc>
     <lastmod>2024-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/nextjs-guide-3/</loc>
+    <loc>https://blog.heypratham.in/write/nextjs-guide-3/</loc>
     <lastmod>2024-03-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/series/</loc>
+    <loc>https://blog.heypratham.in/write/series/</loc>
     <lastmod>2024-03-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/nextjs-guide-1/</loc>
+    <loc>https://blog.heypratham.in/write/nextjs-guide-1/</loc>
     <lastmod>2024-03-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/html/</loc>
+    <loc>https://blog.heypratham.in/tags/html/</loc>
     <lastmod>2024-03-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/nextauth/</loc>
+    <loc>https://blog.heypratham.in/write/nextauth/</loc>
     <lastmod>2024-03-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/hugo-guide/</loc>
+    <loc>https://blog.heypratham.in/write/hugo-guide/</loc>
     <lastmod>2024-02-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/website/</loc>
+    <loc>https://blog.heypratham.in/tags/website/</loc>
     <lastmod>2024-02-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/calisthenics2024/</loc>
+    <loc>https://blog.heypratham.in/write/calisthenics2024/</loc>
     <lastmod>2024-01-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/floorp/</loc>
+    <loc>https://blog.heypratham.in/write/floorp/</loc>
     <lastmod>2024-01-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/learning-nodejs/</loc>
+    <loc>https://blog.heypratham.in/write/learning-nodejs/</loc>
     <lastmod>2024-01-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/updates/</loc>
+    <loc>https://blog.heypratham.in/tags/updates/</loc>
     <lastmod>2024-01-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/distraction-free-internet/</loc>
+    <loc>https://blog.heypratham.in/write/distraction-free-internet/</loc>
     <lastmod>2023-11-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/linux/</loc>
+    <loc>https://blog.heypratham.in/tags/linux/</loc>
     <lastmod>2023-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/youtube-local/</loc>
+    <loc>https://blog.heypratham.in/write/youtube-local/</loc>
     <lastmod>2023-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/simple-apps/</loc>
+    <loc>https://blog.heypratham.in/write/simple-apps/</loc>
     <lastmod>2023-02-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/tgpt/</loc>
+    <loc>https://blog.heypratham.in/write/tgpt/</loc>
     <lastmod>2023-02-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/consume-web-in-a-better-way/</loc>
+    <loc>https://blog.heypratham.in/write/consume-web-in-a-better-way/</loc>
     <lastmod>2023-02-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/learninglog/</loc>
+    <loc>https://blog.heypratham.in/learninglog/</loc>
     <lastmod>2023-01-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/perfect-phone/</loc>
+    <loc>https://blog.heypratham.in/write/perfect-phone/</loc>
     <lastmod>2023-01-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/best-manga-reader/</loc>
+    <loc>https://blog.heypratham.in/write/best-manga-reader/</loc>
     <lastmod>2022-09-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/ubuntu-lid/</loc>
+    <loc>https://blog.heypratham.in/write/ubuntu-lid/</loc>
     <lastmod>2022-09-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/gaming-on-linux/</loc>
+    <loc>https://blog.heypratham.in/write/gaming-on-linux/</loc>
     <lastmod>2022-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/planner-linux/</loc>
+    <loc>https://blog.heypratham.in/write/planner-linux/</loc>
     <lastmod>2022-08-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/mobile-screen-usage/</loc>
+    <loc>https://blog.heypratham.in/write/mobile-screen-usage/</loc>
     <lastmod>2022-08-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/privacy/</loc>
+    <loc>https://blog.heypratham.in/tags/privacy/</loc>
     <lastmod>2022-08-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/security/</loc>
+    <loc>https://blog.heypratham.in/tags/security/</loc>
     <lastmod>2022-08-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/tools_privacy/</loc>
+    <loc>https://blog.heypratham.in/write/tools_privacy/</loc>
     <lastmod>2022-08-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/social-media/</loc>
+    <loc>https://blog.heypratham.in/tags/social-media/</loc>
     <lastmod>2022-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/social-media-addiction/</loc>
+    <loc>https://blog.heypratham.in/write/social-media-addiction/</loc>
     <lastmod>2022-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/gnome/</loc>
+    <loc>https://blog.heypratham.in/tags/gnome/</loc>
     <lastmod>2022-08-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/gnome-aug-5-2022/</loc>
+    <loc>https://blog.heypratham.in/write/gnome-aug-5-2022/</loc>
     <lastmod>2022-08-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/customization/</loc>
+    <loc>https://blog.heypratham.in/tags/customization/</loc>
     <lastmod>2022-08-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/material-you-gnome/</loc>
+    <loc>https://blog.heypratham.in/write/material-you-gnome/</loc>
     <lastmod>2022-08-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/how-to-switch-to-linux/</loc>
+    <loc>https://blog.heypratham.in/write/how-to-switch-to-linux/</loc>
     <lastmod>2022-08-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/android-13/</loc>
+    <loc>https://blog.heypratham.in/write/android-13/</loc>
     <lastmod>2022-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/android-132/</loc>
+    <loc>https://blog.heypratham.in/write/android-132/</loc>
     <lastmod>2022-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/linux-6.0/</loc>
+    <loc>https://blog.heypratham.in/write/linux-6.0/</loc>
     <lastmod>2022-08-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/wine-7.14/</loc>
+    <loc>https://blog.heypratham.in/write/wine-7.14/</loc>
     <lastmod>2022-08-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/chrome-os-flex/</loc>
+    <loc>https://blog.heypratham.in/write/chrome-os-flex/</loc>
     <lastmod>2022-07-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/alternative/</loc>
+    <loc>https://blog.heypratham.in/alternative/</loc>
     <lastmod>2022-07-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/vulcan_beta_drivers/</loc>
+    <loc>https://blog.heypratham.in/write/vulcan_beta_drivers/</loc>
     <lastmod>2022-07-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/open-source/</loc>
+    <loc>https://blog.heypratham.in/tags/open-source/</loc>
     <lastmod>2022-07-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/reasons-to-use-foss/</loc>
+    <loc>https://blog.heypratham.in/write/reasons-to-use-foss/</loc>
     <lastmod>2022-07-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/you-should-switch-to-these-private-messangers/</loc>
+    <loc>https://blog.heypratham.in/write/you-should-switch-to-these-private-messangers/</loc>
     <lastmod>2021-07-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/productive-android-apps/</loc>
+    <loc>https://blog.heypratham.in/write/productive-android-apps/</loc>
     <lastmod>2021-07-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/open-source-browsers/</loc>
+    <loc>https://blog.heypratham.in/write/open-source-browsers/</loc>
     <lastmod>2021-07-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/addiction/</loc>
+    <loc>https://blog.heypratham.in/tags/addiction/</loc>
     <lastmod>2021-07-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/write/instagram-addiction/</loc>
+    <loc>https://blog.heypratham.in/write/instagram-addiction/</loc>
     <lastmod>2021-07-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/test/</loc>
+    <loc>https://blog.heypratham.in/test/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://blog.heypratham.in/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/me/</loc>
+    <loc>https://blog.heypratham.in/me/</loc>
+  </url><url>
+    <loc>https://blog.heypratham.in/media/</loc>
   </url>
 </urlset>

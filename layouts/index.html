@@ -33,6 +33,24 @@
 </section>
 {{ end }}
 
+{{ with site.GetPage "/media" }}
+<section class="section">
+    <div class="section-head">
+        <h2>Things I like</h2>
+        <a href="{{ .RelPermalink }}">the whole list →</a>
+    </div>
+    {{ $all := slice }}
+    {{ range (default slice .Params.books) }}{{ $all = $all | append . }}{{ end }}
+    {{ range (default slice .Params.movies) }}{{ $all = $all | append . }}{{ end }}
+    {{ range (default slice .Params.shows) }}{{ $all = $all | append . }}{{ end }}
+    {{ $picks := first 9 $all }}
+    <div class="poster-strip">
+        {{ range $picks }}{{ with .poster }}<img src="{{ . | relURL }}" alt="" loading="lazy">{{ end }}{{ end }}
+    </div>
+    <p class="desc">The movies, shows and books I keep coming back to, each with a line on what I thought of it.</p>
+</section>
+{{ end }}
+
 {{ with .Params.experience }}
 <section class="section">
     <h2>Experience</h2>

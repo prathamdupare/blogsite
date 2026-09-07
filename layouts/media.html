@@ -1,0 +1,25 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ with .Params.intro }}<p class="lede">{{ . }}</p>{{ end }}
+
+{{ range $group := slice (dict "key" "books" "label" "Books" "items" .Params.books) (dict "key" "movies" "label" "Movies" "items" .Params.movies) (dict "key" "shows" "label" "Shows" "items" .Params.shows) }}
+{{ with $group.items }}
+<section class="section">
+    <h2>{{ $group.label }}</h2>
+    <ul class="media-list">
+        {{ range . }}
+        <li class="media-item">
+            {{ with .poster }}<img class="poster" src="{{ . | relURL }}" alt="" loading="lazy" width="92" height="138">{{ end }}
+            <div class="media-body">
+                <div class="media-title">{{ .title }}</div>
+                <p class="media-note">{{ .note }}</p>
+            </div>
+        </li>
+        {{ end }}
+    </ul>
+</section>
+{{ end }}
+{{ end }}
+
+{{ with .Content }}<div class="media-outro">{{ . }}</div>{{ end }}
+{{ end }}
