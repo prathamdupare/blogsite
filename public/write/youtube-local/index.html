@@ -1,126 +1,17 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Youtube Local · Pratham Dupare</title>
-<meta name="description" content="youtube-local is a browser-based client written in Python for watching Youtube anonymously">
-<link rel="stylesheet" href="/css/main.css">
-<link rel="icon" href="/favicon.svg">
-
-
-</head>
-<body>
-    <header class="site-header">
-    <div class="wrap">
-        <a class="site-name" href="/">Pratham Dupare</a>
-        <nav class="site-nav">
-            
-            <a href="/">home</a>
-            
-            <a href="/write/">writing</a>
-            
-            <a href="/media/">likes</a>
-            
-            <a href="/me/">about</a>
-            
-        </nav>
-    </div>
-</header>
-
-    <main>
-        <div class="wrap">
-            
-<article>
-    <header class="post-header">
-        <h1>Youtube Local</h1>
-        <div class="meta">April 4, 2023 · 3 min read</div>
-    </header>
-
-    <p>If you are searching for a youtube frontent that is bloat-free and follows the principle of doing the basic thing and doing it the best then youtube-local is the best option.</p>
-<p>I will tell you what is yt-local and how I set it up.</p>
-<h2 id="what-is-yt-local">What is yt-local?</h2>
-<p>youtube-local is a browser-based client written in Python for watching Youtube anonymously and without the lag of the slow page used by Youtube. One of the primary features is that all requests are routed through Tor, except for the video file at googlevideo.com. This is analogous to what HookTube (defunct) and Invidious do, except that you do not have to trust a third-party to respect your privacy. The assumption here is that Google won&rsquo;t put the effort in to incorporate the video file requests into their tracking, as it&rsquo;s not worth pursuing the incredibly small number of users who care about privacy (Tor video routing is also provided as an option). Tor has high latency, so this will not be as fast network-wise as regular Youtube. However, using Tor is optional; when not routing through Tor, video pages may load faster than they do with Youtube&rsquo;s page depending on your browser.</p>
-<p>This is litrally what&rsquo;s written on its github page.</p>
-<h2 id="features">Features</h2>
-<ul>
-<li>Standard pages of Youtube: search, channels, playlists</li>
-<li>Anonymity from Google&rsquo;s tracking by routing requests through Tor</li>
-<li>Local playlists: These solve the two problems with creating playlists on Youtube: (1) they&rsquo;re datamined and (2) videos frequently get deleted by Youtube and lost from the playlist, making it very difficult to find a reupload as the title of the deleted video is not displayed.</li>
-<li>Themes: Light, Gray, and Dark</li>
-<li>Subtitles</li>
-<li>Easily download videos or their audio</li>
-<li>No ads</li>
-<li>View comments</li>
-<li>Javascript not required</li>
-<li>Theater and non-theater mode</li>
-<li>Subscriptions that are independent from Youtube
-<ul>
-<li>Can import subscriptions from Youtube</li>
-<li>Works by checking channels individually</li>
-<li>Can be set to automatically check channels.</li>
-<li>For efficiency of requests, frequency of checking is based on how quickly channel posts videos</li>
-<li>Can mute channels, so as to have a way to &ldquo;soft&rdquo; unsubscribe. Muted channels won&rsquo;t be checked automatically or when using the &ldquo;Check all&rdquo; button. Videos from these channels will be hidden.</li>
-<li>Can tag subscriptions to organize them or check specific tags</li>
-</ul>
-</li>
-<li>Fast page
-<ul>
-<li>No distracting/slow layout rearrangement</li>
-<li>No lazy-loading of comments; they are ready instantly.</li>
-</ul>
-</li>
-<li>Settings allow fine-tuned control over when/how comments or related videos are shown:
-<ol>
-<li>Shown by default, with click to hide</li>
-<li>Hidden by default, with click to show</li>
-<li>Never shown</li>
-</ol>
-</li>
-<li>Optionally skip sponsored segments using <a href="https://github.com/ajayyy/SponsorBlock">SponsorBlock</a>&rsquo;s API</li>
-<li>Custom video speeds</li>
-<li>Video transcript</li>
-<li>Supports all available video qualities: 144p through 2160p</li>
-</ul>
-<h2 id="my-setup">My Setup</h2>
-<p>First, I made a folder in my $HOME directory(I use Arch btw!) and cloned the Git-Hub repo into it.</p>
-<p>cd into that folder and you just have to run the <strong>server.py</strong> file in the terminal and it will start the server at <strong>http://localhost:(something)</strong>. In my case its  <strong>http://localhost:8080</strong>.</p>
-<p>When you visit the server, you will get a simple minimal GUI. But you don&rsquo;t want to run <strong>server.py</strong> everytime you start your computer.</p>
-<p>I made a simple bash script:</p>
-<pre tabindex="0"><code>#!/bin/bash
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Youtube Local · Pratham Dupare</title><meta name=description content="youtube-local is a browser-based client written in Python for watching Youtube anonymously"><link rel=stylesheet href=/css/main.css><link rel=icon href=/favicon.svg></head><body><header class=site-header><div class=wrap><a class=site-name href=/>Pratham Dupare</a><nav class=site-nav><a href=/>home</a>
+<a href=/write/>writing</a>
+<a href=/media/>likes</a>
+<a href=/me/>about</a></nav></div></header><main><div class=wrap><article><header class=post-header><h1>Youtube Local</h1><div class=meta>April 4, 2023 · 3 min read</div></header><p>If you are searching for a youtube frontent that is bloat-free and follows the principle of doing the basic thing and doing it the best then youtube-local is the best option.</p><p>I will tell you what is yt-local and how I set it up.</p><h2 id=what-is-yt-local>What is yt-local?</h2><p>youtube-local is a browser-based client written in Python for watching Youtube anonymously and without the lag of the slow page used by Youtube. One of the primary features is that all requests are routed through Tor, except for the video file at googlevideo.com. This is analogous to what HookTube (defunct) and Invidious do, except that you do not have to trust a third-party to respect your privacy. The assumption here is that Google won&rsquo;t put the effort in to incorporate the video file requests into their tracking, as it&rsquo;s not worth pursuing the incredibly small number of users who care about privacy (Tor video routing is also provided as an option). Tor has high latency, so this will not be as fast network-wise as regular Youtube. However, using Tor is optional; when not routing through Tor, video pages may load faster than they do with Youtube&rsquo;s page depending on your browser.</p><p>This is litrally what&rsquo;s written on its github page.</p><h2 id=features>Features</h2><ul><li>Standard pages of Youtube: search, channels, playlists</li><li>Anonymity from Google&rsquo;s tracking by routing requests through Tor</li><li>Local playlists: These solve the two problems with creating playlists on Youtube: (1) they&rsquo;re datamined and (2) videos frequently get deleted by Youtube and lost from the playlist, making it very difficult to find a reupload as the title of the deleted video is not displayed.</li><li>Themes: Light, Gray, and Dark</li><li>Subtitles</li><li>Easily download videos or their audio</li><li>No ads</li><li>View comments</li><li>Javascript not required</li><li>Theater and non-theater mode</li><li>Subscriptions that are independent from Youtube<ul><li>Can import subscriptions from Youtube</li><li>Works by checking channels individually</li><li>Can be set to automatically check channels.</li><li>For efficiency of requests, frequency of checking is based on how quickly channel posts videos</li><li>Can mute channels, so as to have a way to &ldquo;soft&rdquo; unsubscribe. Muted channels won&rsquo;t be checked automatically or when using the &ldquo;Check all&rdquo; button. Videos from these channels will be hidden.</li><li>Can tag subscriptions to organize them or check specific tags</li></ul></li><li>Fast page<ul><li>No distracting/slow layout rearrangement</li><li>No lazy-loading of comments; they are ready instantly.</li></ul></li><li>Settings allow fine-tuned control over when/how comments or related videos are shown:<ol><li>Shown by default, with click to hide</li><li>Hidden by default, with click to show</li><li>Never shown</li></ol></li><li>Optionally skip sponsored segments using <a href=https://github.com/ajayyy/SponsorBlock>SponsorBlock</a>&rsquo;s API</li><li>Custom video speeds</li><li>Video transcript</li><li>Supports all available video qualities: 144p through 2160p</li></ul><h2 id=my-setup>My Setup</h2><p>First, I made a folder in my $HOME directory(I use Arch btw!) and cloned the Git-Hub repo into it.</p><p>cd into that folder and you just have to run the <strong>server.py</strong> file in the terminal and it will start the server at <strong>http://localhost:(something)</strong>. In my case its <strong>http://localhost:8080</strong>.</p><p>When you visit the server, you will get a simple minimal GUI. But you don&rsquo;t want to run <strong>server.py</strong> everytime you start your computer.</p><p>I made a simple bash script:</p><pre tabindex=0><code>#!/bin/bash
 cd /home/pratham/yt-local/
 python3 server.py
 </code></pre><p>I use Hyprland so I saved it as ytlocal in hyprland&rsquo;s scripts folder.
-If you are using some desktop enviornment, add the command in your startup from settings.</p>
-<p>And then added few lines to my startup file.</p>
-<pre tabindex="0"><code>#!/bin/bash
+If you are using some desktop enviornment, add the command in your startup from settings.</p><p>And then added few lines to my startup file.</p><pre tabindex=0><code>#!/bin/bash
 
 SCRIPTSDIR=$HOME/.config/hypr/scripts
 
 # Launch yt-local
 ${SCRIPTSDIR}/ytlocal &amp;
-</code></pre><p>Now whenever you start your PC the script will run automatically in the background. You just have to visit localhost.</p>
-<p>You can also redirect your site whenever you search youtube.com to localhost by using extensions like Redirector.</p>
-<p>Enjoy you privacy and minimalism!</p>
-
-
-    
-    <div class="tags">
-        <a href="/tags/linux/">#Linux</a> 
-    </div>
-    
-</article>
-
-        </div>
-    </main>
-    <footer class="site-footer">
-    <div class="wrap">
-        <span>© 2026 Pratham Dupare</span>
-        <a href="https://github.com/prathamdupare">github</a>
-        <a href="https://x.com/prathammdupare">x</a>
-        <a href="/index.xml">rss</a>
-    </div>
-</footer>
-
-</body>
-</html>
+</code></pre><p>Now whenever you start your PC the script will run automatically in the background. You just have to visit localhost.</p><p>You can also redirect your site whenever you search youtube.com to localhost by using extensions like Redirector.</p><p>Enjoy you privacy and minimalism!</p><div class=tags><a href=/tags/linux/>#Linux</a></div></article></div></main><footer class=site-footer><div class=wrap><span>© 2026 Pratham Dupare</span>
+<a href=https://github.com/prathamdupare>github</a>
+<a href=https://x.com/prathammdupare>x</a>
+<a href=/index.xml>rss</a></div></footer></body></html>

@@ -1,397 +1,265 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Beginner&#39;s Guide to Lua · Pratham Dupare</title>
-<meta name="description" content="Lua - Beginners Guide I recently started learning Lua and I found it to be a very interesting language. It is a very lightweight language and is used in many applications. It is …">
-<link rel="stylesheet" href="/css/main.css">
-<link rel="icon" href="/favicon.svg">
-
-
-</head>
-<body>
-    <header class="site-header">
-    <div class="wrap">
-        <a class="site-name" href="/">Pratham Dupare</a>
-        <nav class="site-nav">
-            
-            <a href="/">home</a>
-            
-            <a href="/write/">writing</a>
-            
-            <a href="/media/">likes</a>
-            
-            <a href="/me/">about</a>
-            
-        </nav>
-    </div>
-</header>
-
-    <main>
-        <div class="wrap">
-            
-<article>
-    <header class="post-header">
-        <h1>Beginner&#39;s Guide to Lua</h1>
-        <div class="meta">April 3, 2024 · 6 min read</div>
-    </header>
-
-    <h1 id="lua---beginners-guide">Lua - Beginners Guide</h1>
-<p>I recently started learning Lua and I found it to be a very interesting language. It is a very lightweight language and is used in many applications. It is also used in many games as a scripting language.</p>
-<p>This is a beginners guide to Lua.</p>
-<h2 id="printing">Printing</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>print<span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;Hello World&#34;</span><span style="color:#1f2328">)</span>
-</span></span></code></pre></div><h2 id="comments">Comments</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#57606a">--this is a comment</span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;hello&#34;</span><span style="color:#1f2328">)</span> <span style="color:#57606a">--this is another comment</span>
-</span></span><span style="display:flex;"><span><span style="color:#57606a">-- the next line will not do anything because it is commented out</span>
-</span></span><span style="display:flex;"><span><span style="color:#57606a">--print(&#34;world&#34;)</span>
-</span></span></code></pre></div><h2 id="variables">Variables</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#57606a">-- Different types</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> x <span style="color:#0550ae">=</span> <span style="color:#0550ae">10</span> <span style="color:#57606a">--number</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> name <span style="color:#0550ae">=</span> <span style="color:#0a3069">&#34;john doe&#34;</span> <span style="color:#57606a">--string</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> isAlive <span style="color:#0550ae">=</span> <span style="color:#cf222e">false</span> <span style="color:#57606a">-- boolean</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> a <span style="color:#0550ae">=</span> <span style="color:#cf222e">nil</span> <span style="color:#57606a">--no value or invalid value</span>
-</span></span></code></pre></div><p><strong>Numbers</strong></p>
-<p>operators</p>
-<ul>
-<li>+ addition</li>
-<li>- minus</li>
-<li>* multiply</li>
-<li>/ divide</li>
-<li>^ power</li>
-<li>% modulus</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#57606a">-- examples</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> a <span style="color:#0550ae">=</span> <span style="color:#0550ae">1</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> b <span style="color:#0550ae">=</span> <span style="color:#0550ae">2</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> c <span style="color:#0550ae">=</span> a <span style="color:#0550ae">+</span> b
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>c<span style="color:#1f2328">)</span> <span style="color:#57606a">-- 3</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> d <span style="color:#0550ae">=</span> b <span style="color:#0550ae">-</span> a
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>d<span style="color:#1f2328">)</span> <span style="color:#57606a">-- 1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> x <span style="color:#0550ae">=</span>  <span style="color:#0550ae">1</span> <span style="color:#0550ae">*</span> <span style="color:#0550ae">3</span> <span style="color:#0550ae">*</span> <span style="color:#0550ae">4</span> <span style="color:#57606a">-- 12</span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>x<span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> y <span style="color:#0550ae">=</span> <span style="color:#1f2328">(</span><span style="color:#0550ae">1</span><span style="color:#0550ae">+</span><span style="color:#0550ae">3</span><span style="color:#1f2328">)</span> <span style="color:#0550ae">*</span> <span style="color:#0550ae">2</span> <span style="color:#57606a">-- 8</span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>y<span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span><span style="color:#0550ae">10</span><span style="color:#0550ae">/</span><span style="color:#0550ae">2</span><span style="color:#1f2328">)</span> <span style="color:#57606a">-- 5</span>
-</span></span><span style="display:flex;"><span>print <span style="color:#1f2328">(</span><span style="color:#0550ae">2</span><span style="color:#0550ae">^</span><span style="color:#0550ae">2</span><span style="color:#1f2328">)</span> <span style="color:#57606a">-- 4</span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span><span style="color:#0550ae">5</span><span style="color:#0550ae">%</span><span style="color:#0550ae">2</span><span style="color:#1f2328">)</span> <span style="color:#57606a">-- 1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span><span style="color:#0550ae">-</span>b<span style="color:#1f2328">)</span> <span style="color:#57606a">-- -2</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#57606a">-- increment</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> level <span style="color:#0550ae">=</span> <span style="color:#0550ae">1</span>
-</span></span><span style="display:flex;"><span>level <span style="color:#0550ae">=</span> level <span style="color:#0550ae">+</span> <span style="color:#0550ae">1</span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>level<span style="color:#1f2328">)</span> <span style="color:#57606a">-- 2</span>
-</span></span></code></pre></div><p><strong>Strings</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#57606a">-- concatenate strings</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> phrase <span style="color:#0550ae">=</span> <span style="color:#0a3069">&#34;My name is &#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> name <span style="color:#0550ae">=</span> <span style="color:#0a3069">&#34;John Doe&#34;</span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>phase <span style="color:#0550ae">..</span> name<span style="color:#1f2328">)</span> <span style="color:#57606a">--My name is John Doe</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#57606a">-- strings and numbers</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> age <span style="color:#0550ae">=</span> <span style="color:#0550ae">12</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> name <span style="color:#0550ae">=</span> <span style="color:#0a3069">&#34;Billy&#34;</span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>name <span style="color:#0550ae">..</span> <span style="color:#0a3069">&#34; is &#34;</span> <span style="color:#0550ae">..</span> age <span style="color:#0550ae">..</span> <span style="color:#0a3069">&#34; years old&#34;</span><span style="color:#1f2328">)</span>
-</span></span></code></pre></div><p><strong>Boolean</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#cf222e">local</span> isAlive <span style="color:#0550ae">=</span> <span style="color:#cf222e">true</span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>isAlive<span style="color:#1f2328">)</span> <span style="color:#57606a">--true</span>
-</span></span><span style="display:flex;"><span>isAlive <span style="color:#0550ae">=</span> <span style="color:#cf222e">false</span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>isAlive<span style="color:#1f2328">)</span> <span style="color:#57606a">--false</span>
-</span></span></code></pre></div><h2 id="conditional-statements">Conditional Statements</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#57606a">--number comparisions</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> age <span style="color:#0550ae">=</span> <span style="color:#0550ae">10</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">if</span> age <span style="color:#0550ae">&lt;</span> <span style="color:#0550ae">18</span> <span style="color:#cf222e">then</span>
-</span></span><span style="display:flex;"><span>  print<span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;over 18&#34;</span><span style="color:#1f2328">)</span> <span style="color:#57606a">--this will not be executed</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#57606a">--elseif and else</span>
-</span></span><span style="display:flex;"><span>age <span style="color:#0550ae">=</span> <span style="color:#0550ae">20</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">if</span> age <span style="color:#0550ae">&gt;</span> <span style="color:#0550ae">18</span> <span style="color:#cf222e">then</span>
-</span></span><span style="display:flex;"><span>  print<span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;dog&#34;</span><span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">elseif</span> age <span style="color:#0550ae">==</span> <span style="color:#0550ae">18</span> <span style="color:#cf222e">then</span>
-</span></span><span style="display:flex;"><span>  print<span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;cat&#34;</span><span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">else</span>
-</span></span><span style="display:flex;"><span>  print<span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;mouse&#34;</span><span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">end</span>
-</span></span></code></pre></div><p><strong>Comparison Operators</strong></p>
-<ul>
-<li>== equality</li>
-<li>&lt; less than</li>
-<li>&gt; greater than</li>
-<li>&lt;= less than or equal to</li>
-<li>&gt;= greater than or equal to</li>
-<li>~= inequality</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#57606a">--boolean comparision</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> isAlive <span style="color:#0550ae">=</span> <span style="color:#cf222e">true</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">if</span> isAlive <span style="color:#cf222e">then</span>
-</span></span><span style="display:flex;"><span>    print<span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;dog&#34;</span><span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#57606a">--string comparisions</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> name <span style="color:#0550ae">=</span> <span style="color:#0a3069">&#34;billy&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">if</span> name <span style="color:#0550ae">==</span> <span style="color:#0a3069">&#34;Billy&#34;</span> <span style="color:#cf222e">then</span> <span style="color:#57606a">--false</span>
-</span></span><span style="display:flex;"><span>  print<span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;Billy&#34;</span><span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">elseif</span> name <span style="color:#0550ae">==</span> <span style="color:#0a3069">&#34;billy&#34;</span> <span style="color:#cf222e">then</span> <span style="color:#57606a">--true</span>
-</span></span><span style="display:flex;"><span>  print<span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;billy&#34;</span><span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">end</span>
-</span></span></code></pre></div><p><strong>Combining Statements</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#cf222e">local</span> x <span style="color:#0550ae">=</span> <span style="color:#0550ae">10</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">if</span> x <span style="color:#0550ae">==</span> <span style="color:#0550ae">10</span> <span style="color:#0550ae">and</span> x <span style="color:#0550ae">&lt;</span> <span style="color:#0550ae">0</span> <span style="color:#cf222e">then</span> <span style="color:#57606a">--both are true</span>
-</span></span><span style="display:flex;"><span>  print<span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;dog&#34;</span><span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">elseif</span> x <span style="color:#0550ae">==</span> <span style="color:#0550ae">100</span> <span style="color:#0550ae">or</span> x <span style="color:#0550ae">&lt;</span> <span style="color:#0550ae">0</span> <span style="color:#cf222e">then</span> <span style="color:#57606a">--1 or more are true</span>
-</span></span><span style="display:flex;"><span>  print<span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;cat&#34;</span><span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#57606a">--result: cat</span>
-</span></span></code></pre></div><p><strong>Nested statements</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#cf222e">local</span> x <span style="color:#0550ae">=</span> <span style="color:#0550ae">10</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> isAlive <span style="color:#0550ae">=</span> <span style="color:#cf222e">true</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">if</span> x<span style="color:#0550ae">==</span><span style="color:#0550ae">10</span> <span style="color:#cf222e">then</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">if</span> isAlive <span style="color:#0550ae">==</span> <span style="color:#cf222e">true</span> <span style="color:#cf222e">then</span>
-</span></span><span style="display:flex;"><span>    print<span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;dog&#34;</span><span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">else</span>
-</span></span><span style="display:flex;"><span>    print<span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;cat&#34;</span><span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">end</span>
-</span></span></code></pre></div><p><strong>Invert Value</strong></p>
-<p>you can also invert a value with the <strong>not</strong> keyword</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#cf222e">local</span> x <span style="color:#0550ae">=</span> <span style="color:#0550ae">10</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">if</span> <span style="color:#0550ae">not</span> x <span style="color:#0550ae">==</span> <span style="color:#0550ae">10</span> <span style="color:#cf222e">then</span>
-</span></span><span style="display:flex;"><span>  print<span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;here&#34;</span><span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">end</span>
-</span></span></code></pre></div><h2 id="functions">Functions</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#cf222e">function</span> <span style="color:#6639ba">printTax</span><span style="color:#1f2328">(</span>price<span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">local</span> tax <span style="color:#0550ae">=</span> price <span style="color:#0550ae">*</span> <span style="color:#0550ae">0.21</span>
-</span></span><span style="display:flex;"><span>  print<span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;tax:&#34;</span> <span style="color:#0550ae">..</span> tax<span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>printTax<span style="color:#1f2328">(</span><span style="color:#0550ae">200</span><span style="color:#1f2328">)</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#57606a">--function that returns a value</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">function</span> <span style="color:#6639ba">calculateTax</span><span style="color:#1f2328">(</span>price<span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">return</span> price <span style="color:#0550ae">*</span> <span style="color:#0550ae">0.21</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> result <span style="color:#0550ae">=</span> calculateTax<span style="color:#1f2328">(</span><span style="color:#0550ae">100</span><span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>result<span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#57606a">--reusing the function but this time using variables</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> bread <span style="color:#0550ae">=</span> <span style="color:#0550ae">130</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> milk <span style="color:#0550ae">=</span> <span style="color:#0550ae">110</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> breadTax <span style="color:#0550ae">=</span> calculateTax<span style="color:#1f2328">(</span>bread<span style="color:#1f2328">)</span> <span style="color:#57606a">--27.3</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> milkTax <span style="color:#0550ae">=</span> calculateTax<span style="color:#1f2328">(</span>milk<span style="color:#1f2328">)</span> <span style="color:#57606a">--23.1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;Bread Tax = &#34;</span> <span style="color:#0550ae">..</span> breadTax<span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;Milk Tax = &#34;</span> <span style="color:#0550ae">..</span> milkTax<span style="color:#1f2328">)</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#57606a">--multiple parameters</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">function</span> <span style="color:#6639ba">displayInfo</span><span style="color:#1f2328">(</span>name<span style="color:#1f2328">,</span> age<span style="color:#1f2328">,</span> country<span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span>  print<span style="color:#1f2328">(</span>name <span style="color:#0550ae">..</span> <span style="color:#0a3069">&#34; is &#34;</span> <span style="color:#0550ae">..</span> age <span style="color:#0550ae">..</span> <span style="color:#0a3069">&#34; years old and is from &#34;</span> <span style="color:#0550ae">..</span> country<span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>displayInfo<span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;Billy&#34;</span><span style="color:#1f2328">,</span> <span style="color:#0550ae">12</span><span style="color:#1f2328">,</span> <span style="color:#0a3069">&#34;Jupiter&#34;</span><span style="color:#1f2328">)</span>
-</span></span></code></pre></div><h2 id="scope">Scope</h2>
-<p>Variables have different scopes. Once the end of the scope is reached the values in that scope are no longer accessable</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#cf222e">function</span> <span style="color:#6639ba">foo</span><span style="color:#1f2328">()</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">local</span> a <span style="color:#0550ae">=</span> <span style="color:#0550ae">10</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>a<span style="color:#1f2328">)</span> <span style="color:#57606a">--nil</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#cf222e">local</span> isAlive <span style="color:#0550ae">=</span> <span style="color:#cf222e">true</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">if</span> isAlive <span style="color:#cf222e">then</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">local</span> a <span style="color:#0550ae">=</span> <span style="color:#0550ae">10</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>a<span style="color:#1f2328">)</span> <span style="color:#57606a">--nil</span>
-</span></span></code></pre></div><p><strong>Global Variable</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#cf222e">local</span> _G.myValue <span style="color:#0550ae">=</span> <span style="color:#0550ae">69</span>
-</span></span><span style="display:flex;"><span><span style="color:#57606a">--doing this can sometimes be bad practice</span>
-</span></span></code></pre></div><h2 id="loops">Loops</h2>
-<p>There is a few different ways you can do a loop in lua</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#57606a">--while loop</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> i <span style="color:#0550ae">=</span> <span style="color:#0550ae">0</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> count <span style="color:#0550ae">=</span> <span style="color:#0550ae">0</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">while</span> i <span style="color:#0550ae">&lt;=</span> <span style="color:#0550ae">10</span> <span style="color:#cf222e">do</span>
-</span></span><span style="display:flex;"><span>  count <span style="color:#0550ae">=</span> count <span style="color:#0550ae">+</span> <span style="color:#0550ae">1</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;count is &#34;</span> <span style="color:#0550ae">..</span> count<span style="color:#1f2328">)</span> <span style="color:#57606a">--count is 7</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#57606a">--for loop</span>
-</span></span><span style="display:flex;"><span>count <span style="color:#0550ae">=</span> <span style="color:#0550ae">0</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">for</span> i<span style="color:#0550ae">=</span><span style="color:#0550ae">1</span><span style="color:#1f2328">,</span> <span style="color:#0550ae">5</span> <span style="color:#cf222e">do</span>
-</span></span><span style="display:flex;"><span>  count <span style="color:#0550ae">=</span> count <span style="color:#0550ae">+</span> <span style="color:#0550ae">1</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">end</span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;count is &#34;</span> <span style="color:#0550ae">..</span> count<span style="color:#1f2328">)</span>
-</span></span></code></pre></div><p><strong>Infinite Loops</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#57606a">--infinite loop will never end</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> i <span style="color:#0550ae">=</span> <span style="color:#0550ae">0</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">while</span> i <span style="color:#0550ae">&gt;=</span> <span style="color:#0550ae">0</span> <span style="color:#cf222e">do</span>
-</span></span><span style="display:flex;"><span> i <span style="color:#0550ae">=</span> i <span style="color:#0550ae">+</span> <span style="color:#0550ae">1</span>
-</span></span><span style="display:flex;"><span> print<span style="color:#1f2328">(</span>i<span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">end</span>
-</span></span></code></pre></div><p><strong>Nested Loops</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#cf222e">local</span> count <span style="color:#0550ae">=</span> <span style="color:#0550ae">0</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">for</span> a<span style="color:#0550ae">=</span><span style="color:#0550ae">1</span><span style="color:#1f2328">,</span> <span style="color:#0550ae">10</span> <span style="color:#cf222e">do</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">for</span> b<span style="color:#0550ae">=</span><span style="color:#0550ae">1</span><span style="color:#1f2328">,</span> <span style="color:#0550ae">10</span> <span style="color:#cf222e">do</span>
-</span></span><span style="display:flex;"><span>    count <span style="color:#0550ae">=</span> count <span style="color:#0550ae">+</span> <span style="color:#0550ae">1</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">end</span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>count<span style="color:#1f2328">)</span> <span style="color:#57606a">-- 100</span>
-</span></span></code></pre></div><h2 id="tables">Tables</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#57606a">--basic table</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> colors <span style="color:#0550ae">=</span> <span style="color:#1f2328">{</span> <span style="color:#0a3069">&#34;red&#34;</span><span style="color:#1f2328">,</span> <span style="color:#0a3069">&#34;green&#34;</span><span style="color:#1f2328">,</span> <span style="color:#0a3069">&#34;blue&#34;</span> <span style="color:#1f2328">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>colors<span style="color:#1f2328">[</span><span style="color:#0550ae">1</span><span style="color:#1f2328">])</span> <span style="color:#57606a">--red</span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>colors<span style="color:#1f2328">[</span><span style="color:#0550ae">2</span><span style="color:#1f2328">])</span> <span style="color:#57606a">--green</span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>colors<span style="color:#1f2328">[</span><span style="color:#0550ae">3</span><span style="color:#1f2328">])</span> <span style="color:#57606a">--blue</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#57606a">--using a loop to iterate though your table</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">for</span> i<span style="color:#0550ae">=</span><span style="color:#0550ae">1</span><span style="color:#1f2328">,</span> <span style="color:#0550ae">#</span>colors <span style="color:#cf222e">do</span>
-</span></span><span style="display:flex;"><span>  print<span style="color:#1f2328">(</span>colors<span style="color:#1f2328">[</span>i<span style="color:#1f2328">])</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">end</span>
-</span></span></code></pre></div><p><strong>Table Manipulation</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#57606a">--insert</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> colors <span style="color:#0550ae">=</span> <span style="color:#1f2328">{</span> <span style="color:#0a3069">&#34;red&#34;</span><span style="color:#1f2328">,</span> <span style="color:#0a3069">&#34;green&#34;</span><span style="color:#1f2328">,</span> <span style="color:#0a3069">&#34;blue&#34;</span> <span style="color:#1f2328">}</span>
-</span></span><span style="display:flex;"><span>table.insert<span style="color:#1f2328">(</span>colors<span style="color:#1f2328">,</span> <span style="color:#0a3069">&#34;orange&#34;</span><span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> index <span style="color:#0550ae">=</span> <span style="color:#0550ae">#</span>colors <span style="color:#57606a">--4 (this is the last index in the table)</span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>colors<span style="color:#1f2328">[</span>index<span style="color:#1f2328">])</span> <span style="color:#57606a">--orange</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#57606a">--insert at index</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> colors <span style="color:#0550ae">=</span> <span style="color:#1f2328">{</span> <span style="color:#0a3069">&#34;red&#34;</span><span style="color:#1f2328">,</span> <span style="color:#0a3069">&#34;green&#34;</span><span style="color:#1f2328">,</span> <span style="color:#0a3069">&#34;blue&#34;</span> <span style="color:#1f2328">}</span>
-</span></span><span style="display:flex;"><span>table.insert<span style="color:#1f2328">(</span>colors<span style="color:#1f2328">,</span> <span style="color:#0550ae">2</span><span style="color:#1f2328">,</span> <span style="color:#0a3069">&#34;pink&#34;</span><span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">for</span> i<span style="color:#0550ae">=</span><span style="color:#0550ae">1</span><span style="color:#1f2328">,</span> <span style="color:#0550ae">#</span>colors <span style="color:#cf222e">do</span>
-</span></span><span style="display:flex;"><span>  print<span style="color:#1f2328">(</span>colors<span style="color:#1f2328">[</span>i<span style="color:#1f2328">])</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#57606a">--red, pink, green, blue</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#57606a">--remove</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> colors <span style="color:#0550ae">=</span> <span style="color:#1f2328">{</span> <span style="color:#0a3069">&#34;red&#34;</span><span style="color:#1f2328">,</span> <span style="color:#0a3069">&#34;green&#34;</span><span style="color:#1f2328">,</span> <span style="color:#0a3069">&#34;blue&#34;</span> <span style="color:#1f2328">}</span>
-</span></span><span style="display:flex;"><span>table.remove<span style="color:#1f2328">(</span>colors<span style="color:#1f2328">,</span> <span style="color:#0550ae">1</span><span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">for</span> i<span style="color:#0550ae">=</span><span style="color:#0550ae">1</span><span style="color:#1f2328">,</span> <span style="color:#0550ae">#</span>colors <span style="color:#cf222e">do</span>
-</span></span><span style="display:flex;"><span>  print<span style="color:#1f2328">(</span>colors<span style="color:#1f2328">[</span>i<span style="color:#1f2328">])</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#57606a">-- &#34;green&#34;, &#34;blue&#34;</span>
-</span></span></code></pre></div><p><strong>2 Dimensional Table</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#57606a">--tables within tables</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> data <span style="color:#0550ae">=</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">{</span> <span style="color:#0a3069">&#34;billy&#34;</span><span style="color:#1f2328">,</span> <span style="color:#0550ae">12</span> <span style="color:#1f2328">},</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">{</span> <span style="color:#0a3069">&#34;john&#34;</span><span style="color:#1f2328">,</span> <span style="color:#0550ae">20</span> <span style="color:#1f2328">},</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">{</span> <span style="color:#0a3069">&#34;andy&#34;</span><span style="color:#1f2328">,</span> <span style="color:#0550ae">65</span> <span style="color:#1f2328">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">for</span> a<span style="color:#0550ae">=</span><span style="color:#0550ae">1</span><span style="color:#1f2328">,</span> <span style="color:#0550ae">#</span>data <span style="color:#cf222e">do</span>
-</span></span><span style="display:flex;"><span>  print<span style="color:#1f2328">(</span>data<span style="color:#1f2328">[</span>a<span style="color:#1f2328">][</span><span style="color:#0550ae">1</span><span style="color:#1f2328">]</span> <span style="color:#0550ae">..</span> <span style="color:#0a3069">&#34; is &#34;</span> <span style="color:#0550ae">..</span> data<span style="color:#1f2328">[</span>a<span style="color:#1f2328">][</span><span style="color:#0550ae">2</span><span style="color:#1f2328">]</span> <span style="color:#0550ae">..</span> <span style="color:#0a3069">&#34; years old&#34;</span><span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">end</span>
-</span></span></code></pre></div><p><strong>Key Tables</strong></p>
-<p>2 dimensional tables are not suited to data with different types, instead uses keys for tables</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#cf222e">local</span> teams <span style="color:#0550ae">=</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">[</span><span style="color:#0a3069">&#34;teamA&#34;</span><span style="color:#1f2328">]</span> <span style="color:#0550ae">=</span> <span style="color:#0550ae">12</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">[</span><span style="color:#0a3069">&#34;teamB&#34;</span><span style="color:#1f2328">]</span> <span style="color:#0550ae">=</span> <span style="color:#0550ae">15</span>
-</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>teams<span style="color:#1f2328">[</span><span style="color:#0a3069">&#34;teamA&#34;</span><span style="color:#1f2328">])</span> <span style="color:#57606a">-- 12</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">for</span> key<span style="color:#1f2328">,</span>value <span style="color:#cf222e">in</span> pairs<span style="color:#1f2328">(</span>teams<span style="color:#1f2328">)</span> <span style="color:#cf222e">do</span>
-</span></span><span style="display:flex;"><span>  print<span style="color:#1f2328">(</span>key <span style="color:#0550ae">..</span> <span style="color:#0a3069">&#34;:&#34;</span> <span style="color:#0550ae">..</span> value<span style="color:#1f2328">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">end</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#57606a">--insert into key table</span>
-</span></span><span style="display:flex;"><span>teams<span style="color:#1f2328">[</span><span style="color:#0a3069">&#34;teamC&#34;</span><span style="color:#1f2328">]</span> <span style="color:#0550ae">=</span> <span style="color:#0550ae">1</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#57606a">--remove key from table</span>
-</span></span><span style="display:flex;"><span>teams<span style="color:#1f2328">[</span><span style="color:#0a3069">&#34;teamA&#34;</span><span style="color:#1f2328">]</span> <span style="color:#0550ae">=</span> <span style="color:#cf222e">nil</span>
-</span></span></code></pre></div><p><strong>Returning a Table from a Function</strong></p>
-<p>This can be used to return multiple values from a functions</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#cf222e">function</span> <span style="color:#6639ba">getTeamScores</span><span style="color:#1f2328">()</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">local</span> scores <span style="color:#0550ae">=</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">[</span><span style="color:#0a3069">&#34;teamA&#34;</span><span style="color:#1f2328">]</span> <span style="color:#0550ae">=</span> <span style="color:#0550ae">12</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">[</span><span style="color:#0a3069">&#34;teamB&#34;</span><span style="color:#1f2328">]</span> <span style="color:#0550ae">=</span> <span style="color:#0550ae">15</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">}</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">return</span> scores
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> scores <span style="color:#0550ae">=</span> getTeamScores<span style="color:#1f2328">()</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> total <span style="color:#0550ae">=</span> <span style="color:#0550ae">0</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">for</span> key<span style="color:#1f2328">,</span> val <span style="color:#cf222e">in</span> pairs<span style="color:#1f2328">(</span>scores<span style="color:#1f2328">)</span> <span style="color:#cf222e">do</span>
-</span></span><span style="display:flex;"><span>  total <span style="color:#0550ae">+=</span> val
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">end</span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;Total score of all teams:&#34;</span> <span style="color:#0550ae">..</span> total<span style="color:#1f2328">)</span>
-</span></span></code></pre></div><h2 id="math">Math</h2>
-<p>The math class has a number of functions for dealing with numbers. You may not need them but here is some of the more useful one functions:</p>
-<p>More: <a href="http://lua-users.org/wiki/MathLibraryTutorial">Wiki</a></p>
-<ul>
-<li>
-<p>abs (absolute value)</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#cf222e">local</span> x <span style="color:#0550ae">=</span> <span style="color:#0550ae">-</span><span style="color:#0550ae">10</span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>math.abs<span style="color:#1f2328">(</span>x<span style="color:#1f2328">))</span> <span style="color:#57606a">--result: 10</span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">local</span> a <span style="color:#0550ae">=</span> <span style="color:#0550ae">10</span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>math.abs<span style="color:#1f2328">(</span>a<span style="color:#1f2328">))</span> <span style="color:#57606a">--result: 10</span>
-</span></span></code></pre></div></li>
-<li>
-<p>ceil (round up decimal value)</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#cf222e">local</span> x <span style="color:#0550ae">=</span> <span style="color:#0550ae">1.2</span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>math.ceil<span style="color:#1f2328">(</span>x<span style="color:#1f2328">))</span> <span style="color:#57606a">--result: 2</span>
-</span></span></code></pre></div></li>
-<li>
-<p>deg (Convert value from radians to degrees)</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>math.deg<span style="color:#1f2328">(</span>math.pi<span style="color:#1f2328">))</span> <span style="color:#57606a">-- result: 180</span>
-</span></span></code></pre></div></li>
-<li>
-<p>floor (round down decimal value)</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#cf222e">local</span> x <span style="color:#0550ae">=</span> <span style="color:#0550ae">1.2</span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>math.floor<span style="color:#1f2328">(</span>x<span style="color:#1f2328">))</span> <span style="color:#57606a">--result: 1</span>
-</span></span></code></pre></div></li>
-<li>
-<p>pi (constant value of pi)</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>math.pi<span style="color:#1f2328">)</span> <span style="color:#57606a">--3.1415926535898</span>
-</span></span><span style="display:flex;"><span><span style="color:#0550ae">3.1415926535898</span>
-</span></span></code></pre></div></li>
-<li>
-<p>rad (Convert value from degrees to radians)</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>math.rad<span style="color:#1f2328">(</span><span style="color:#0550ae">180</span><span style="color:#1f2328">))</span> <span style="color:#57606a">--result: 3.1415926535898</span>
-</span></span></code></pre></div></li>
-<li>
-<p>random (random number generation)</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#57606a">--random value between 0 tand 1</span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>math.random<span style="color:#1f2328">())</span> <span style="color:#57606a">--result: 0.0012512588885159</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#57606a">--random integer value from 1 to 100 (both inclusive)</span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>math.random<span style="color:#1f2328">(</span><span style="color:#0550ae">100</span><span style="color:#1f2328">))</span> <span style="color:#57606a">--result: 20</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#57606a">--random integer value from 20 to 100 (both inclusive)</span>
-</span></span><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>math.random<span style="color:#1f2328">(</span><span style="color:#0550ae">20</span><span style="color:#1f2328">,</span> <span style="color:#0550ae">100</span><span style="color:#1f2328">))</span> <span style="color:#57606a">--result: 54</span>
-</span></span></code></pre></div></li>
-<li>
-<p>sqrt (Square root of a number)</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>print<span style="color:#1f2328">(</span>math.sqrt<span style="color:#1f2328">(</span><span style="color:#0550ae">100</span><span style="color:#1f2328">))</span> <span style="color:#57606a">--result: 10</span>
-</span></span></code></pre></div></li>
-</ul>
-<h2 id="modules">Modules</h2>
-<p>Include code other files</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>require<span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;otherfile&#34;</span><span style="color:#1f2328">)</span>
-</span></span></code></pre></div>
-
-    
-    <div class="tags">
-        <a href="/tags/lua/">#lua</a> <a href="/tags/docs/">#docs</a> 
-    </div>
-    
-</article>
-
-        </div>
-    </main>
-    <footer class="site-footer">
-    <div class="wrap">
-        <span>© 2026 Pratham Dupare</span>
-        <a href="https://github.com/prathamdupare">github</a>
-        <a href="https://x.com/prathammdupare">x</a>
-        <a href="/index.xml">rss</a>
-    </div>
-</footer>
-
-</body>
-</html>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Beginner's Guide to Lua · Pratham Dupare</title><meta name=description content="Lua - Beginners Guide I recently started learning Lua and I found it to be a very interesting language. It is a very lightweight language and is used in many applications. It is …"><link rel=stylesheet href=/css/main.css><link rel=icon href=/favicon.svg></head><body><header class=site-header><div class=wrap><a class=site-name href=/>Pratham Dupare</a><nav class=site-nav><a href=/>home</a>
+<a href=/write/>writing</a>
+<a href=/media/>likes</a>
+<a href=/me/>about</a></nav></div></header><main><div class=wrap><article><header class=post-header><h1>Beginner's Guide to Lua</h1><div class=meta>April 3, 2024 · 6 min read</div></header><h1 id=lua---beginners-guide>Lua - Beginners Guide</h1><p>I recently started learning Lua and I found it to be a very interesting language. It is a very lightweight language and is used in many applications. It is also used in many games as a scripting language.</p><p>This is a beginners guide to Lua.</p><h2 id=printing>Printing</h2><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span>print<span style=color:#1f2328>(</span><span style=color:#0a3069>&#34;Hello World&#34;</span><span style=color:#1f2328>)</span>
+</span></span></code></pre></div><h2 id=comments>Comments</h2><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#57606a>--this is a comment</span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span><span style=color:#0a3069>&#34;hello&#34;</span><span style=color:#1f2328>)</span> <span style=color:#57606a>--this is another comment</span>
+</span></span><span style=display:flex><span><span style=color:#57606a>-- the next line will not do anything because it is commented out</span>
+</span></span><span style=display:flex><span><span style=color:#57606a>--print(&#34;world&#34;)</span>
+</span></span></code></pre></div><h2 id=variables>Variables</h2><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#57606a>-- Different types</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> x <span style=color:#0550ae>=</span> <span style=color:#0550ae>10</span> <span style=color:#57606a>--number</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> name <span style=color:#0550ae>=</span> <span style=color:#0a3069>&#34;john doe&#34;</span> <span style=color:#57606a>--string</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> isAlive <span style=color:#0550ae>=</span> <span style=color:#cf222e>false</span> <span style=color:#57606a>-- boolean</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> a <span style=color:#0550ae>=</span> <span style=color:#cf222e>nil</span> <span style=color:#57606a>--no value or invalid value</span>
+</span></span></code></pre></div><p><strong>Numbers</strong></p><p>operators</p><ul><li>+ addition</li><li>- minus</li><li>* multiply</li><li>/ divide</li><li>^ power</li><li>% modulus</li></ul><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#57606a>-- examples</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> a <span style=color:#0550ae>=</span> <span style=color:#0550ae>1</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> b <span style=color:#0550ae>=</span> <span style=color:#0550ae>2</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> c <span style=color:#0550ae>=</span> a <span style=color:#0550ae>+</span> b
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span>c<span style=color:#1f2328>)</span> <span style=color:#57606a>-- 3</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> d <span style=color:#0550ae>=</span> b <span style=color:#0550ae>-</span> a
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span>d<span style=color:#1f2328>)</span> <span style=color:#57606a>-- 1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> x <span style=color:#0550ae>=</span>  <span style=color:#0550ae>1</span> <span style=color:#0550ae>*</span> <span style=color:#0550ae>3</span> <span style=color:#0550ae>*</span> <span style=color:#0550ae>4</span> <span style=color:#57606a>-- 12</span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span>x<span style=color:#1f2328>)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> y <span style=color:#0550ae>=</span> <span style=color:#1f2328>(</span><span style=color:#0550ae>1</span><span style=color:#0550ae>+</span><span style=color:#0550ae>3</span><span style=color:#1f2328>)</span> <span style=color:#0550ae>*</span> <span style=color:#0550ae>2</span> <span style=color:#57606a>-- 8</span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span>y<span style=color:#1f2328>)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span><span style=color:#0550ae>10</span><span style=color:#0550ae>/</span><span style=color:#0550ae>2</span><span style=color:#1f2328>)</span> <span style=color:#57606a>-- 5</span>
+</span></span><span style=display:flex><span>print <span style=color:#1f2328>(</span><span style=color:#0550ae>2</span><span style=color:#0550ae>^</span><span style=color:#0550ae>2</span><span style=color:#1f2328>)</span> <span style=color:#57606a>-- 4</span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span><span style=color:#0550ae>5</span><span style=color:#0550ae>%</span><span style=color:#0550ae>2</span><span style=color:#1f2328>)</span> <span style=color:#57606a>-- 1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span><span style=color:#0550ae>-</span>b<span style=color:#1f2328>)</span> <span style=color:#57606a>-- -2</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#57606a>-- increment</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> level <span style=color:#0550ae>=</span> <span style=color:#0550ae>1</span>
+</span></span><span style=display:flex><span>level <span style=color:#0550ae>=</span> level <span style=color:#0550ae>+</span> <span style=color:#0550ae>1</span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span>level<span style=color:#1f2328>)</span> <span style=color:#57606a>-- 2</span>
+</span></span></code></pre></div><p><strong>Strings</strong></p><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#57606a>-- concatenate strings</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> phrase <span style=color:#0550ae>=</span> <span style=color:#0a3069>&#34;My name is &#34;</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> name <span style=color:#0550ae>=</span> <span style=color:#0a3069>&#34;John Doe&#34;</span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span>phase <span style=color:#0550ae>..</span> name<span style=color:#1f2328>)</span> <span style=color:#57606a>--My name is John Doe</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#57606a>-- strings and numbers</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> age <span style=color:#0550ae>=</span> <span style=color:#0550ae>12</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> name <span style=color:#0550ae>=</span> <span style=color:#0a3069>&#34;Billy&#34;</span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span>name <span style=color:#0550ae>..</span> <span style=color:#0a3069>&#34; is &#34;</span> <span style=color:#0550ae>..</span> age <span style=color:#0550ae>..</span> <span style=color:#0a3069>&#34; years old&#34;</span><span style=color:#1f2328>)</span>
+</span></span></code></pre></div><p><strong>Boolean</strong></p><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#cf222e>local</span> isAlive <span style=color:#0550ae>=</span> <span style=color:#cf222e>true</span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span>isAlive<span style=color:#1f2328>)</span> <span style=color:#57606a>--true</span>
+</span></span><span style=display:flex><span>isAlive <span style=color:#0550ae>=</span> <span style=color:#cf222e>false</span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span>isAlive<span style=color:#1f2328>)</span> <span style=color:#57606a>--false</span>
+</span></span></code></pre></div><h2 id=conditional-statements>Conditional Statements</h2><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#57606a>--number comparisions</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> age <span style=color:#0550ae>=</span> <span style=color:#0550ae>10</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>if</span> age <span style=color:#0550ae>&lt;</span> <span style=color:#0550ae>18</span> <span style=color:#cf222e>then</span>
+</span></span><span style=display:flex><span>  print<span style=color:#1f2328>(</span><span style=color:#0a3069>&#34;over 18&#34;</span><span style=color:#1f2328>)</span> <span style=color:#57606a>--this will not be executed</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>end</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#57606a>--elseif and else</span>
+</span></span><span style=display:flex><span>age <span style=color:#0550ae>=</span> <span style=color:#0550ae>20</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>if</span> age <span style=color:#0550ae>&gt;</span> <span style=color:#0550ae>18</span> <span style=color:#cf222e>then</span>
+</span></span><span style=display:flex><span>  print<span style=color:#1f2328>(</span><span style=color:#0a3069>&#34;dog&#34;</span><span style=color:#1f2328>)</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>elseif</span> age <span style=color:#0550ae>==</span> <span style=color:#0550ae>18</span> <span style=color:#cf222e>then</span>
+</span></span><span style=display:flex><span>  print<span style=color:#1f2328>(</span><span style=color:#0a3069>&#34;cat&#34;</span><span style=color:#1f2328>)</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>else</span>
+</span></span><span style=display:flex><span>  print<span style=color:#1f2328>(</span><span style=color:#0a3069>&#34;mouse&#34;</span><span style=color:#1f2328>)</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>end</span>
+</span></span></code></pre></div><p><strong>Comparison Operators</strong></p><ul><li>== equality</li><li>&lt; less than</li><li>> greater than</li><li>&lt;= less than or equal to</li><li>>= greater than or equal to</li><li>~= inequality</li></ul><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#57606a>--boolean comparision</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> isAlive <span style=color:#0550ae>=</span> <span style=color:#cf222e>true</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>if</span> isAlive <span style=color:#cf222e>then</span>
+</span></span><span style=display:flex><span>    print<span style=color:#1f2328>(</span><span style=color:#0a3069>&#34;dog&#34;</span><span style=color:#1f2328>)</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>end</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#57606a>--string comparisions</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> name <span style=color:#0550ae>=</span> <span style=color:#0a3069>&#34;billy&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>if</span> name <span style=color:#0550ae>==</span> <span style=color:#0a3069>&#34;Billy&#34;</span> <span style=color:#cf222e>then</span> <span style=color:#57606a>--false</span>
+</span></span><span style=display:flex><span>  print<span style=color:#1f2328>(</span><span style=color:#0a3069>&#34;Billy&#34;</span><span style=color:#1f2328>)</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>elseif</span> name <span style=color:#0550ae>==</span> <span style=color:#0a3069>&#34;billy&#34;</span> <span style=color:#cf222e>then</span> <span style=color:#57606a>--true</span>
+</span></span><span style=display:flex><span>  print<span style=color:#1f2328>(</span><span style=color:#0a3069>&#34;billy&#34;</span><span style=color:#1f2328>)</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>end</span>
+</span></span></code></pre></div><p><strong>Combining Statements</strong></p><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#cf222e>local</span> x <span style=color:#0550ae>=</span> <span style=color:#0550ae>10</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>if</span> x <span style=color:#0550ae>==</span> <span style=color:#0550ae>10</span> <span style=color:#0550ae>and</span> x <span style=color:#0550ae>&lt;</span> <span style=color:#0550ae>0</span> <span style=color:#cf222e>then</span> <span style=color:#57606a>--both are true</span>
+</span></span><span style=display:flex><span>  print<span style=color:#1f2328>(</span><span style=color:#0a3069>&#34;dog&#34;</span><span style=color:#1f2328>)</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>elseif</span> x <span style=color:#0550ae>==</span> <span style=color:#0550ae>100</span> <span style=color:#0550ae>or</span> x <span style=color:#0550ae>&lt;</span> <span style=color:#0550ae>0</span> <span style=color:#cf222e>then</span> <span style=color:#57606a>--1 or more are true</span>
+</span></span><span style=display:flex><span>  print<span style=color:#1f2328>(</span><span style=color:#0a3069>&#34;cat&#34;</span><span style=color:#1f2328>)</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>end</span>
+</span></span><span style=display:flex><span><span style=color:#57606a>--result: cat</span>
+</span></span></code></pre></div><p><strong>Nested statements</strong></p><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#cf222e>local</span> x <span style=color:#0550ae>=</span> <span style=color:#0550ae>10</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> isAlive <span style=color:#0550ae>=</span> <span style=color:#cf222e>true</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>if</span> x<span style=color:#0550ae>==</span><span style=color:#0550ae>10</span> <span style=color:#cf222e>then</span>
+</span></span><span style=display:flex><span>  <span style=color:#cf222e>if</span> isAlive <span style=color:#0550ae>==</span> <span style=color:#cf222e>true</span> <span style=color:#cf222e>then</span>
+</span></span><span style=display:flex><span>    print<span style=color:#1f2328>(</span><span style=color:#0a3069>&#34;dog&#34;</span><span style=color:#1f2328>)</span>
+</span></span><span style=display:flex><span>  <span style=color:#cf222e>else</span>
+</span></span><span style=display:flex><span>    print<span style=color:#1f2328>(</span><span style=color:#0a3069>&#34;cat&#34;</span><span style=color:#1f2328>)</span>
+</span></span><span style=display:flex><span>  <span style=color:#cf222e>end</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>end</span>
+</span></span></code></pre></div><p><strong>Invert Value</strong></p><p>you can also invert a value with the <strong>not</strong> keyword</p><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#cf222e>local</span> x <span style=color:#0550ae>=</span> <span style=color:#0550ae>10</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>if</span> <span style=color:#0550ae>not</span> x <span style=color:#0550ae>==</span> <span style=color:#0550ae>10</span> <span style=color:#cf222e>then</span>
+</span></span><span style=display:flex><span>  print<span style=color:#1f2328>(</span><span style=color:#0a3069>&#34;here&#34;</span><span style=color:#1f2328>)</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>end</span>
+</span></span></code></pre></div><h2 id=functions>Functions</h2><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#cf222e>function</span> <span style=color:#6639ba>printTax</span><span style=color:#1f2328>(</span>price<span style=color:#1f2328>)</span>
+</span></span><span style=display:flex><span>  <span style=color:#cf222e>local</span> tax <span style=color:#0550ae>=</span> price <span style=color:#0550ae>*</span> <span style=color:#0550ae>0.21</span>
+</span></span><span style=display:flex><span>  print<span style=color:#1f2328>(</span><span style=color:#0a3069>&#34;tax:&#34;</span> <span style=color:#0550ae>..</span> tax<span style=color:#1f2328>)</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>end</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>printTax<span style=color:#1f2328>(</span><span style=color:#0550ae>200</span><span style=color:#1f2328>)</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#57606a>--function that returns a value</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>function</span> <span style=color:#6639ba>calculateTax</span><span style=color:#1f2328>(</span>price<span style=color:#1f2328>)</span>
+</span></span><span style=display:flex><span>  <span style=color:#cf222e>return</span> price <span style=color:#0550ae>*</span> <span style=color:#0550ae>0.21</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>end</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> result <span style=color:#0550ae>=</span> calculateTax<span style=color:#1f2328>(</span><span style=color:#0550ae>100</span><span style=color:#1f2328>)</span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span>result<span style=color:#1f2328>)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#57606a>--reusing the function but this time using variables</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> bread <span style=color:#0550ae>=</span> <span style=color:#0550ae>130</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> milk <span style=color:#0550ae>=</span> <span style=color:#0550ae>110</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> breadTax <span style=color:#0550ae>=</span> calculateTax<span style=color:#1f2328>(</span>bread<span style=color:#1f2328>)</span> <span style=color:#57606a>--27.3</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> milkTax <span style=color:#0550ae>=</span> calculateTax<span style=color:#1f2328>(</span>milk<span style=color:#1f2328>)</span> <span style=color:#57606a>--23.1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span><span style=color:#0a3069>&#34;Bread Tax = &#34;</span> <span style=color:#0550ae>..</span> breadTax<span style=color:#1f2328>)</span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span><span style=color:#0a3069>&#34;Milk Tax = &#34;</span> <span style=color:#0550ae>..</span> milkTax<span style=color:#1f2328>)</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#57606a>--multiple parameters</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>function</span> <span style=color:#6639ba>displayInfo</span><span style=color:#1f2328>(</span>name<span style=color:#1f2328>,</span> age<span style=color:#1f2328>,</span> country<span style=color:#1f2328>)</span>
+</span></span><span style=display:flex><span>  print<span style=color:#1f2328>(</span>name <span style=color:#0550ae>..</span> <span style=color:#0a3069>&#34; is &#34;</span> <span style=color:#0550ae>..</span> age <span style=color:#0550ae>..</span> <span style=color:#0a3069>&#34; years old and is from &#34;</span> <span style=color:#0550ae>..</span> country<span style=color:#1f2328>)</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>end</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>displayInfo<span style=color:#1f2328>(</span><span style=color:#0a3069>&#34;Billy&#34;</span><span style=color:#1f2328>,</span> <span style=color:#0550ae>12</span><span style=color:#1f2328>,</span> <span style=color:#0a3069>&#34;Jupiter&#34;</span><span style=color:#1f2328>)</span>
+</span></span></code></pre></div><h2 id=scope>Scope</h2><p>Variables have different scopes. Once the end of the scope is reached the values in that scope are no longer accessable</p><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#cf222e>function</span> <span style=color:#6639ba>foo</span><span style=color:#1f2328>()</span>
+</span></span><span style=display:flex><span>  <span style=color:#cf222e>local</span> a <span style=color:#0550ae>=</span> <span style=color:#0550ae>10</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>end</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span>a<span style=color:#1f2328>)</span> <span style=color:#57606a>--nil</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#cf222e>local</span> isAlive <span style=color:#0550ae>=</span> <span style=color:#cf222e>true</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>if</span> isAlive <span style=color:#cf222e>then</span>
+</span></span><span style=display:flex><span>  <span style=color:#cf222e>local</span> a <span style=color:#0550ae>=</span> <span style=color:#0550ae>10</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>end</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span>a<span style=color:#1f2328>)</span> <span style=color:#57606a>--nil</span>
+</span></span></code></pre></div><p><strong>Global Variable</strong></p><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#cf222e>local</span> _G.myValue <span style=color:#0550ae>=</span> <span style=color:#0550ae>69</span>
+</span></span><span style=display:flex><span><span style=color:#57606a>--doing this can sometimes be bad practice</span>
+</span></span></code></pre></div><h2 id=loops>Loops</h2><p>There is a few different ways you can do a loop in lua</p><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#57606a>--while loop</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> i <span style=color:#0550ae>=</span> <span style=color:#0550ae>0</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> count <span style=color:#0550ae>=</span> <span style=color:#0550ae>0</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>while</span> i <span style=color:#0550ae>&lt;=</span> <span style=color:#0550ae>10</span> <span style=color:#cf222e>do</span>
+</span></span><span style=display:flex><span>  count <span style=color:#0550ae>=</span> count <span style=color:#0550ae>+</span> <span style=color:#0550ae>1</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>end</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span><span style=color:#0a3069>&#34;count is &#34;</span> <span style=color:#0550ae>..</span> count<span style=color:#1f2328>)</span> <span style=color:#57606a>--count is 7</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#57606a>--for loop</span>
+</span></span><span style=display:flex><span>count <span style=color:#0550ae>=</span> <span style=color:#0550ae>0</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>for</span> i<span style=color:#0550ae>=</span><span style=color:#0550ae>1</span><span style=color:#1f2328>,</span> <span style=color:#0550ae>5</span> <span style=color:#cf222e>do</span>
+</span></span><span style=display:flex><span>  count <span style=color:#0550ae>=</span> count <span style=color:#0550ae>+</span> <span style=color:#0550ae>1</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>end</span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span><span style=color:#0a3069>&#34;count is &#34;</span> <span style=color:#0550ae>..</span> count<span style=color:#1f2328>)</span>
+</span></span></code></pre></div><p><strong>Infinite Loops</strong></p><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#57606a>--infinite loop will never end</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> i <span style=color:#0550ae>=</span> <span style=color:#0550ae>0</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>while</span> i <span style=color:#0550ae>&gt;=</span> <span style=color:#0550ae>0</span> <span style=color:#cf222e>do</span>
+</span></span><span style=display:flex><span> i <span style=color:#0550ae>=</span> i <span style=color:#0550ae>+</span> <span style=color:#0550ae>1</span>
+</span></span><span style=display:flex><span> print<span style=color:#1f2328>(</span>i<span style=color:#1f2328>)</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>end</span>
+</span></span></code></pre></div><p><strong>Nested Loops</strong></p><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#cf222e>local</span> count <span style=color:#0550ae>=</span> <span style=color:#0550ae>0</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>for</span> a<span style=color:#0550ae>=</span><span style=color:#0550ae>1</span><span style=color:#1f2328>,</span> <span style=color:#0550ae>10</span> <span style=color:#cf222e>do</span>
+</span></span><span style=display:flex><span>  <span style=color:#cf222e>for</span> b<span style=color:#0550ae>=</span><span style=color:#0550ae>1</span><span style=color:#1f2328>,</span> <span style=color:#0550ae>10</span> <span style=color:#cf222e>do</span>
+</span></span><span style=display:flex><span>    count <span style=color:#0550ae>=</span> count <span style=color:#0550ae>+</span> <span style=color:#0550ae>1</span>
+</span></span><span style=display:flex><span>  <span style=color:#cf222e>end</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>end</span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span>count<span style=color:#1f2328>)</span> <span style=color:#57606a>-- 100</span>
+</span></span></code></pre></div><h2 id=tables>Tables</h2><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#57606a>--basic table</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> colors <span style=color:#0550ae>=</span> <span style=color:#1f2328>{</span> <span style=color:#0a3069>&#34;red&#34;</span><span style=color:#1f2328>,</span> <span style=color:#0a3069>&#34;green&#34;</span><span style=color:#1f2328>,</span> <span style=color:#0a3069>&#34;blue&#34;</span> <span style=color:#1f2328>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span>colors<span style=color:#1f2328>[</span><span style=color:#0550ae>1</span><span style=color:#1f2328>])</span> <span style=color:#57606a>--red</span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span>colors<span style=color:#1f2328>[</span><span style=color:#0550ae>2</span><span style=color:#1f2328>])</span> <span style=color:#57606a>--green</span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span>colors<span style=color:#1f2328>[</span><span style=color:#0550ae>3</span><span style=color:#1f2328>])</span> <span style=color:#57606a>--blue</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#57606a>--using a loop to iterate though your table</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>for</span> i<span style=color:#0550ae>=</span><span style=color:#0550ae>1</span><span style=color:#1f2328>,</span> <span style=color:#0550ae>#</span>colors <span style=color:#cf222e>do</span>
+</span></span><span style=display:flex><span>  print<span style=color:#1f2328>(</span>colors<span style=color:#1f2328>[</span>i<span style=color:#1f2328>])</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>end</span>
+</span></span></code></pre></div><p><strong>Table Manipulation</strong></p><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#57606a>--insert</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> colors <span style=color:#0550ae>=</span> <span style=color:#1f2328>{</span> <span style=color:#0a3069>&#34;red&#34;</span><span style=color:#1f2328>,</span> <span style=color:#0a3069>&#34;green&#34;</span><span style=color:#1f2328>,</span> <span style=color:#0a3069>&#34;blue&#34;</span> <span style=color:#1f2328>}</span>
+</span></span><span style=display:flex><span>table.insert<span style=color:#1f2328>(</span>colors<span style=color:#1f2328>,</span> <span style=color:#0a3069>&#34;orange&#34;</span><span style=color:#1f2328>)</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> index <span style=color:#0550ae>=</span> <span style=color:#0550ae>#</span>colors <span style=color:#57606a>--4 (this is the last index in the table)</span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span>colors<span style=color:#1f2328>[</span>index<span style=color:#1f2328>])</span> <span style=color:#57606a>--orange</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#57606a>--insert at index</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> colors <span style=color:#0550ae>=</span> <span style=color:#1f2328>{</span> <span style=color:#0a3069>&#34;red&#34;</span><span style=color:#1f2328>,</span> <span style=color:#0a3069>&#34;green&#34;</span><span style=color:#1f2328>,</span> <span style=color:#0a3069>&#34;blue&#34;</span> <span style=color:#1f2328>}</span>
+</span></span><span style=display:flex><span>table.insert<span style=color:#1f2328>(</span>colors<span style=color:#1f2328>,</span> <span style=color:#0550ae>2</span><span style=color:#1f2328>,</span> <span style=color:#0a3069>&#34;pink&#34;</span><span style=color:#1f2328>)</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>for</span> i<span style=color:#0550ae>=</span><span style=color:#0550ae>1</span><span style=color:#1f2328>,</span> <span style=color:#0550ae>#</span>colors <span style=color:#cf222e>do</span>
+</span></span><span style=display:flex><span>  print<span style=color:#1f2328>(</span>colors<span style=color:#1f2328>[</span>i<span style=color:#1f2328>])</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>end</span>
+</span></span><span style=display:flex><span><span style=color:#57606a>--red, pink, green, blue</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#57606a>--remove</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> colors <span style=color:#0550ae>=</span> <span style=color:#1f2328>{</span> <span style=color:#0a3069>&#34;red&#34;</span><span style=color:#1f2328>,</span> <span style=color:#0a3069>&#34;green&#34;</span><span style=color:#1f2328>,</span> <span style=color:#0a3069>&#34;blue&#34;</span> <span style=color:#1f2328>}</span>
+</span></span><span style=display:flex><span>table.remove<span style=color:#1f2328>(</span>colors<span style=color:#1f2328>,</span> <span style=color:#0550ae>1</span><span style=color:#1f2328>)</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>for</span> i<span style=color:#0550ae>=</span><span style=color:#0550ae>1</span><span style=color:#1f2328>,</span> <span style=color:#0550ae>#</span>colors <span style=color:#cf222e>do</span>
+</span></span><span style=display:flex><span>  print<span style=color:#1f2328>(</span>colors<span style=color:#1f2328>[</span>i<span style=color:#1f2328>])</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>end</span>
+</span></span><span style=display:flex><span><span style=color:#57606a>-- &#34;green&#34;, &#34;blue&#34;</span>
+</span></span></code></pre></div><p><strong>2 Dimensional Table</strong></p><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#57606a>--tables within tables</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> data <span style=color:#0550ae>=</span> <span style=color:#1f2328>{</span>
+</span></span><span style=display:flex><span>  <span style=color:#1f2328>{</span> <span style=color:#0a3069>&#34;billy&#34;</span><span style=color:#1f2328>,</span> <span style=color:#0550ae>12</span> <span style=color:#1f2328>},</span>
+</span></span><span style=display:flex><span>  <span style=color:#1f2328>{</span> <span style=color:#0a3069>&#34;john&#34;</span><span style=color:#1f2328>,</span> <span style=color:#0550ae>20</span> <span style=color:#1f2328>},</span>
+</span></span><span style=display:flex><span>  <span style=color:#1f2328>{</span> <span style=color:#0a3069>&#34;andy&#34;</span><span style=color:#1f2328>,</span> <span style=color:#0550ae>65</span> <span style=color:#1f2328>}</span>
+</span></span><span style=display:flex><span><span style=color:#1f2328>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>for</span> a<span style=color:#0550ae>=</span><span style=color:#0550ae>1</span><span style=color:#1f2328>,</span> <span style=color:#0550ae>#</span>data <span style=color:#cf222e>do</span>
+</span></span><span style=display:flex><span>  print<span style=color:#1f2328>(</span>data<span style=color:#1f2328>[</span>a<span style=color:#1f2328>][</span><span style=color:#0550ae>1</span><span style=color:#1f2328>]</span> <span style=color:#0550ae>..</span> <span style=color:#0a3069>&#34; is &#34;</span> <span style=color:#0550ae>..</span> data<span style=color:#1f2328>[</span>a<span style=color:#1f2328>][</span><span style=color:#0550ae>2</span><span style=color:#1f2328>]</span> <span style=color:#0550ae>..</span> <span style=color:#0a3069>&#34; years old&#34;</span><span style=color:#1f2328>)</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>end</span>
+</span></span></code></pre></div><p><strong>Key Tables</strong></p><p>2 dimensional tables are not suited to data with different types, instead uses keys for tables</p><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#cf222e>local</span> teams <span style=color:#0550ae>=</span> <span style=color:#1f2328>{</span>
+</span></span><span style=display:flex><span>    <span style=color:#1f2328>[</span><span style=color:#0a3069>&#34;teamA&#34;</span><span style=color:#1f2328>]</span> <span style=color:#0550ae>=</span> <span style=color:#0550ae>12</span><span style=color:#1f2328>,</span>
+</span></span><span style=display:flex><span>    <span style=color:#1f2328>[</span><span style=color:#0a3069>&#34;teamB&#34;</span><span style=color:#1f2328>]</span> <span style=color:#0550ae>=</span> <span style=color:#0550ae>15</span>
+</span></span><span style=display:flex><span><span style=color:#1f2328>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span>teams<span style=color:#1f2328>[</span><span style=color:#0a3069>&#34;teamA&#34;</span><span style=color:#1f2328>])</span> <span style=color:#57606a>-- 12</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>for</span> key<span style=color:#1f2328>,</span>value <span style=color:#cf222e>in</span> pairs<span style=color:#1f2328>(</span>teams<span style=color:#1f2328>)</span> <span style=color:#cf222e>do</span>
+</span></span><span style=display:flex><span>  print<span style=color:#1f2328>(</span>key <span style=color:#0550ae>..</span> <span style=color:#0a3069>&#34;:&#34;</span> <span style=color:#0550ae>..</span> value<span style=color:#1f2328>)</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>end</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#57606a>--insert into key table</span>
+</span></span><span style=display:flex><span>teams<span style=color:#1f2328>[</span><span style=color:#0a3069>&#34;teamC&#34;</span><span style=color:#1f2328>]</span> <span style=color:#0550ae>=</span> <span style=color:#0550ae>1</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#57606a>--remove key from table</span>
+</span></span><span style=display:flex><span>teams<span style=color:#1f2328>[</span><span style=color:#0a3069>&#34;teamA&#34;</span><span style=color:#1f2328>]</span> <span style=color:#0550ae>=</span> <span style=color:#cf222e>nil</span>
+</span></span></code></pre></div><p><strong>Returning a Table from a Function</strong></p><p>This can be used to return multiple values from a functions</p><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#cf222e>function</span> <span style=color:#6639ba>getTeamScores</span><span style=color:#1f2328>()</span>
+</span></span><span style=display:flex><span>  <span style=color:#cf222e>local</span> scores <span style=color:#0550ae>=</span> <span style=color:#1f2328>{</span>
+</span></span><span style=display:flex><span>    <span style=color:#1f2328>[</span><span style=color:#0a3069>&#34;teamA&#34;</span><span style=color:#1f2328>]</span> <span style=color:#0550ae>=</span> <span style=color:#0550ae>12</span><span style=color:#1f2328>,</span>
+</span></span><span style=display:flex><span>    <span style=color:#1f2328>[</span><span style=color:#0a3069>&#34;teamB&#34;</span><span style=color:#1f2328>]</span> <span style=color:#0550ae>=</span> <span style=color:#0550ae>15</span>
+</span></span><span style=display:flex><span>  <span style=color:#1f2328>}</span>
+</span></span><span style=display:flex><span>  <span style=color:#cf222e>return</span> scores
+</span></span><span style=display:flex><span><span style=color:#cf222e>end</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> scores <span style=color:#0550ae>=</span> getTeamScores<span style=color:#1f2328>()</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> total <span style=color:#0550ae>=</span> <span style=color:#0550ae>0</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>for</span> key<span style=color:#1f2328>,</span> val <span style=color:#cf222e>in</span> pairs<span style=color:#1f2328>(</span>scores<span style=color:#1f2328>)</span> <span style=color:#cf222e>do</span>
+</span></span><span style=display:flex><span>  total <span style=color:#0550ae>+=</span> val
+</span></span><span style=display:flex><span><span style=color:#cf222e>end</span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span><span style=color:#0a3069>&#34;Total score of all teams:&#34;</span> <span style=color:#0550ae>..</span> total<span style=color:#1f2328>)</span>
+</span></span></code></pre></div><h2 id=math>Math</h2><p>The math class has a number of functions for dealing with numbers. You may not need them but here is some of the more useful one functions:</p><p>More: <a href=http://lua-users.org/wiki/MathLibraryTutorial>Wiki</a></p><ul><li><p>abs (absolute value)</p><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#cf222e>local</span> x <span style=color:#0550ae>=</span> <span style=color:#0550ae>-</span><span style=color:#0550ae>10</span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span>math.abs<span style=color:#1f2328>(</span>x<span style=color:#1f2328>))</span> <span style=color:#57606a>--result: 10</span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>local</span> a <span style=color:#0550ae>=</span> <span style=color:#0550ae>10</span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span>math.abs<span style=color:#1f2328>(</span>a<span style=color:#1f2328>))</span> <span style=color:#57606a>--result: 10</span>
+</span></span></code></pre></div></li><li><p>ceil (round up decimal value)</p><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#cf222e>local</span> x <span style=color:#0550ae>=</span> <span style=color:#0550ae>1.2</span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span>math.ceil<span style=color:#1f2328>(</span>x<span style=color:#1f2328>))</span> <span style=color:#57606a>--result: 2</span>
+</span></span></code></pre></div></li><li><p>deg (Convert value from radians to degrees)</p><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span>print<span style=color:#1f2328>(</span>math.deg<span style=color:#1f2328>(</span>math.pi<span style=color:#1f2328>))</span> <span style=color:#57606a>-- result: 180</span>
+</span></span></code></pre></div></li><li><p>floor (round down decimal value)</p><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#cf222e>local</span> x <span style=color:#0550ae>=</span> <span style=color:#0550ae>1.2</span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span>math.floor<span style=color:#1f2328>(</span>x<span style=color:#1f2328>))</span> <span style=color:#57606a>--result: 1</span>
+</span></span></code></pre></div></li><li><p>pi (constant value of pi)</p><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span>print<span style=color:#1f2328>(</span>math.pi<span style=color:#1f2328>)</span> <span style=color:#57606a>--3.1415926535898</span>
+</span></span><span style=display:flex><span><span style=color:#0550ae>3.1415926535898</span>
+</span></span></code></pre></div></li><li><p>rad (Convert value from degrees to radians)</p><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span>print<span style=color:#1f2328>(</span>math.rad<span style=color:#1f2328>(</span><span style=color:#0550ae>180</span><span style=color:#1f2328>))</span> <span style=color:#57606a>--result: 3.1415926535898</span>
+</span></span></code></pre></div></li><li><p>random (random number generation)</p><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#57606a>--random value between 0 tand 1</span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span>math.random<span style=color:#1f2328>())</span> <span style=color:#57606a>--result: 0.0012512588885159</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#57606a>--random integer value from 1 to 100 (both inclusive)</span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span>math.random<span style=color:#1f2328>(</span><span style=color:#0550ae>100</span><span style=color:#1f2328>))</span> <span style=color:#57606a>--result: 20</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#57606a>--random integer value from 20 to 100 (both inclusive)</span>
+</span></span><span style=display:flex><span>print<span style=color:#1f2328>(</span>math.random<span style=color:#1f2328>(</span><span style=color:#0550ae>20</span><span style=color:#1f2328>,</span> <span style=color:#0550ae>100</span><span style=color:#1f2328>))</span> <span style=color:#57606a>--result: 54</span>
+</span></span></code></pre></div></li><li><p>sqrt (Square root of a number)</p><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span>print<span style=color:#1f2328>(</span>math.sqrt<span style=color:#1f2328>(</span><span style=color:#0550ae>100</span><span style=color:#1f2328>))</span> <span style=color:#57606a>--result: 10</span>
+</span></span></code></pre></div></li></ul><h2 id=modules>Modules</h2><p>Include code other files</p><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-lua data-lang=lua><span style=display:flex><span>require<span style=color:#1f2328>(</span><span style=color:#0a3069>&#34;otherfile&#34;</span><span style=color:#1f2328>)</span>
+</span></span></code></pre></div><div class=tags><a href=/tags/lua/>#lua</a> <a href=/tags/docs/>#docs</a></div></article></div></main><footer class=site-footer><div class=wrap><span>© 2026 Pratham Dupare</span>
+<a href=https://github.com/prathamdupare>github</a>
+<a href=https://x.com/prathammdupare>x</a>
+<a href=/index.xml>rss</a></div></footer></body></html>

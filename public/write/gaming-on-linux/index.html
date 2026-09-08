@@ -1,128 +1,18 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gaming on Linux — How To Play Any Game on Linux! · Pratham Dupare</title>
-<meta name="description" content="Sometimes better than windows!">
-<link rel="stylesheet" href="/css/main.css">
-<link rel="icon" href="/favicon.svg">
-
-
-</head>
-<body>
-    <header class="site-header">
-    <div class="wrap">
-        <a class="site-name" href="/">Pratham Dupare</a>
-        <nav class="site-nav">
-            
-            <a href="/">home</a>
-            
-            <a href="/write/">writing</a>
-            
-            <a href="/media/">likes</a>
-            
-            <a href="/me/">about</a>
-            
-        </nav>
-    </div>
-</header>
-
-    <main>
-        <div class="wrap">
-            
-<article>
-    <header class="post-header">
-        <h1>Gaming on Linux — How To Play Any Game on Linux!</h1>
-        <div class="meta">August 26, 2022 · 6 min read</div>
-    </header>
-
-    <p>Linux gaming is growing so popular.</p>
-<p>The Steam deck has over 1.6 million users, and we expect them to grow more!</p>
-<p>Unlike Windows, where you can play almost anything with a click, Linux gaming can be tricky. There are a lot of tools, software, and terms that can make things complicated.</p>
-<p>This guide will cover everything including Steam, Epic Games, Ubisoft, and much more.</p>
-<h2 id="basic-terms">Basic terms</h2>
-<p><strong>Proton</strong>
-Proton is a compatibility layer for Microsoft Windows games to run on Linux-based operating systems. It is a collection of software and libraries combined with a patched version of Wine to improve performance and compatibility with Windows games.</p>
-<p>It creates a fake C Drive which games run on and then converts them to understand Linux inputs. It uses a lot of open-source libraries like Wine, DXVK, and VKD3D.</p>
-<p><strong>Wine</strong>
-Wine is a compatibility layer capable of running Windows apps on Linux. It is not an emulator and can run apps natively and can be used to run games too!</p>
-<p><strong>GE Proton</strong>
-It is a variant of the Proton and Compatibility tool for Steam Play based on Wine and additional components. It provides better compatibility and support but might not be as stable.</p>
-<h2 id="linux-distributions">Linux Distributions</h2>
-<!-- raw HTML omitted -->
-<p>If you already use Linux you might know it doesn’t really matter which distro you choose, almost every distro comes with all the drivers pre-installed.</p>
-<p>Pick any distro with the latest updates like Fedora, Ubuntu, Pop OS!, Arch, Manjaro, or anything you prefer.</p>
-<p><strong>Drivers</strong>
-All the drivers required are already in the Linux Kernel, you don’t have to install them manually. When you update your kernel and distro, drivers get updated automatically. Intel and AMD provide their open-source drivers and are present in the kernel.</p>
-<p><strong>Nvidia drivers</strong>
-Nvidia drivers are not open-source and hence are not added to the kernel. If you have an Nvidia GPU you will need to install Proprietary drivers. Just open your software store and search for “Nvidia” and install the latest version. It will support any GPU from Nvidia.</p>
-<p><strong>Steam and Proton</strong>
-Steam is available for all distros and you can install it from your software center.</p>
-<p>By default, Steam only lets you play games that have native support on Linux. But you can play other games too! To do that go to Steam Settings -&gt; Steam Play and <strong>Enable Steam Play for all other titles</strong>. It uses Proton to run every windows game. But, it&rsquo;s not perfect, some games will run better with a specific version of Proton, some run better than others and maybe some games won’t even run.</p>
-<p>You can check the compatibility, performance, and reviews on protondb.com. This website has a page for every game. It is categorized by labels.</p>
-<p><strong>Platinum</strong> — Native performance, no issues.</p>
-<p><strong>Gold</strong> — It means it runs really well but you might need to select a specific Proton version or do some tweaks.</p>
-<p><strong>Silver</strong> — Some things will not work like subtitles, audio, cutscenes, or glitches.</p>
-<p><strong>Bronze</strong> — The game will have issues and won’t provide good performance.</p>
-<p><strong>Borked</strong> — The game will not run.</p>
-<p>You can look for comments and people with similar hardware to check compatibility and you will find all the necessary tweaks and arguments.</p>
-<p><strong>Launch argument</strong> can be added by going into game properties and pasting the argument in Launch Options.</p>
-<p><strong>Proton Verison</strong> can be changed in the Compatibility tab.</p>
-<h2 id="proton-ge-installation">Proton GE installation</h2>
-<p>Some versions might run better with Proton GE, to install it go to the proton-ge GitHub page and download tar.gz file from the releases page. Extract it and copy the contents inside.</p>
-<p>Look for the <strong>.steam folder</strong> in the Home directory in the Steam folder, it is hidden so press <strong>ctrl + H</strong> to show hidden files. If it&rsquo;s not present, look for it in <strong>.var/app/com.valvesoftware.Steam/.steam.</strong> and create a new folder named <strong>compatibilitytools.d</strong> and open it. Paste the extracted files inside this folder.</p>
-<p>After restarting Steam you&rsquo;ll find the Ge-Proton option in steam.</p>
-<h2 id="epic-games-store">Epic Games Store</h2>
-<p>The best solution for playing Epic games is using an unofficial client named <strong>Heroic Games Launcher</strong>. This lets you run games as you would with Steam Client.</p>
-<!-- raw HTML omitted -->
-<p>You can also run games by using the official Epic Games Store client but you can&rsquo;t change the Proton Version for specific games meaning settings will apply to every single game.</p>
-<p>Heroic lets you select tweaks and Proton versions for individual games. Install Heroic from your official Software store or from the Heroic website.</p>
-<p>After installing, login to your Epic Games Store account. There are a tonne of options, you can change the install location, change the Proton version and also check the compatibility. It can also auto-detect your Steam’s installed Proton versions.</p>
-<p>You can select a dedicated GPU if you have a hybrid graphics card like Nvidia.</p>
-<h2 id="ubisoft-and-origin-ea">Ubisoft and Origin/ EA</h2>
-<p>These games are handled by Lutris.</p>
-<p><strong>Lutris</strong>
-It is a game manager that can manage all of your Steam, Epic Games, Gog, Ubisoft, or EA games in one place.</p>
-<p>Go to lutris.net/downloads and check the install instructions for your distribution. Click on the UBisobt or Origin icons and log in, then your games will be listed in the game window. Click to install the games you like.</p>
-<p>Lutris shows you some scripts to choose from which are provided by users and install the best compatible version of proton or Wine. Choose the one you prefer and install the game.</p>
-<p><strong>GoG</strong>
-For Gog, you can use Heroic game Launcher just like Epic Games. Other processes are similar and easy.</p>
-<h2 id="what-is-fsr">What is FSR?</h2>
-<p>AMD’s FidelityFX SuperResolution (FSR) is a tool that you can use on any GPU. AMD’s FSR works by running the game in a lower resolution (thereby increasing performance), then using AI to upscale the image to your output resolution. AMD has recommended specific resolutions at which your game should run, depending on your screen resolution.</p>
-<p>You can render a game at 720p and upscale it to your native resolution and the final output looks amazing! You can enable this setting in games that don&rsquo;t even support this.</p>
-<p>FSR is only supported only by GE-Proton and not by the main Proton version.</p>
-<p><strong>For Steam</strong>
-Add this argument: WINE_FULLSCREEN_FSR=1 %command% in Steam in the Game Properties -&gt; Launch options tab.</p>
-<p><strong>For Heroic Games Launcher</strong>
-Go to the game, then click on Settings and select GE-Proton in the Wine Version dropdown. Then check Enable FSR Hack below it.</p>
-<p><strong>For Lutris</strong>
-Right-click on the game, select Configure, and go into Runner Options and <strong>Enable AMD FidelityFX Super</strong>.</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>This is everything you need to start gaming on Linux, try playing your first game on Linux! Read the documentation, try different settings and enjoy! If you think this post provided you with some valuable information, give a clap and share.</p>
-<p>Thank you!</p>
-<h4 id="comments">Comments</h4>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-
-
-    
-    <div class="tags">
-        <a href="/tags/productivity/">#Productivity</a> 
-    </div>
-    
-</article>
-
-        </div>
-    </main>
-    <footer class="site-footer">
-    <div class="wrap">
-        <span>© 2026 Pratham Dupare</span>
-        <a href="https://github.com/prathamdupare">github</a>
-        <a href="https://x.com/prathammdupare">x</a>
-        <a href="/index.xml">rss</a>
-    </div>
-</footer>
-
-</body>
-</html>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Gaming on Linux — How To Play Any Game on Linux! · Pratham Dupare</title><meta name=description content="Sometimes better than windows!"><link rel=stylesheet href=/css/main.css><link rel=icon href=/favicon.svg></head><body><header class=site-header><div class=wrap><a class=site-name href=/>Pratham Dupare</a><nav class=site-nav><a href=/>home</a>
+<a href=/write/>writing</a>
+<a href=/media/>likes</a>
+<a href=/me/>about</a></nav></div></header><main><div class=wrap><article><header class=post-header><h1>Gaming on Linux — How To Play Any Game on Linux!</h1><div class=meta>August 26, 2022 · 6 min read</div></header><p>Linux gaming is growing so popular.</p><p>The Steam deck has over 1.6 million users, and we expect them to grow more!</p><p>Unlike Windows, where you can play almost anything with a click, Linux gaming can be tricky. There are a lot of tools, software, and terms that can make things complicated.</p><p>This guide will cover everything including Steam, Epic Games, Ubisoft, and much more.</p><h2 id=basic-terms>Basic terms</h2><p><strong>Proton</strong>
+Proton is a compatibility layer for Microsoft Windows games to run on Linux-based operating systems. It is a collection of software and libraries combined with a patched version of Wine to improve performance and compatibility with Windows games.</p><p>It creates a fake C Drive which games run on and then converts them to understand Linux inputs. It uses a lot of open-source libraries like Wine, DXVK, and VKD3D.</p><p><strong>Wine</strong>
+Wine is a compatibility layer capable of running Windows apps on Linux. It is not an emulator and can run apps natively and can be used to run games too!</p><p><strong>GE Proton</strong>
+It is a variant of the Proton and Compatibility tool for Steam Play based on Wine and additional components. It provides better compatibility and support but might not be as stable.</p><h2 id=linux-distributions>Linux Distributions</h2><p>If you already use Linux you might know it doesn’t really matter which distro you choose, almost every distro comes with all the drivers pre-installed.</p><p>Pick any distro with the latest updates like Fedora, Ubuntu, Pop OS!, Arch, Manjaro, or anything you prefer.</p><p><strong>Drivers</strong>
+All the drivers required are already in the Linux Kernel, you don’t have to install them manually. When you update your kernel and distro, drivers get updated automatically. Intel and AMD provide their open-source drivers and are present in the kernel.</p><p><strong>Nvidia drivers</strong>
+Nvidia drivers are not open-source and hence are not added to the kernel. If you have an Nvidia GPU you will need to install Proprietary drivers. Just open your software store and search for “Nvidia” and install the latest version. It will support any GPU from Nvidia.</p><p><strong>Steam and Proton</strong>
+Steam is available for all distros and you can install it from your software center.</p><p>By default, Steam only lets you play games that have native support on Linux. But you can play other games too! To do that go to Steam Settings -> Steam Play and <strong>Enable Steam Play for all other titles</strong>. It uses Proton to run every windows game. But, it&rsquo;s not perfect, some games will run better with a specific version of Proton, some run better than others and maybe some games won’t even run.</p><p>You can check the compatibility, performance, and reviews on protondb.com. This website has a page for every game. It is categorized by labels.</p><p><strong>Platinum</strong> — Native performance, no issues.</p><p><strong>Gold</strong> — It means it runs really well but you might need to select a specific Proton version or do some tweaks.</p><p><strong>Silver</strong> — Some things will not work like subtitles, audio, cutscenes, or glitches.</p><p><strong>Bronze</strong> — The game will have issues and won’t provide good performance.</p><p><strong>Borked</strong> — The game will not run.</p><p>You can look for comments and people with similar hardware to check compatibility and you will find all the necessary tweaks and arguments.</p><p><strong>Launch argument</strong> can be added by going into game properties and pasting the argument in Launch Options.</p><p><strong>Proton Verison</strong> can be changed in the Compatibility tab.</p><h2 id=proton-ge-installation>Proton GE installation</h2><p>Some versions might run better with Proton GE, to install it go to the proton-ge GitHub page and download tar.gz file from the releases page. Extract it and copy the contents inside.</p><p>Look for the <strong>.steam folder</strong> in the Home directory in the Steam folder, it is hidden so press <strong>ctrl + H</strong> to show hidden files. If it&rsquo;s not present, look for it in <strong>.var/app/com.valvesoftware.Steam/.steam.</strong> and create a new folder named <strong>compatibilitytools.d</strong> and open it. Paste the extracted files inside this folder.</p><p>After restarting Steam you&rsquo;ll find the Ge-Proton option in steam.</p><h2 id=epic-games-store>Epic Games Store</h2><p>The best solution for playing Epic games is using an unofficial client named <strong>Heroic Games Launcher</strong>. This lets you run games as you would with Steam Client.</p><p>You can also run games by using the official Epic Games Store client but you can&rsquo;t change the Proton Version for specific games meaning settings will apply to every single game.</p><p>Heroic lets you select tweaks and Proton versions for individual games. Install Heroic from your official Software store or from the Heroic website.</p><p>After installing, login to your Epic Games Store account. There are a tonne of options, you can change the install location, change the Proton version and also check the compatibility. It can also auto-detect your Steam’s installed Proton versions.</p><p>You can select a dedicated GPU if you have a hybrid graphics card like Nvidia.</p><h2 id=ubisoft-and-origin-ea>Ubisoft and Origin/ EA</h2><p>These games are handled by Lutris.</p><p><strong>Lutris</strong>
+It is a game manager that can manage all of your Steam, Epic Games, Gog, Ubisoft, or EA games in one place.</p><p>Go to lutris.net/downloads and check the install instructions for your distribution. Click on the UBisobt or Origin icons and log in, then your games will be listed in the game window. Click to install the games you like.</p><p>Lutris shows you some scripts to choose from which are provided by users and install the best compatible version of proton or Wine. Choose the one you prefer and install the game.</p><p><strong>GoG</strong>
+For Gog, you can use Heroic game Launcher just like Epic Games. Other processes are similar and easy.</p><h2 id=what-is-fsr>What is FSR?</h2><p>AMD’s FidelityFX SuperResolution (FSR) is a tool that you can use on any GPU. AMD’s FSR works by running the game in a lower resolution (thereby increasing performance), then using AI to upscale the image to your output resolution. AMD has recommended specific resolutions at which your game should run, depending on your screen resolution.</p><p>You can render a game at 720p and upscale it to your native resolution and the final output looks amazing! You can enable this setting in games that don&rsquo;t even support this.</p><p>FSR is only supported only by GE-Proton and not by the main Proton version.</p><p><strong>For Steam</strong>
+Add this argument: WINE_FULLSCREEN_FSR=1 %command% in Steam in the Game Properties -> Launch options tab.</p><p><strong>For Heroic Games Launcher</strong>
+Go to the game, then click on Settings and select GE-Proton in the Wine Version dropdown. Then check Enable FSR Hack below it.</p><p><strong>For Lutris</strong>
+Right-click on the game, select Configure, and go into Runner Options and <strong>Enable AMD FidelityFX Super</strong>.</p><h2 id=conclusion>Conclusion</h2><p>This is everything you need to start gaming on Linux, try playing your first game on Linux! Read the documentation, try different settings and enjoy! If you think this post provided you with some valuable information, give a clap and share.</p><p>Thank you!</p><h4 id=comments>Comments</h4><div class=tags><a href=/tags/productivity/>#Productivity</a></div></article></div></main><footer class=site-footer><div class=wrap><span>© 2026 Pratham Dupare</span>
+<a href=https://github.com/prathamdupare>github</a>
+<a href=https://x.com/prathammdupare>x</a>
+<a href=/index.xml>rss</a></div></footer></body></html>

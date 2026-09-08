@@ -1,4 +1,4 @@
-baseURL = 'https://blog.heypratham.in/'
+baseURL = 'https://heypratham.in/'
 languageCode = 'en-US'
 title = "Pratham Dupare"
 ignoreLogs = ['warning-goldmark-raw-html']

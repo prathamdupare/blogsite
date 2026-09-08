@@ -1,219 +1,56 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Components and Optimisations · Pratham Dupare</title>
-<meta name="description" content="Basic to advance guide for Next.js">
-<link rel="stylesheet" href="/css/main.css">
-<link rel="icon" href="/favicon.svg">
-
-
-</head>
-<body>
-    <header class="site-header">
-    <div class="wrap">
-        <a class="site-name" href="/">Pratham Dupare</a>
-        <nav class="site-nav">
-            
-            <a href="/">home</a>
-            
-            <a href="/write/">writing</a>
-            
-            <a href="/media/">likes</a>
-            
-            <a href="/me/">about</a>
-            
-        </nav>
-    </div>
-</header>
-
-    <main>
-        <div class="wrap">
-            
-<article>
-    <header class="post-header">
-        <h1>Components and Optimisations</h1>
-        <div class="meta">March 8, 2024 · 3 min read</div>
-    </header>
-
-    <h2 id="introduction">Introduction</h2>
-<p>Next.js comes with a variety of built-in optimizations designed to improve your application&rsquo;s speed and Core Web Vitals
-.</p>
-<h2 id="built-in-components">Built-in Components</h2>
-<h3 id="1-images-component">1. Images Component:</h3>
-<ul>
-<li>Utilizes the native <code>&lt;img&gt;</code> element.</li>
-<li>Optimizes image performance by implementing lazy loading.</li>
-<li>Automatically resizes images based on the device size for improved responsiveness.</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#57606a">//app/page.js
-</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">import</span> <span style="color:#1f2328">Image</span> <span style="color:#1f2328">from</span> <span style="color:#0a3069">&#34;next/image&#34;</span><span style="color:#1f2328">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">export</span> <span style="color:#cf222e">default</span> <span style="color:#cf222e">function</span> <span style="color:#1f2328">Page</span><span style="color:#1f2328">()</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">return</span> <span style="color:#1f2328">(</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">&lt;</span><span style="color:#0550ae">Image</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#1f2328">src</span><span style="color:#0550ae">=</span><span style="color:#0a3069">&#34;/profile.png&#34;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#1f2328">width</span><span style="color:#0550ae">=</span><span style="color:#1f2328">{</span><span style="color:#0550ae">500</span><span style="color:#1f2328">}</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#1f2328">height</span><span style="color:#0550ae">=</span><span style="color:#1f2328">{</span><span style="color:#0550ae">500</span><span style="color:#1f2328">}</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#1f2328">alt</span><span style="color:#0550ae">=</span><span style="color:#0a3069">&#34;Picture of the author&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">/&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">);</span>
-</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
-</span></span></code></pre></div><p>The Image Component requires the following properties: <code>src</code>, <code>width</code>, <code>height</code>, and <code>alt</code>.</p>
-<h3 id="2-link-component">2. Link Component:</h3>
-<p>The <code>&lt;Link&gt;</code> component in Next.js is a React component that extends the HTML <code>&lt;a&gt;</code> element. It plays a crucial role in providing prefetching and enabling client-side navigation between routes. This component serves as the primary means of navigating between routes in a Next.js application.</p>
-<ul>
-<li>Built on the native <code>&lt;a&gt;</code> tags.</li>
-<li>Prefetches pages in the background, enhancing page transition speed.</li>
-<li>Facilitates faster and smoother navigation between pages.</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#cf222e">import</span> <span style="color:#1f2328">Link</span> <span style="color:#1f2328">from</span> <span style="color:#0a3069">&#34;next/link&#34;</span><span style="color:#1f2328">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">export</span> <span style="color:#cf222e">default</span> <span style="color:#cf222e">function</span> <span style="color:#1f2328">Page</span><span style="color:#1f2328">()</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">return</span> <span style="color:#1f2328">&lt;</span><span style="color:#0550ae">Link</span> <span style="color:#1f2328">href</span><span style="color:#0550ae">=</span><span style="color:#0a3069">&#34;/dashboard&#34;</span><span style="color:#1f2328">&gt;</span><span style="color:#1f2328">Dashboard</span><span style="color:#1f2328">&lt;/</span><span style="color:#0550ae">Link</span><span style="color:#1f2328">&gt;;</span>
-</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
-</span></span></code></pre></div><p><code>href</code> (required)<br>
-The path or URL to navigate to.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#1f2328">&lt;</span><span style="color:#0550ae">Link</span> <span style="color:#1f2328">href</span><span style="color:#0550ae">=</span><span style="color:#0a3069">&#34;/dashboard&#34;</span><span style="color:#1f2328">&gt;</span><span style="color:#1f2328">Dashboard</span><span style="color:#1f2328">&lt;/</span><span style="color:#0550ae">Link</span><span style="color:#1f2328">&gt;</span>
-</span></span></code></pre></div><ul>
-<li><strong>Linking to Dynamic Routes</strong></li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#57606a">//app/blog/page.js
-</span></span></span><span style="display:flex;"><span><span style="color:#cf222e">import</span> <span style="color:#1f2328">Link</span> <span style="color:#1f2328">from</span> <span style="color:#0a3069">&#34;next/link&#34;</span><span style="color:#1f2328">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">function</span> <span style="color:#1f2328">Page</span><span style="color:#1f2328">({</span> <span style="color:#1f2328">posts</span> <span style="color:#1f2328">})</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">return</span> <span style="color:#1f2328">(</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">&lt;</span><span style="color:#0550ae">ul</span><span style="color:#1f2328">&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#1f2328">{</span><span style="color:#1f2328">posts</span><span style="color:#1f2328">.</span><span style="color:#1f2328">map</span><span style="color:#1f2328">((</span><span style="color:#1f2328">post</span><span style="color:#1f2328">)</span> <span style="color:#1f2328">=&gt;</span> <span style="color:#1f2328">(</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">&lt;</span><span style="color:#0550ae">li</span> <span style="color:#1f2328">key</span><span style="color:#0550ae">=</span><span style="color:#1f2328">{</span><span style="color:#1f2328">post</span><span style="color:#1f2328">.</span><span style="color:#1f2328">id</span><span style="color:#1f2328">}&gt;</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#1f2328">&lt;</span><span style="color:#0550ae">Link</span> <span style="color:#1f2328">href</span><span style="color:#0550ae">=</span><span style="color:#1f2328">{</span><span style="color:#0a3069">`/blog/</span><span style="color:#0a3069">${</span><span style="color:#1f2328">post</span><span style="color:#1f2328">.</span><span style="color:#1f2328">slug</span><span style="color:#0a3069">}</span><span style="color:#0a3069">`</span><span style="color:#1f2328">}&gt;{</span><span style="color:#1f2328">post</span><span style="color:#1f2328">.</span><span style="color:#1f2328">title</span><span style="color:#1f2328">}&lt;/</span><span style="color:#0550ae">Link</span><span style="color:#1f2328">&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">&lt;/</span><span style="color:#0550ae">li</span><span style="color:#1f2328">&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#1f2328">))}</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">&lt;/</span><span style="color:#0550ae">ul</span><span style="color:#1f2328">&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">);</span>
-</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
-</span></span></code></pre></div><p>For example, you can generate a list of links to the dynamic route <code>app/blog/[slug]/page.js</code>:</p>
-<h3 id="3-scripts-component">3. Scripts Component:</h3>
-<p>This is self-explanatory, this let&rsquo;s you run scripts for a specific components.</p>
-<ul>
-<li>Implemented with the native <code>&lt;script&gt;</code> tags.</li>
-<li>Provides control over the loading and execution of third-party scripts.</li>
-<li>Enables efficient management of external scripts for better overall performance.</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#cf222e">import</span> <span style="color:#1f2328">Script</span> <span style="color:#1f2328">from</span> <span style="color:#0a3069">&#34;next/script&#34;</span><span style="color:#1f2328">;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">export</span> <span style="color:#cf222e">default</span> <span style="color:#cf222e">function</span> <span style="color:#1f2328">Dashboard</span><span style="color:#1f2328">()</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#cf222e">return</span> <span style="color:#1f2328">(</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">&lt;&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#1f2328">&lt;</span><span style="color:#0550ae">Script</span> <span style="color:#1f2328">src</span><span style="color:#0550ae">=</span><span style="color:#0a3069">&#34;https://example.com/script.js&#34;</span> <span style="color:#1f2328">/&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">&lt;/&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">);</span>
-</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
-</span></span></code></pre></div><p><strong>Required Props for Script Component in Next.js</strong></p>
-<p>The <code>&lt;Script&gt;</code> component in Next.js requires the following property:</p>
-<ul>
-<li><strong>src:</strong>
-<ul>
-<li>Type: String</li>
-<li>Description: A path string specifying the URL of an external script. This can be either an absolute external URL or an internal path.</li>
-<li>Requirement: The <code>src</code> property is required unless an inline script is used.</li>
-</ul>
-</li>
-</ul>
-<p><strong>Optional Props</strong> :</p>
-<table>
-	<thead>
-			<tr>
-					<th>Prop</th>
-					<th>Example</th>
-					<th>Type</th>
-					<th>Required</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td><code>src</code></td>
-					<td><code>src=&quot;http://example.com/script&quot;</code></td>
-					<td>String</td>
-					<td>Required unless inline script is used</td>
-			</tr>
-			<tr>
-					<td><code>strategy</code></td>
-					<td><code>strategy=&quot;lazyOnload&quot;</code></td>
-					<td>String</td>
-					<td>-</td>
-			</tr>
-			<tr>
-					<td><code>onLoad</code></td>
-					<td><code>onLoad={onLoadFunc}</code></td>
-					<td>Function</td>
-					<td>-</td>
-			</tr>
-			<tr>
-					<td><code>onReady</code></td>
-					<td><code>onReady={onReadyFunc}</code></td>
-					<td>Function</td>
-					<td>-</td>
-			</tr>
-			<tr>
-					<td><code>onError</code></td>
-					<td><code>onError={onErrorFunc}</code></td>
-					<td>Function</td>
-					<td>-</td>
-			</tr>
-	</tbody>
-</table>
-<p>For a comprehensive guide on Next.js components, refer to the <a href="https://nextjs.org/docs/app/api-reference/components">Api Reference/Components</a> section of the official Next.js documentation.</p>
-<h2 id="static-assets">Static Assets</h2>
-<p>The Next.js <code>/public</code> folder serves as a convenient location for hosting static assets such as images, fonts, and other files.</p>
-<p>Files stored within the <code>/public</code> directory can be efficiently cached by Content Delivery Network (CDN) providers. This caching mechanism enhances the delivery speed of assets to users, resulting in a smoother browsing experience.</p>
-<h2 id="metadata">Metadata</h2>
-<p><strong>Next.js Metadata API for Improved SEO and Shareability</strong></p>
-<p>Next.js provides a Metadata API that allows you to define your application&rsquo;s metadata, including meta and link tags inside the HTML head element. This is crucial for enhancing SEO and improving web shareability.</p>
-<p>There are two methods to add metadata to your application:</p>
-<ol>
-<li>
-<p><strong>Config-based Metadata:</strong></p>
-<ul>
-<li>Export a static metadata object or a dynamic <code>generateMetadata</code> function in a <code>layout.js</code> or <code>page.js</code> file.</li>
-</ul>
-</li>
-<li>
-<p><strong>File-based Metadata:</strong></p>
-<ul>
-<li>Add static or dynamically generated special files to route segments.</li>
-</ul>
-</li>
-</ol>
-<p>Regardless of the method chosen, Next.js will automatically generate the relevant <code>&lt;head&gt;</code> elements for your pages. Additionally, you can create dynamic Open Graph (OG) images using the <code>ImageResponse</code> constructor for a more customized and engaging web sharing experience.</p>
-<p>To define static metadata, export a Metadata object from a <code>layout.js</code>(we have already seen in previous chapter) or static <code>page.js</code> file.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#cf222e">export</span> <span style="color:#cf222e">const</span> <span style="color:#1f2328">metadata</span> <span style="color:#0550ae">=</span> <span style="color:#1f2328">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">title</span><span style="color:#0550ae">:</span> <span style="color:#0a3069">&#34;...&#34;</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">description</span><span style="color:#0550ae">:</span> <span style="color:#0a3069">&#34;...&#34;</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span><span style="color:#1f2328">};</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#cf222e">export</span> <span style="color:#cf222e">default</span> <span style="color:#cf222e">function</span> <span style="color:#1f2328">Page</span><span style="color:#1f2328">()</span> <span style="color:#1f2328">{}</span>
-</span></span></code></pre></div><p>These components and elements cover the fundamental requirements for constructing a speedy and responsive Next.js application.</p>
-
-
-    
-    <div class="tags">
-        <a href="/tags/web-development/">#Web Development</a> <a href="/tags/nextjs/">#NextJs</a> <a href="/tags/series/">#series</a> <a href="/tags/docs/">#docs</a> 
-    </div>
-    
-</article>
-
-        </div>
-    </main>
-    <footer class="site-footer">
-    <div class="wrap">
-        <span>© 2026 Pratham Dupare</span>
-        <a href="https://github.com/prathamdupare">github</a>
-        <a href="https://x.com/prathammdupare">x</a>
-        <a href="/index.xml">rss</a>
-    </div>
-</footer>
-
-</body>
-</html>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Components and Optimisations · Pratham Dupare</title><meta name=description content="Basic to advance guide for Next.js"><link rel=stylesheet href=/css/main.css><link rel=icon href=/favicon.svg></head><body><header class=site-header><div class=wrap><a class=site-name href=/>Pratham Dupare</a><nav class=site-nav><a href=/>home</a>
+<a href=/write/>writing</a>
+<a href=/media/>likes</a>
+<a href=/me/>about</a></nav></div></header><main><div class=wrap><article><header class=post-header><h1>Components and Optimisations</h1><div class=meta>March 8, 2024 · 3 min read</div></header><h2 id=introduction>Introduction</h2><p>Next.js comes with a variety of built-in optimizations designed to improve your application&rsquo;s speed and Core Web Vitals
+.</p><h2 id=built-in-components>Built-in Components</h2><h3 id=1-images-component>1. Images Component:</h3><ul><li>Utilizes the native <code>&lt;img></code> element.</li><li>Optimizes image performance by implementing lazy loading.</li><li>Automatically resizes images based on the device size for improved responsiveness.</li></ul><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-jsx data-lang=jsx><span style=display:flex><span><span style=color:#57606a>//app/page.js
+</span></span></span><span style=display:flex><span><span style=color:#cf222e>import</span> <span style=color:#1f2328>Image</span> <span style=color:#1f2328>from</span> <span style=color:#0a3069>&#34;next/image&#34;</span><span style=color:#1f2328>;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>export</span> <span style=color:#cf222e>default</span> <span style=color:#cf222e>function</span> <span style=color:#1f2328>Page</span><span style=color:#1f2328>()</span> <span style=color:#1f2328>{</span>
+</span></span><span style=display:flex><span>  <span style=color:#cf222e>return</span> <span style=color:#1f2328>(</span>
+</span></span><span style=display:flex><span>    <span style=color:#1f2328>&lt;</span><span style=color:#0550ae>Image</span>
+</span></span><span style=display:flex><span>      <span style=color:#1f2328>src</span><span style=color:#0550ae>=</span><span style=color:#0a3069>&#34;/profile.png&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#1f2328>width</span><span style=color:#0550ae>=</span><span style=color:#1f2328>{</span><span style=color:#0550ae>500</span><span style=color:#1f2328>}</span>
+</span></span><span style=display:flex><span>      <span style=color:#1f2328>height</span><span style=color:#0550ae>=</span><span style=color:#1f2328>{</span><span style=color:#0550ae>500</span><span style=color:#1f2328>}</span>
+</span></span><span style=display:flex><span>      <span style=color:#1f2328>alt</span><span style=color:#0550ae>=</span><span style=color:#0a3069>&#34;Picture of the author&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#1f2328>/&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:#1f2328>);</span>
+</span></span><span style=display:flex><span><span style=color:#1f2328>}</span>
+</span></span></code></pre></div><p>The Image Component requires the following properties: <code>src</code>, <code>width</code>, <code>height</code>, and <code>alt</code>.</p><h3 id=2-link-component>2. Link Component:</h3><p>The <code>&lt;Link></code> component in Next.js is a React component that extends the HTML <code>&lt;a></code> element. It plays a crucial role in providing prefetching and enabling client-side navigation between routes. This component serves as the primary means of navigating between routes in a Next.js application.</p><ul><li>Built on the native <code>&lt;a></code> tags.</li><li>Prefetches pages in the background, enhancing page transition speed.</li><li>Facilitates faster and smoother navigation between pages.</li></ul><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-jsx data-lang=jsx><span style=display:flex><span><span style=color:#cf222e>import</span> <span style=color:#1f2328>Link</span> <span style=color:#1f2328>from</span> <span style=color:#0a3069>&#34;next/link&#34;</span><span style=color:#1f2328>;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>export</span> <span style=color:#cf222e>default</span> <span style=color:#cf222e>function</span> <span style=color:#1f2328>Page</span><span style=color:#1f2328>()</span> <span style=color:#1f2328>{</span>
+</span></span><span style=display:flex><span>  <span style=color:#cf222e>return</span> <span style=color:#1f2328>&lt;</span><span style=color:#0550ae>Link</span> <span style=color:#1f2328>href</span><span style=color:#0550ae>=</span><span style=color:#0a3069>&#34;/dashboard&#34;</span><span style=color:#1f2328>&gt;</span><span style=color:#1f2328>Dashboard</span><span style=color:#1f2328>&lt;/</span><span style=color:#0550ae>Link</span><span style=color:#1f2328>&gt;;</span>
+</span></span><span style=display:flex><span><span style=color:#1f2328>}</span>
+</span></span></code></pre></div><p><code>href</code> (required)<br>The path or URL to navigate to.</p><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-jsx data-lang=jsx><span style=display:flex><span><span style=color:#1f2328>&lt;</span><span style=color:#0550ae>Link</span> <span style=color:#1f2328>href</span><span style=color:#0550ae>=</span><span style=color:#0a3069>&#34;/dashboard&#34;</span><span style=color:#1f2328>&gt;</span><span style=color:#1f2328>Dashboard</span><span style=color:#1f2328>&lt;/</span><span style=color:#0550ae>Link</span><span style=color:#1f2328>&gt;</span>
+</span></span></code></pre></div><ul><li><strong>Linking to Dynamic Routes</strong></li></ul><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-jsx data-lang=jsx><span style=display:flex><span><span style=color:#57606a>//app/blog/page.js
+</span></span></span><span style=display:flex><span><span style=color:#cf222e>import</span> <span style=color:#1f2328>Link</span> <span style=color:#1f2328>from</span> <span style=color:#0a3069>&#34;next/link&#34;</span><span style=color:#1f2328>;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>function</span> <span style=color:#1f2328>Page</span><span style=color:#1f2328>({</span> <span style=color:#1f2328>posts</span> <span style=color:#1f2328>})</span> <span style=color:#1f2328>{</span>
+</span></span><span style=display:flex><span>  <span style=color:#cf222e>return</span> <span style=color:#1f2328>(</span>
+</span></span><span style=display:flex><span>    <span style=color:#1f2328>&lt;</span><span style=color:#0550ae>ul</span><span style=color:#1f2328>&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:#1f2328>{</span><span style=color:#1f2328>posts</span><span style=color:#1f2328>.</span><span style=color:#1f2328>map</span><span style=color:#1f2328>((</span><span style=color:#1f2328>post</span><span style=color:#1f2328>)</span> <span style=color:#1f2328>=&gt;</span> <span style=color:#1f2328>(</span>
+</span></span><span style=display:flex><span>        <span style=color:#1f2328>&lt;</span><span style=color:#0550ae>li</span> <span style=color:#1f2328>key</span><span style=color:#0550ae>=</span><span style=color:#1f2328>{</span><span style=color:#1f2328>post</span><span style=color:#1f2328>.</span><span style=color:#1f2328>id</span><span style=color:#1f2328>}&gt;</span>
+</span></span><span style=display:flex><span>          <span style=color:#1f2328>&lt;</span><span style=color:#0550ae>Link</span> <span style=color:#1f2328>href</span><span style=color:#0550ae>=</span><span style=color:#1f2328>{</span><span style=color:#0a3069>`/blog/</span><span style=color:#0a3069>${</span><span style=color:#1f2328>post</span><span style=color:#1f2328>.</span><span style=color:#1f2328>slug</span><span style=color:#0a3069>}</span><span style=color:#0a3069>`</span><span style=color:#1f2328>}&gt;{</span><span style=color:#1f2328>post</span><span style=color:#1f2328>.</span><span style=color:#1f2328>title</span><span style=color:#1f2328>}&lt;/</span><span style=color:#0550ae>Link</span><span style=color:#1f2328>&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#1f2328>&lt;/</span><span style=color:#0550ae>li</span><span style=color:#1f2328>&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:#1f2328>))}</span>
+</span></span><span style=display:flex><span>    <span style=color:#1f2328>&lt;/</span><span style=color:#0550ae>ul</span><span style=color:#1f2328>&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:#1f2328>);</span>
+</span></span><span style=display:flex><span><span style=color:#1f2328>}</span>
+</span></span></code></pre></div><p>For example, you can generate a list of links to the dynamic route <code>app/blog/[slug]/page.js</code>:</p><h3 id=3-scripts-component>3. Scripts Component:</h3><p>This is self-explanatory, this let&rsquo;s you run scripts for a specific components.</p><ul><li>Implemented with the native <code>&lt;script></code> tags.</li><li>Provides control over the loading and execution of third-party scripts.</li><li>Enables efficient management of external scripts for better overall performance.</li></ul><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-jsx data-lang=jsx><span style=display:flex><span><span style=color:#cf222e>import</span> <span style=color:#1f2328>Script</span> <span style=color:#1f2328>from</span> <span style=color:#0a3069>&#34;next/script&#34;</span><span style=color:#1f2328>;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>export</span> <span style=color:#cf222e>default</span> <span style=color:#cf222e>function</span> <span style=color:#1f2328>Dashboard</span><span style=color:#1f2328>()</span> <span style=color:#1f2328>{</span>
+</span></span><span style=display:flex><span>  <span style=color:#cf222e>return</span> <span style=color:#1f2328>(</span>
+</span></span><span style=display:flex><span>    <span style=color:#1f2328>&lt;&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:#1f2328>&lt;</span><span style=color:#0550ae>Script</span> <span style=color:#1f2328>src</span><span style=color:#0550ae>=</span><span style=color:#0a3069>&#34;https://example.com/script.js&#34;</span> <span style=color:#1f2328>/&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#1f2328>&lt;/&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:#1f2328>);</span>
+</span></span><span style=display:flex><span><span style=color:#1f2328>}</span>
+</span></span></code></pre></div><p><strong>Required Props for Script Component in Next.js</strong></p><p>The <code>&lt;Script></code> component in Next.js requires the following property:</p><ul><li><strong>src:</strong><ul><li>Type: String</li><li>Description: A path string specifying the URL of an external script. This can be either an absolute external URL or an internal path.</li><li>Requirement: The <code>src</code> property is required unless an inline script is used.</li></ul></li></ul><p><strong>Optional Props</strong> :</p><table><thead><tr><th>Prop</th><th>Example</th><th>Type</th><th>Required</th></tr></thead><tbody><tr><td><code>src</code></td><td><code>src="http://example.com/script"</code></td><td>String</td><td>Required unless inline script is used</td></tr><tr><td><code>strategy</code></td><td><code>strategy="lazyOnload"</code></td><td>String</td><td>-</td></tr><tr><td><code>onLoad</code></td><td><code>onLoad={onLoadFunc}</code></td><td>Function</td><td>-</td></tr><tr><td><code>onReady</code></td><td><code>onReady={onReadyFunc}</code></td><td>Function</td><td>-</td></tr><tr><td><code>onError</code></td><td><code>onError={onErrorFunc}</code></td><td>Function</td><td>-</td></tr></tbody></table><p>For a comprehensive guide on Next.js components, refer to the <a href=https://nextjs.org/docs/app/api-reference/components>Api Reference/Components</a> section of the official Next.js documentation.</p><h2 id=static-assets>Static Assets</h2><p>The Next.js <code>/public</code> folder serves as a convenient location for hosting static assets such as images, fonts, and other files.</p><p>Files stored within the <code>/public</code> directory can be efficiently cached by Content Delivery Network (CDN) providers. This caching mechanism enhances the delivery speed of assets to users, resulting in a smoother browsing experience.</p><h2 id=metadata>Metadata</h2><p><strong>Next.js Metadata API for Improved SEO and Shareability</strong></p><p>Next.js provides a Metadata API that allows you to define your application&rsquo;s metadata, including meta and link tags inside the HTML head element. This is crucial for enhancing SEO and improving web shareability.</p><p>There are two methods to add metadata to your application:</p><ol><li><p><strong>Config-based Metadata:</strong></p><ul><li>Export a static metadata object or a dynamic <code>generateMetadata</code> function in a <code>layout.js</code> or <code>page.js</code> file.</li></ul></li><li><p><strong>File-based Metadata:</strong></p><ul><li>Add static or dynamically generated special files to route segments.</li></ul></li></ol><p>Regardless of the method chosen, Next.js will automatically generate the relevant <code>&lt;head></code> elements for your pages. Additionally, you can create dynamic Open Graph (OG) images using the <code>ImageResponse</code> constructor for a more customized and engaging web sharing experience.</p><p>To define static metadata, export a Metadata object from a <code>layout.js</code>(we have already seen in previous chapter) or static <code>page.js</code> file.</p><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-jsx data-lang=jsx><span style=display:flex><span><span style=color:#cf222e>export</span> <span style=color:#cf222e>const</span> <span style=color:#1f2328>metadata</span> <span style=color:#0550ae>=</span> <span style=color:#1f2328>{</span>
+</span></span><span style=display:flex><span>  <span style=color:#1f2328>title</span><span style=color:#0550ae>:</span> <span style=color:#0a3069>&#34;...&#34;</span><span style=color:#1f2328>,</span>
+</span></span><span style=display:flex><span>  <span style=color:#1f2328>description</span><span style=color:#0550ae>:</span> <span style=color:#0a3069>&#34;...&#34;</span><span style=color:#1f2328>,</span>
+</span></span><span style=display:flex><span><span style=color:#1f2328>};</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#cf222e>export</span> <span style=color:#cf222e>default</span> <span style=color:#cf222e>function</span> <span style=color:#1f2328>Page</span><span style=color:#1f2328>()</span> <span style=color:#1f2328>{}</span>
+</span></span></code></pre></div><p>These components and elements cover the fundamental requirements for constructing a speedy and responsive Next.js application.</p><div class=tags><a href=/tags/web-development/>#Web Development</a> <a href=/tags/nextjs/>#NextJs</a> <a href=/tags/series/>#series</a> <a href=/tags/docs/>#docs</a></div></article></div></main><footer class=site-footer><div class=wrap><span>© 2026 Pratham Dupare</span>
+<a href=https://github.com/prathamdupare>github</a>
+<a href=https://x.com/prathammdupare>x</a>
+<a href=/index.xml>rss</a></div></footer></body></html>

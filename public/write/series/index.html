@@ -1,153 +1,40 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Server components and Client Components in Next.js · Pratham Dupare</title>
-<meta name="description" content="Basic to advance guide for Next.js">
-<link rel="stylesheet" href="/css/main.css">
-<link rel="icon" href="/favicon.svg">
-
-
-</head>
-<body>
-    <header class="site-header">
-    <div class="wrap">
-        <a class="site-name" href="/">Pratham Dupare</a>
-        <nav class="site-nav">
-            
-            <a href="/">home</a>
-            
-            <a href="/write/">writing</a>
-            
-            <a href="/media/">likes</a>
-            
-            <a href="/me/">about</a>
-            
-        </nav>
-    </div>
-</header>
-
-    <main>
-        <div class="wrap">
-            
-<article>
-    <header class="post-header">
-        <h1>Server components and Client Components in Next.js</h1>
-        <div class="meta">March 6, 2024 · 3 min read</div>
-    </header>
-
-    <h2 id="server-components">Server components</h2>
-<p>By default, Next.js uses Server Components. This makes server rendering possible without any configuration and you can opt into using Client Components when needed.</p>
-<p>Reacr Server Components allow you to write UI that can be rendered and optionally cached on the server.</p>
-<h2 id="why-server-rendering">Why Server Rendering</h2>
-<p>There are a lot of benefits of server side rendering such as :</p>
-<ul>
-<li>
-<p><strong>Data Fetching</strong>: Fetching data on the server improves performance by reducing client-side data retrieval time and the number of requests.</p>
-</li>
-<li>
-<p><strong>Security: Keeping</strong> sensitive data and logic on the server, such as tokens and API keys, prevents exposure to the client, enhancing security.</p>
-</li>
-<li>
-<p><strong>Caching</strong> : Server-side rendering allows for caching, improving performance and reducing costs by reusing results across requests and users.</p>
-</li>
-<li>
-<p><strong>Bundle Sizes</strong>: Large dependencies impacting client bundles are moved to the server, benefiting users with slower internet or less powerful devices.</p>
-</li>
-<li>
-<p><strong>Initial Page Load and FCP</strong>: Server-generated HTML enables immediate page viewing without waiting for client-side JavaScript execution.</p>
-</li>
-<li>
-<p><strong>SEO and Shareability</strong>: Rendered HTML aids search engine indexing and social network previews for better SEO and shareability.</p>
-</li>
-<li>
-<p><strong>Streaming</strong>: Server Components enable rendering in chunks, allowing users to see parts of the page earlier, enhancing the user experience.</p>
-</li>
-</ul>
-<h2 id="rendering">Rendering</h2>
-<p>So how are server components rendered?</p>
-<p>On the server, Next.js uses React&rsquo;s API to start rendering. When requested on client, the html is used to immidiately show a fast non-interactive preview on the route.</p>
-<h3 id="static-and-dynamic-rendering">Static and dynamic rendering</h3>
-<p>Static Rendering (Default):
-Routes are pre-rendered at build time or in the background, then cached and stored. This is great for content that doesn&rsquo;t change per user, like static blog posts or product pages.</p>
-<p>Dynamic Rendering:
-Routes are generated for each user when requested. This is useful for content that is personalized or relies on information like cookies or URL parameters, which can only be known at the time of the request.</p>
-<p>As a developer you don&rsquo;t have to choose static or dynamic rendering.</p>
-<h2 id="client-components">Client components</h2>
-<p>Client Components allow you to write interactive UI that is prerenderd on the server and use client JavaScript to run in the browser.</p>
-<p><em>Benefits</em> of doing the rendering on the client are :</p>
-<ul>
-<li>You can use states, use state, effects and event listners on client components and they can provide immidiate feedback to the user and update the UI on client side.</li>
-<li>Browser APIs like geolocation and localStorage can be accesed.</li>
-</ul>
-<h2 id="using-client-components-in-nextjs">Using Client Components in Next.js</h2>
-<p>To use a Client Components, you can use the React <code>&quot;use client&quot;</code> directive at the top of a file.</p>
-<div class="highlight"><div style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="background-color:#dedede"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>```
-</span></span><span style="display:flex; background-color:#dedede"><span>&#39;use client&#39;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>import { useState } from &#39;react&#39;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>export default function Counter() {
-</span></span><span style="display:flex;"><span>  const [count, setCount] = useState(0)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  return (
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">&lt;</span><span style="color:#0550ae">div</span><span style="color:#1f2328">&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#1f2328">&lt;</span><span style="color:#0550ae">p</span><span style="color:#1f2328">&gt;</span>You clicked {count} times<span style="color:#1f2328">&lt;/</span><span style="color:#0550ae">p</span><span style="color:#1f2328">&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#1f2328">&lt;</span><span style="color:#0550ae">button</span> <span style="color:#1f2328">onClick</span><span style="color:#0550ae">=</span><span style="color:#0a3069">{()</span> <span style="color:#f6f8fa;background-color:#82071e">=</span><span style="color:#1f2328">&gt;</span> setCount(count + 1)}&gt;Click me<span style="color:#1f2328">&lt;/</span><span style="color:#0550ae">button</span><span style="color:#1f2328">&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">&lt;/</span><span style="color:#0550ae">div</span><span style="color:#1f2328">&gt;</span>
-</span></span><span style="display:flex;"><span>  )
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>```</span></span></code></pre></td></tr></table>
-</div>
-</div>
-<p>That is all you need to convert server components to client componets.</p>
-<blockquote>
-<p><strong>Note</strong> - If you use state, effects, browser APIs without specifying the client component by <code>&quot;use client&quot;</code>, Next.js will thorow an error.</p>
-</blockquote>
-<h2 id="full-page-load">Full page load</h2>
-<p>To optimize the initial page load, Next.js will use React&rsquo;s APIs to render a static HTML preview on the server for both Client and Server Components. This means, when the user first visits your application, they will see the content of the page immediately, without having to wait for the client to download, parse, and execute the Client Component JavaScript bundle.</p>
-<h1 id="conclusion">Conclusion</h1>
-<p>Server and Client Components enhance website performance, conserve data, and are especially advantageous for low-powered devices. You have the flexibility to choose when to employ client components as needed!</p>
-
-
-    
-    <div class="tags">
-        <a href="/tags/web-development/">#Web Development</a> <a href="/tags/nextjs/">#NextJs</a> 
-    </div>
-    
-</article>
-
-        </div>
-    </main>
-    <footer class="site-footer">
-    <div class="wrap">
-        <span>© 2026 Pratham Dupare</span>
-        <a href="https://github.com/prathamdupare">github</a>
-        <a href="https://x.com/prathammdupare">x</a>
-        <a href="/index.xml">rss</a>
-    </div>
-</footer>
-
-</body>
-</html>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Server components and Client Components in Next.js · Pratham Dupare</title><meta name=description content="Basic to advance guide for Next.js"><link rel=stylesheet href=/css/main.css><link rel=icon href=/favicon.svg></head><body><header class=site-header><div class=wrap><a class=site-name href=/>Pratham Dupare</a><nav class=site-nav><a href=/>home</a>
+<a href=/write/>writing</a>
+<a href=/media/>likes</a>
+<a href=/me/>about</a></nav></div></header><main><div class=wrap><article><header class=post-header><h1>Server components and Client Components in Next.js</h1><div class=meta>March 6, 2024 · 3 min read</div></header><h2 id=server-components>Server components</h2><p>By default, Next.js uses Server Components. This makes server rendering possible without any configuration and you can opt into using Client Components when needed.</p><p>Reacr Server Components allow you to write UI that can be rendered and optionally cached on the server.</p><h2 id=why-server-rendering>Why Server Rendering</h2><p>There are a lot of benefits of server side rendering such as :</p><ul><li><p><strong>Data Fetching</strong>: Fetching data on the server improves performance by reducing client-side data retrieval time and the number of requests.</p></li><li><p><strong>Security: Keeping</strong> sensitive data and logic on the server, such as tokens and API keys, prevents exposure to the client, enhancing security.</p></li><li><p><strong>Caching</strong> : Server-side rendering allows for caching, improving performance and reducing costs by reusing results across requests and users.</p></li><li><p><strong>Bundle Sizes</strong>: Large dependencies impacting client bundles are moved to the server, benefiting users with slower internet or less powerful devices.</p></li><li><p><strong>Initial Page Load and FCP</strong>: Server-generated HTML enables immediate page viewing without waiting for client-side JavaScript execution.</p></li><li><p><strong>SEO and Shareability</strong>: Rendered HTML aids search engine indexing and social network previews for better SEO and shareability.</p></li><li><p><strong>Streaming</strong>: Server Components enable rendering in chunks, allowing users to see parts of the page earlier, enhancing the user experience.</p></li></ul><h2 id=rendering>Rendering</h2><p>So how are server components rendered?</p><p>On the server, Next.js uses React&rsquo;s API to start rendering. When requested on client, the html is used to immidiately show a fast non-interactive preview on the route.</p><h3 id=static-and-dynamic-rendering>Static and dynamic rendering</h3><p>Static Rendering (Default):
+Routes are pre-rendered at build time or in the background, then cached and stored. This is great for content that doesn&rsquo;t change per user, like static blog posts or product pages.</p><p>Dynamic Rendering:
+Routes are generated for each user when requested. This is useful for content that is personalized or relies on information like cookies or URL parameters, which can only be known at the time of the request.</p><p>As a developer you don&rsquo;t have to choose static or dynamic rendering.</p><h2 id=client-components>Client components</h2><p>Client Components allow you to write interactive UI that is prerenderd on the server and use client JavaScript to run in the browser.</p><p><em>Benefits</em> of doing the rendering on the client are :</p><ul><li>You can use states, use state, effects and event listners on client components and they can provide immidiate feedback to the user and update the UI on client side.</li><li>Browser APIs like geolocation and localStorage can be accesed.</li></ul><h2 id=using-client-components-in-nextjs>Using Client Components in Next.js</h2><p>To use a Client Components, you can use the React <code>"use client"</code> directive at the top of a file.</p><div class=highlight><div style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style=background-color:#dedede><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid><code class=language-html data-lang=html><span style=display:flex><span>```
+</span></span><span style=display:flex;background-color:#dedede><span>&#39;use client&#39;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>import { useState } from &#39;react&#39;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>export default function Counter() {
+</span></span><span style=display:flex><span>  const [count, setCount] = useState(0)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  return (
+</span></span><span style=display:flex><span>    <span style=color:#1f2328>&lt;</span><span style=color:#0550ae>div</span><span style=color:#1f2328>&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:#1f2328>&lt;</span><span style=color:#0550ae>p</span><span style=color:#1f2328>&gt;</span>You clicked {count} times<span style=color:#1f2328>&lt;/</span><span style=color:#0550ae>p</span><span style=color:#1f2328>&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:#1f2328>&lt;</span><span style=color:#0550ae>button</span> <span style=color:#1f2328>onClick</span><span style=color:#0550ae>=</span><span style=color:#0a3069>{()</span> <span style=color:#f6f8fa;background-color:#82071e>=</span><span style=color:#1f2328>&gt;</span> setCount(count + 1)}&gt;Click me<span style=color:#1f2328>&lt;/</span><span style=color:#0550ae>button</span><span style=color:#1f2328>&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#1f2328>&lt;/</span><span style=color:#0550ae>div</span><span style=color:#1f2328>&gt;</span>
+</span></span><span style=display:flex><span>  )
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>```</span></span></code></pre></td></tr></table></div></div><p>That is all you need to convert server components to client componets.</p><blockquote><p><strong>Note</strong> - If you use state, effects, browser APIs without specifying the client component by <code>"use client"</code>, Next.js will thorow an error.</p></blockquote><h2 id=full-page-load>Full page load</h2><p>To optimize the initial page load, Next.js will use React&rsquo;s APIs to render a static HTML preview on the server for both Client and Server Components. This means, when the user first visits your application, they will see the content of the page immediately, without having to wait for the client to download, parse, and execute the Client Component JavaScript bundle.</p><h1 id=conclusion>Conclusion</h1><p>Server and Client Components enhance website performance, conserve data, and are especially advantageous for low-powered devices. You have the flexibility to choose when to employ client components as needed!</p><div class=tags><a href=/tags/web-development/>#Web Development</a> <a href=/tags/nextjs/>#NextJs</a></div></article></div></main><footer class=site-footer><div class=wrap><span>© 2026 Pratham Dupare</span>
+<a href=https://github.com/prathamdupare>github</a>
+<a href=https://x.com/prathammdupare>x</a>
+<a href=/index.xml>rss</a></div></footer></body></html>

@@ -1,71 +1,28 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title> · Pratham Dupare</title>
-<meta name="description" content="package handlers
-import ( &ldquo;backend/middleware&rdquo; &ldquo;backend/models&rdquo; &ldquo;context&rdquo; &ldquo;encoding/json&rdquo; &ldquo;net/http&rdquo; &ldquo;time&rdquo; …">
-<link rel="stylesheet" href="/css/main.css">
-<link rel="icon" href="/favicon.svg">
-
-
-</head>
-<body>
-    <header class="site-header">
-    <div class="wrap">
-        <a class="site-name" href="/">Pratham Dupare</a>
-        <nav class="site-nav">
-            
-            <a href="/">home</a>
-            
-            <a href="/write/">writing</a>
-            
-            <a href="/media/">likes</a>
-            
-            <a href="/me/">about</a>
-            
-        </nav>
-    </div>
-</header>
-
-    <main>
-        <div class="wrap">
-            
-<article>
-    <header class="post-header">
-        <h1></h1>
-        
-    </header>
-
-    <p>package handlers</p>
-<p>import (
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>· Pratham Dupare</title><meta name=description content="package handlers
+import ( &ldquo;backend/middleware&rdquo; &ldquo;backend/models&rdquo; &ldquo;context&rdquo; &ldquo;encoding/json&rdquo; &ldquo;net/http&rdquo; &ldquo;time&rdquo; …"><link rel=stylesheet href=/css/main.css><link rel=icon href=/favicon.svg></head><body><header class=site-header><div class=wrap><a class=site-name href=/>Pratham Dupare</a><nav class=site-nav><a href=/>home</a>
+<a href=/write/>writing</a>
+<a href=/media/>likes</a>
+<a href=/me/>about</a></nav></div></header><main><div class=wrap><article><header class=post-header><h1></h1></header><p>package handlers</p><p>import (
 &ldquo;backend/middleware&rdquo;
 &ldquo;backend/models&rdquo;
 &ldquo;context&rdquo;
 &ldquo;encoding/json&rdquo;
 &ldquo;net/http&rdquo;
-&ldquo;time&rdquo;</p>
-<pre><code>&quot;github.com/gorilla/mux&quot;
+&ldquo;time&rdquo;</p><pre><code>&quot;github.com/gorilla/mux&quot;
 &quot;go.mongodb.org/mongo-driver/bson&quot;
 &quot;go.mongodb.org/mongo-driver/bson/primitive&quot;
 &quot;go.mongodb.org/mongo-driver/mongo&quot;
 &quot;golang.org/x/crypto/bcrypt&quot;
-</code></pre>
-<p>)</p>
-<p>var client *mongo.Client</p>
-<p>func SetClient(mongoClient *mongo.Client) {
+</code></pre><p>)</p><p>var client *mongo.Client</p><p>func SetClient(mongoClient *mongo.Client) {
 client = mongoClient
-}</p>
-<p>func GetUserByIDHandler(w http.ResponseWriter, r *http.Request) {
+}</p><p>func GetUserByIDHandler(w http.ResponseWriter, r *http.Request) {
 // Get the user ID from the URL parameter
 vars := mux.Vars(r)
 userID, err := primitive.ObjectIDFromHex(vars[&ldquo;id&rdquo;])
 if err != nil {
 http.Error(w, &ldquo;Invalid user ID&rdquo;, http.StatusBadRequest)
 return
-}</p>
-<pre><code>collection := client.Database(&quot;profileFolio&quot;).Collection(&quot;users&quot;)
+}</p><pre><code>collection := client.Database(&quot;profileFolio&quot;).Collection(&quot;users&quot;)
 var user models.User
 ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 defer cancel()
@@ -83,13 +40,10 @@ if err != nil {
 
 w.Header().Set(&quot;Content-Type&quot;, &quot;application/json&quot;)
 json.NewEncoder(w).Encode(user)
-</code></pre>
-<p>}</p>
-<p>func GetUserByEmailHandler(w http.ResponseWriter, r *http.Request) {
+</code></pre><p>}</p><p>func GetUserByEmailHandler(w http.ResponseWriter, r *http.Request) {
 // Get the email from the URL parameter
 vars := mux.Vars(r)
-email := vars[&ldquo;email&rdquo;]</p>
-<pre><code>collection := client.Database(&quot;profileFolio&quot;).Collection(&quot;users&quot;)
+email := vars[&ldquo;email&rdquo;]</p><pre><code>collection := client.Database(&quot;profileFolio&quot;).Collection(&quot;users&quot;)
 var user models.User
 ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 defer cancel()
@@ -107,13 +61,10 @@ if err != nil {
 
 w.Header().Set(&quot;Content-Type&quot;, &quot;application/json&quot;)
 json.NewEncoder(w).Encode(user)
-</code></pre>
-<p>}</p>
-<p>func GetUserByUsernameHandler(w http.ResponseWriter, r *http.Request) {
+</code></pre><p>}</p><p>func GetUserByUsernameHandler(w http.ResponseWriter, r *http.Request) {
 // Get the username from the URL parameter
 vars := mux.Vars(r)
-username := vars[&ldquo;username&rdquo;]</p>
-<pre><code>collection := client.Database(&quot;profileFolio&quot;).Collection(&quot;users&quot;)
+username := vars[&ldquo;username&rdquo;]</p><pre><code>collection := client.Database(&quot;profileFolio&quot;).Collection(&quot;users&quot;)
 var user models.User
 ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 defer cancel()
@@ -131,13 +82,10 @@ if err != nil {
 
 w.Header().Set(&quot;Content-Type&quot;, &quot;application/json&quot;)
 json.NewEncoder(w).Encode(user)
-</code></pre>
-<p>}</p>
-<p>func UpdateUserByEmailHandler(w http.ResponseWriter, r *http.Request) {
+</code></pre><p>}</p><p>func UpdateUserByEmailHandler(w http.ResponseWriter, r *http.Request) {
 // Get the email from the URL parameter
 vars := mux.Vars(r)
-email := vars[&ldquo;email&rdquo;]</p>
-<pre><code>// Parse the request body
+email := vars[&ldquo;email&rdquo;]</p><pre><code>// Parse the request body
 var updates map[string]interface{}
 err := json.NewDecoder(r.Body).Decode(&amp;updates)
 if err != nil {
@@ -173,13 +121,10 @@ if result.MatchedCount == 0 {
 
 w.WriteHeader(http.StatusOK)
 json.NewEncoder(w).Encode(map[string]string{&quot;message&quot;: &quot;User updated successfully&quot;})
-</code></pre>
-<p>}</p>
-<p>func UpdateUserByUsernameHandler(w http.ResponseWriter, r *http.Request) {
+</code></pre><p>}</p><p>func UpdateUserByUsernameHandler(w http.ResponseWriter, r *http.Request) {
 // Get the username from the URL parameter
 vars := mux.Vars(r)
-username := vars[&ldquo;username&rdquo;]</p>
-<pre><code>// Parse the request body
+username := vars[&ldquo;username&rdquo;]</p><pre><code>// Parse the request body
 var updates map[string]interface{}
 err := json.NewDecoder(r.Body).Decode(&amp;updates)
 if err != nil {
@@ -215,14 +160,11 @@ if result.MatchedCount == 0 {
 
 w.WriteHeader(http.StatusOK)
 json.NewEncoder(w).Encode(map[string]string{&quot;message&quot;: &quot;User updated successfully&quot;})
-</code></pre>
-<p>}</p>
-<p>func SignUpHandler(w http.ResponseWriter, r *http.Request) {
+</code></pre><p>}</p><p>func SignUpHandler(w http.ResponseWriter, r *http.Request) {
 if r.Method != http.MethodPost {
 http.Error(w, &ldquo;Invalid request method&rdquo;, http.StatusMethodNotAllowed)
 return
-}</p>
-<pre><code>var user models.User
+}</p><pre><code>var user models.User
 var authUser models.AuthUser
 if err := json.NewDecoder(r.Body).Decode(&amp;authUser); err != nil {
 	http.Error(w, &quot;Error decoding request body&quot;, http.StatusBadRequest)
@@ -313,14 +255,11 @@ response := map[string]interface{}{
 	&quot;user&quot;:        new_user,
 }
 json.NewEncoder(w).Encode(response)
-</code></pre>
-<p>}</p>
-<p>func SignInHandler(w http.ResponseWriter, r *http.Request) {
+</code></pre><p>}</p><p>func SignInHandler(w http.ResponseWriter, r *http.Request) {
 if r.Method != http.MethodPost {
 http.Error(w, &ldquo;Invalid request method&rdquo;, http.StatusMethodNotAllowed)
 return
-}</p>
-<pre><code>var credentials struct {
+}</p><pre><code>var credentials struct {
 	Email    string `json:&quot;email&quot;`
 	Password string `json:&quot;password&quot;`
 }
@@ -371,23 +310,17 @@ response := map[string]interface{}{
 }
 
 json.NewEncoder(w).Encode(response)
-</code></pre>
-<p>}</p>
-<p>func GetUserHandler(w http.ResponseWriter, r *http.Request) {
+</code></pre><p>}</p><p>func GetUserHandler(w http.ResponseWriter, r *http.Request) {
 collection := client.Database(&ldquo;profileFolio&rdquo;).Collection(&ldquo;users&rdquo;)
 var user models.User
 err := collection.FindOne(context.Background(), bson.M{}).Decode(&amp;user)
 if err != nil {
 http.Error(w, err.Error(), http.StatusInternalServerError)
 return
-}</p>
-<pre><code>json.NewEncoder(w).Encode(user)
-</code></pre>
-<p>}</p>
-<p>func GetSkillsHandler(w http.ResponseWriter, r *http.Request) {
+}</p><pre><code>json.NewEncoder(w).Encode(user)
+</code></pre><p>}</p><p>func GetSkillsHandler(w http.ResponseWriter, r *http.Request) {
 collection := client.Database(&ldquo;profileFolio&rdquo;).Collection(&ldquo;skills&rdquo;)
-var skills []models.SkillCollection</p>
-<pre><code>cursor, err := collection.Find(context.Background(), bson.M{})
+var skills []models.SkillCollection</p><pre><code>cursor, err := collection.Find(context.Background(), bson.M{})
 if err != nil {
 	http.Error(w, err.Error(), http.StatusInternalServerError)
 	return
@@ -412,16 +345,13 @@ w.Header().Set(&quot;Content-Type&quot;, &quot;application/json&quot;)
 if err := json.NewEncoder(w).Encode(skills); err != nil {
 	http.Error(w, err.Error(), http.StatusInternalServerError)
 }
-</code></pre>
-<p>}</p>
-<p>func GetSkillsByUserIDHandler(w http.ResponseWriter, r *http.Request) {
+</code></pre><p>}</p><p>func GetSkillsByUserIDHandler(w http.ResponseWriter, r *http.Request) {
 vars := mux.Vars(r)
 userID, err := primitive.ObjectIDFromHex(vars[&ldquo;id&rdquo;])
 if err != nil {
 http.Error(w, &ldquo;Invalid user ID&rdquo;, http.StatusBadRequest)
 return
-}</p>
-<pre><code>ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+}</p><pre><code>ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 defer cancel()
 
 collection := client.Database(&quot;profileFolio&quot;).Collection(&quot;users&quot;)
@@ -473,12 +403,9 @@ if err = cursor.All(ctx, &amp;skills); err != nil {
 
 w.Header().Set(&quot;Content-Type&quot;, &quot;application/json&quot;)
 json.NewEncoder(w).Encode(skills)
-</code></pre>
-<p>}</p>
-<p>func GetSkillsByUsernameHandler(w http.ResponseWriter, r *http.Request) {
+</code></pre><p>}</p><p>func GetSkillsByUsernameHandler(w http.ResponseWriter, r *http.Request) {
 vars := mux.Vars(r)
-username := vars[&ldquo;username&rdquo;]</p>
-<pre><code>collection := client.Database(&quot;profileFolio&quot;).Collection(&quot;users&quot;)
+username := vars[&ldquo;username&rdquo;]</p><pre><code>collection := client.Database(&quot;profileFolio&quot;).Collection(&quot;users&quot;)
 var user models.User
 ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 defer cancel()
@@ -529,12 +456,9 @@ if err = cursor.All(ctx, &amp;skills); err != nil {
 
 w.Header().Set(&quot;Content-Type&quot;, &quot;application/json&quot;)
 json.NewEncoder(w).Encode(skills)
-</code></pre>
-<p>}</p>
-<p>func GetSkillsByEmailHandler(w http.ResponseWriter, r *http.Request) {
+</code></pre><p>}</p><p>func GetSkillsByEmailHandler(w http.ResponseWriter, r *http.Request) {
 vars := mux.Vars(r)
-email := vars[&ldquo;email&rdquo;]</p>
-<pre><code>collection := client.Database(&quot;profileFolio&quot;).Collection(&quot;users&quot;)
+email := vars[&ldquo;email&rdquo;]</p><pre><code>collection := client.Database(&quot;profileFolio&quot;).Collection(&quot;users&quot;)
 var user models.User
 ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 defer cancel()
@@ -585,16 +509,13 @@ if err = cursor.All(ctx, &amp;skills); err != nil {
 
 w.Header().Set(&quot;Content-Type&quot;, &quot;application/json&quot;)
 json.NewEncoder(w).Encode(skills)
-</code></pre>
-<p>}</p>
-<p>func AddUserHandler(w http.ResponseWriter, r *http.Request) {
+</code></pre><p>}</p><p>func AddUserHandler(w http.ResponseWriter, r *http.Request) {
 var newUser models.User
 err := json.NewDecoder(r.Body).Decode(&amp;newUser)
 if err != nil {
 http.Error(w, &ldquo;Invalid request body&rdquo;, http.StatusBadRequest)
 return
-}</p>
-<pre><code>collection := client.Database(&quot;profileFolio&quot;).Collection(&quot;users&quot;)
+}</p><pre><code>collection := client.Database(&quot;profileFolio&quot;).Collection(&quot;users&quot;)
 
 // Check if user already exists
 existingUser := models.User{}
@@ -622,17 +543,14 @@ json.NewEncoder(w).Encode(map[string]string{
 	&quot;message&quot;: &quot;User added successfully&quot;,
 	&quot;id&quot;:      insertedID.Hex(),
 })
-</code></pre>
-<p>}</p>
-<p>func UpdateUserHandler(w http.ResponseWriter, r *http.Request) {
+</code></pre><p>}</p><p>func UpdateUserHandler(w http.ResponseWriter, r *http.Request) {
 // Get the user ID from the URL parameter
 vars := mux.Vars(r)
 userID, err := primitive.ObjectIDFromHex(vars[&ldquo;id&rdquo;])
 if err != nil {
 http.Error(w, &ldquo;Invalid user ID&rdquo;, http.StatusBadRequest)
 return
-}</p>
-<pre><code>// Parse the request body
+}</p><pre><code>// Parse the request body
 var updates map[string]interface{}
 err = json.NewDecoder(r.Body).Decode(&amp;updates)
 if err != nil {
@@ -666,23 +584,7 @@ if result.MatchedCount == 0 {
 
 w.WriteHeader(http.StatusOK)
 json.NewEncoder(w).Encode(map[string]string{&quot;message&quot;: &quot;User updated successfully&quot;})
-</code></pre>
-<p>}</p>
-
-
-    
-</article>
-
-        </div>
-    </main>
-    <footer class="site-footer">
-    <div class="wrap">
-        <span>© 2026 Pratham Dupare</span>
-        <a href="https://github.com/prathamdupare">github</a>
-        <a href="https://x.com/prathammdupare">x</a>
-        <a href="/index.xml">rss</a>
-    </div>
-</footer>
-
-</body>
-</html>
+</code></pre><p>}</p></article></div></main><footer class=site-footer><div class=wrap><span>© 2026 Pratham Dupare</span>
+<a href=https://github.com/prathamdupare>github</a>
+<a href=https://x.com/prathammdupare>x</a>
+<a href=/index.xml>rss</a></div></footer></body></html>

@@ -1,102 +1,13 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Make Ubuntu avoid entering suspended mode when the laptop lid is closed. · Pratham Dupare</title>
-<meta name="description" content="Two methods">
-<link rel="stylesheet" href="/css/main.css">
-<link rel="icon" href="/favicon.svg">
-
-
-</head>
-<body>
-    <header class="site-header">
-    <div class="wrap">
-        <a class="site-name" href="/">Pratham Dupare</a>
-        <nav class="site-nav">
-            
-            <a href="/">home</a>
-            
-            <a href="/write/">writing</a>
-            
-            <a href="/media/">likes</a>
-            
-            <a href="/me/">about</a>
-            
-        </nav>
-    </div>
-</header>
-
-    <main>
-        <div class="wrap">
-            
-<article>
-    <header class="post-header">
-        <h1>Make Ubuntu avoid entering suspended mode when the laptop lid is closed.</h1>
-        <div class="meta">September 7, 2022 · 2 min read</div>
-    </header>
-
-    <p>Our laptops suspend when the lid is closed, it is the default behavior of any laptop. It is a good feature that helps to save battery but if you are using a laptop as a server that needs to run constantly then it can cause problems.</p>
-<p>If you are using Ubuntu then you can turn that off.</p>
-<h2 id="method-1-">Method 1 :</h2>
-<p>This is the simplest method and doesn&rsquo;t require any command line and works with any Distro with a GNOME desktop.
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Make Ubuntu avoid entering suspended mode when the laptop lid is closed. · Pratham Dupare</title><meta name=description content="Two methods"><link rel=stylesheet href=/css/main.css><link rel=icon href=/favicon.svg></head><body><header class=site-header><div class=wrap><a class=site-name href=/>Pratham Dupare</a><nav class=site-nav><a href=/>home</a>
+<a href=/write/>writing</a>
+<a href=/media/>likes</a>
+<a href=/me/>about</a></nav></div></header><main><div class=wrap><article><header class=post-header><h1>Make Ubuntu avoid entering suspended mode when the laptop lid is closed.</h1><div class=meta>September 7, 2022 · 2 min read</div></header><p>Our laptops suspend when the lid is closed, it is the default behavior of any laptop. It is a good feature that helps to save battery but if you are using a laptop as a server that needs to run constantly then it can cause problems.</p><p>If you are using Ubuntu then you can turn that off.</p><h2 id=method-1->Method 1 :</h2><p>This is the simplest method and doesn&rsquo;t require any command line and works with any Distro with a GNOME desktop.
 If you use the GNOME desktop, you might use Gnome Tweaks for various reasons.
-You can install the GNOME tweaks tool from the software center.</p>
-<p>Or run the following command:</p>
-<pre tabindex="0"><code>sudo apt install gnome-tweaks
-</code></pre><!-- raw HTML omitted -->
-<p>After installing the app, open it. In the &ldquo;General&rdquo; tab toggle off &ldquo;Suspend when the laptop lid is closed&rdquo;.
-That&rsquo;s all, just restart your system for changes to take effect.</p>
-<h2 id="method-2-">Method 2 :</h2>
-<p>This method requires you to change login configuration (recommended for advanced users)</p>
-<h3 id="for-ubuntu-">For Ubuntu :</h3>
-<p>Open <strong>/etc/systemd/logind.conf</strong>.
-Or run the following command in the terminal:</p>
-<pre tabindex="0"><code>sudo gedit /etc/systemd/logind.conf
-</code></pre><h3 id="for-ubuntu-server-without-ui-">For Ubuntu server without UI :</h3>
-<p>use <strong>nano</strong> text editor instead</p>
-<p>You will find three lines of default settings for the laptop lid closing.</p>
-<ul>
-<li>HandleLidSwitch: When the laptop is on battery power</li>
-<li>HandleLidSwitchExternalPower: When the laptop is plugged into a power outlet</li>
-<li>HandleLidSwitchDocked: When the laptop is connected to a docking station</li>
-</ul>
-<!-- raw HTML omitted -->
-<p>The laptop will suspend irrespective of whether it is connected to power or not.</p>
-<p>According to your preference, you can change the value to:</p>
-<ul>
-<li>lock: lock when the lid is closed</li>
-<li>ignore: do nothing</li>
-<li>poweroff: shutdown</li>
-<li>hibernate: hibernate when the lid is closed</li>
-</ul>
-<p>Either create a new file in the <strong>/etc/systemd/logind.conf.d</strong> directory or edit the <strong>/etc/systemd/logind.conf</strong> file, uncomment the written settings, and alter their value. If it doesn&rsquo;t already exist, create it.</p>
-<p>If you know the command line use method 2 otherwise use GUI <strong>Method 1</strong>.</p>
-<p>Try these methods and let me know if you have questions.</p>
-<p>Hope this helps.</p>
-<h4 id="comments">Comments</h4>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-
-
-    
-    <div class="tags">
-        <a href="/tags/productivity/">#Productivity</a> 
-    </div>
-    
-</article>
-
-        </div>
-    </main>
-    <footer class="site-footer">
-    <div class="wrap">
-        <span>© 2026 Pratham Dupare</span>
-        <a href="https://github.com/prathamdupare">github</a>
-        <a href="https://x.com/prathammdupare">x</a>
-        <a href="/index.xml">rss</a>
-    </div>
-</footer>
-
-</body>
-</html>
+You can install the GNOME tweaks tool from the software center.</p><p>Or run the following command:</p><pre tabindex=0><code>sudo apt install gnome-tweaks
+</code></pre><p>After installing the app, open it. In the &ldquo;General&rdquo; tab toggle off &ldquo;Suspend when the laptop lid is closed&rdquo;.
+That&rsquo;s all, just restart your system for changes to take effect.</p><h2 id=method-2->Method 2 :</h2><p>This method requires you to change login configuration (recommended for advanced users)</p><h3 id=for-ubuntu->For Ubuntu :</h3><p>Open <strong>/etc/systemd/logind.conf</strong>.
+Or run the following command in the terminal:</p><pre tabindex=0><code>sudo gedit /etc/systemd/logind.conf
+</code></pre><h3 id=for-ubuntu-server-without-ui->For Ubuntu server without UI :</h3><p>use <strong>nano</strong> text editor instead</p><p>You will find three lines of default settings for the laptop lid closing.</p><ul><li>HandleLidSwitch: When the laptop is on battery power</li><li>HandleLidSwitchExternalPower: When the laptop is plugged into a power outlet</li><li>HandleLidSwitchDocked: When the laptop is connected to a docking station</li></ul><p>The laptop will suspend irrespective of whether it is connected to power or not.</p><p>According to your preference, you can change the value to:</p><ul><li>lock: lock when the lid is closed</li><li>ignore: do nothing</li><li>poweroff: shutdown</li><li>hibernate: hibernate when the lid is closed</li></ul><p>Either create a new file in the <strong>/etc/systemd/logind.conf.d</strong> directory or edit the <strong>/etc/systemd/logind.conf</strong> file, uncomment the written settings, and alter their value. If it doesn&rsquo;t already exist, create it.</p><p>If you know the command line use method 2 otherwise use GUI <strong>Method 1</strong>.</p><p>Try these methods and let me know if you have questions.</p><p>Hope this helps.</p><h4 id=comments>Comments</h4><div class=tags><a href=/tags/productivity/>#Productivity</a></div></article></div></main><footer class=site-footer><div class=wrap><span>© 2026 Pratham Dupare</span>
+<a href=https://github.com/prathamdupare>github</a>
+<a href=https://x.com/prathammdupare>x</a>
+<a href=/index.xml>rss</a></div></footer></body></html>
