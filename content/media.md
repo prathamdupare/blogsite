@@ -112,6 +112,10 @@ intro = "No particular order, and definitely not a tier list. I don't watch a lo
   note = "Believe the hype. (Stole this from Letterboxd.)"
 
 [[shows]]
+  title = "Lanterns"
+  note = "John Stewart cast was perfect, and Kyle Chandler as Hal Jordan is spot on. Not finished yet, but it keeps me waiting every Monday. Can't recommend it enough!"
+
+[[shows]]
   title = "Peacemaker"
   poster = "/media/peacemaker.jpg"
   note = "Hate me, but this is the best show on my list and among the ones I've watched. It has comedy, relatable characters, all the emotions, and Freddie Stroma as Vigilante is the best!"
