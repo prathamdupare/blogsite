@@ -52,7 +52,7 @@ intro = "Software engineer who loves coffee. I build open-source tools, mobile a
 
 [[experience]]
   role = "Jr. Engineer (Full Stack Developer)"
-  company = "IIT Indore"
+  company = "IIT Indore Drishti CPS Foundation"
   period = "Jun 2026 – Present · Indore, MP"
   stack = "TypeScript · Go · Python"
 
