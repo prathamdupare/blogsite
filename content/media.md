@@ -74,7 +74,7 @@ intro = "No particular order, and definitely not a tier list. I don't watch a lo
 [[movies]]
   title = "The Batman (2022)"
   poster = "/media/the-batman.jpg"
-  note = "Again, it's Batman, Matt Reeves, a brilliant story, and for fuck's sake, a different villain than Joker!"
+  note = "Again, it's Batman, Matt Reeves, a brilliant story, and for fuck's sake, a different villain than Joker! A detective story for the world's greatest detective, as it should be."
 
 [[movies]]
   title = "The Lion King (1994)"
