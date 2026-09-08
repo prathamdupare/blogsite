@@ -1,6 +1,6 @@
 +++
 title = "Pratham Dupare"
-description = "Pratham Dupare — software engineer who loves coffee. Building open-source tools, mobile apps, and web experiences. BS Mathematics, IISER Bhopal."
+description = "Pratham Dupare — software engineer who loves coffee. Building open-source tools, mobile apps, and web experiences."
 
 intro = "Software engineer who loves coffee. I build open-source tools, mobile apps, and web experiences. Math grad who writes code. I write here about Linux, Android, open source, and whatever I'm learning."
 
@@ -52,7 +52,7 @@ intro = "Software engineer who loves coffee. I build open-source tools, mobile a
 
 [[experience]]
   role = "Jr. Engineer (Full Stack Developer)"
-  company = "IITI DRISHTI CPS FOUNDATION"
+  company = "IIT Indore"
   period = "Jun 2026 – Present · Indore, MP"
   stack = "TypeScript · Go · Python"
 
