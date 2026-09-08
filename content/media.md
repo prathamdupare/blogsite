@@ -114,7 +114,7 @@ intro = "No particular order, and definitely not a tier list. I don't watch a lo
 [[shows]]
   title = "Lanterns"
   poster = "/media/lanterns.jpg"
-  note = "John Stewart cast was perfect, and Kyle Chandler as Hal Jordan is spot on. Not finished yet, but it keeps me waiting every Monday. Can't recommend it enough!"
+  note = "John Stewart cast was perfect, and Kyle Chandler as Hal Jordan is spot on. Not finished yet, but it keeps me waiting every Monday. Can't recommend it enough! Please suggest me something with better chemistry than these two."
 
 [[shows]]
   title = "Peacemaker"
