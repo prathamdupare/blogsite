@@ -1,8 +1,8 @@
 +++
 title = "Pratham Dupare"
-description = "Pratham Dupare — Jr. Engineer (Full Stack Developer) at IITI Drishti CPS Foundation. Building open-source tools, mobile apps, and web experiences. BS Mathematics, IISER Bhopal."
+description = "Pratham Dupare — software engineer who loves coffee. Building open-source tools, mobile apps, and web experiences. BS Mathematics, IISER Bhopal."
 
-intro = "Jr. Engineer (Full Stack Developer) at IITI Drishti CPS Foundation. I build open-source tools, mobile apps, and web experiences. Math grad who writes code. I write here about Linux, Android, open source, and whatever I'm learning."
+intro = "Software engineer who loves coffee. I build open-source tools, mobile apps, and web experiences. Math grad who writes code. I write here about Linux, Android, open source, and whatever I'm learning."
 
 [[projects]]
   name = "kintsu"
