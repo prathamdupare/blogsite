@@ -1,26 +1,15 @@
 /* Simple, typography-first styles. */
 
 :root {
-  --bg: #fffdfa;
-  --text: #1a1a1a;
-  --muted: #6b6b6b;
-  --faint: #e6e3dd;
-  --link: #1a1a1a;
-  --accent: #b5451b;
-  --code-bg: #f3f1ec;
+  --bg: #161614;
+  --text: #e8e6e1;
+  --muted: #b3b0a6;
+  --faint: #3a3a35;
+  --link: #e8e6e1;
+  --accent: #e08a5f;
+  --code-bg: #1f1f1c;
   --measure: 40rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #161614;
-    --text: #e8e6e1;
-    --muted: #9b988f;
-    --faint: #2e2e2a;
-    --link: #e8e6e1;
-    --accent: #e08a5f;
-    --code-bg: #1f1f1c;
-  }
+  color-scheme: dark;
 }
 
 *, *::before, *::after { box-sizing: border-box; }

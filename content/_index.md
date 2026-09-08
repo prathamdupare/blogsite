@@ -1,8 +1,8 @@
 +++
 title = "Pratham Dupare"
-description = "Pratham Dupare — software developer building open-source tools, mobile apps, and web experiences. BS Mathematics, IISER Bhopal."
+description = "Pratham Dupare — Jr. Engineer (Full Stack Developer) at IITI Drishti CPS Foundation. Building open-source tools, mobile apps, and web experiences. BS Mathematics, IISER Bhopal."
 
-intro = "I build open-source tools, mobile apps, and web experiences. Math grad who writes code. I write here about Linux, Android, open source, and whatever I'm learning."
+intro = "Jr. Engineer (Full Stack Developer) at IITI Drishti CPS Foundation. I build open-source tools, mobile apps, and web experiences. Math grad who writes code. I write here about Linux, Android, open source, and whatever I'm learning."
 
 [[projects]]
   name = "kintsu"
@@ -49,6 +49,12 @@ intro = "I build open-source tools, mobile apps, and web experiences. Math grad 
   tagline = "Treat your resume like a Git repo."
   description = "One base resume, a branch per role, and a visual canvas showing which version went where. An AI helper rewrites sections in place — no more Resume-Final-v7-actual.pdf. Work in progress."
   tags = ["LaTeX", "TypeScript", "Canvas", "AI"]
+
+[[experience]]
+  role = "Jr. Engineer (Full Stack Developer)"
+  company = "IITI DRISHTI CPS FOUNDATION"
+  period = "Jun 2026 – Present · Indore, MP"
+  stack = "TypeScript · Go · Python"
 
 [[experience]]
   role = "Software Development Intern"
