@@ -175,6 +175,11 @@ intro = "No particular order, and definitely not a tier list. I don't watch a lo
   title = "Dark"
   poster = "/media/dark.jpg"
   note = "Okay, this has the best time-travel execution. Half of it I don't even remember now, but I loved it in 2019."
+
+[[shows]]
+  title = "Impractical Jokers"
+  poster = "/media/impractical-jokers.jpg"
+  note = "I've watched this since I was a kid — simple format and funny as hell! No script, no plan, just four friends destroying each other with dares. Never gets old."
 +++
 
 Anime: not enough context for AI — just kidding. I'm tired, I'll add anime later.
