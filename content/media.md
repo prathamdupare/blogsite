@@ -111,6 +111,11 @@ intro = "No particular order, and definitely not a tier list. I don't watch a lo
   poster = "/media/the-shawshank-redemption.jpg"
   note = "Believe the hype. (Stole this from Letterboxd.)"
 
+[[movies]]
+  title = "A Simple Favor + Another Simple Favor"
+  poster = "/media/a-simple-favor.jpg"
+  note = "I don't know why I like this one so much, but it's great for a casual watch and totally rewatchable. And the second part completes the joke!!"
+
 [[shows]]
   title = "Lanterns"
   poster = "/media/lanterns.jpg"
