@@ -116,6 +116,11 @@ intro = "No particular order, and definitely not a tier list. I don't watch a lo
   poster = "/media/a-simple-favor.jpg"
   note = "I don't know why I like this one so much, but it's great for a casual watch and totally rewatchable. And the second part completes the joke!!"
 
+[[movies]]
+  title = "Django Unchained"
+  poster = "/media/django-unchained.jpg"
+  note = "This is the best Quentin Tarantino film. Agree or not? Christoph Waltz, DiCaprio, Jamie Foxx and that dinner-table scene. I am not changing my mind."
+
 [[shows]]
   title = "Lanterns"
   poster = "/media/lanterns.jpg"
